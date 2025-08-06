@@ -1,4 +1,4 @@
-id,domain,topic,subtopic,template
+id,domain,topic,subtopic,prompt_type
 MATH.1.1,Foundations & Preliminaries,Mathematical Logic & Proof Techniques,Propositional Logic,definition
 MATH.1.1,Foundations & Preliminaries,Mathematical Logic & Proof Techniques,Predicate Logic,definition
 MATH.1.1,Foundations & Preliminaries,Mathematical Logic & Proof Techniques,Formal Systems and Axiomatic Methods,definition
