@@ -1,1 +1,35 @@
-# encyclopedia_project
+# super_encyclopedia_rebuild
+
+Starter project for generating Markdown encyclopedia entries with GPT-4 and compiling them into a single PDF.
+
+## Project Structure
+- `data/` — place `topics_final.csv` here
+- `output/` — generated Markdown files
+- `prompts/` — prompt templates used for each entry
+  - `prompt_template_definition.txt`
+  - `prompt_template_abstract.txt`
+  - `prompt_template_computation.txt`
+- `scripts/`
+  - `generate.py` — read topics and create Markdown entries
+  - `compile_pdf.py` — merge Markdown files into `compiled.pdf`
+  - `utils.py` — shared helpers
+- `requirements.txt` — Python dependencies
+
+## Setup
+1. Install Python 3.11+
+2. `pip install -r requirements.txt`
+3. Add `topics_final.csv` with a `prompt_type` column and provide the corresponding templates in `prompts/`
+4. Set the `OPENAI_API_KEY` environment variable
+
+## Usage
+Generate Markdown files:
+```bash
+python scripts/generate.py
+```
+
+Compile all Markdown into a single PDF:
+```bash
+python scripts/compile_pdf.py
+```
+
+The resulting PDF will be saved as `compiled.pdf` in the project root.
