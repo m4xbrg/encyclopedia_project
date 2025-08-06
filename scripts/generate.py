@@ -6,7 +6,10 @@ import tomllib
 from pathlib import Path
 from typing import Dict, Iterable
 
+import os
+
 from dotenv import load_dotenv
+import openai
 from openai import OpenAI
 
 from utils import render_prompt, slugify
@@ -25,6 +28,9 @@ MODEL = "gpt-4o-mini"
 
 # Load environment variables (e.g., OPENAI_API_KEY) from .env
 load_dotenv(Path(__file__).resolve().parent.parent / ".env")
+openai.api_key = os.getenv("OPENAI_API_KEY")
+if not openai.api_key:
+    raise ValueError("OPENAI_API_KEY is missing. Please set it in the .env file.")
 
 
 def load_topics(csv_path: Path) -> Iterable[Dict[str, str]]:
@@ -40,13 +46,14 @@ def generate_content(prompt: str) -> str:
     Falls back to placeholder text if the API call fails (e.g., missing key).
     """
     try:
-        client = OpenAI()
+        client = OpenAI(api_key=openai.api_key)
         response = client.chat.completions.create(
             model=MODEL,
             messages=[{"role": "user", "content": prompt}],
         )
         return response.choices[0].message.content
-    except Exception:
+    except Exception as e:
+        print(f"[ERROR] API call failed: {e}")
         return "Placeholder content. Replace this with real API output."
 
 
