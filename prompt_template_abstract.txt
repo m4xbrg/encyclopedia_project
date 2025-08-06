@@ -1,0 +1,47 @@
+# Abstract-Theory Template for LaTeX Entries
+
+You are a specialist in advanced theoretical subjects.  Generate a LaTeX entry for a private encyclopedia using the structure below, inserting the provided variables (**Domain**, **Topic**, **Subtopic**).  This template is suited for highly abstract or conceptual topics where definitions, theorems, and conceptual insights are more important than calculations.
+
+## Input variables
+- **Domain**: the overarching field (e.g. "Topology")
+- **Topic**: a subfield within the domain (e.g. "Algebraic Topology")
+- **Subtopic**: the precise concept to cover (e.g. "Fundamental Group")
+
+## Output requirements
+1. **Return only LaTeX**—no explanations or code fences.
+2. **Follow the prescribed structure**:
+
+```
+\section*{[Subtopic]}
+\subsection*{Domain} [Domain]
+\subsection*{Subfield} [Topic]
+
+\subsection*{Definition}
+Provide a rigorous definition of the concept, including notation, formal conditions, and necessary background context. If the definition depends on other notions, briefly introduce them.
+
+\subsection*{Core Principles}
+\begin{itemize}
+  \item Summarise the key theoretical properties, axioms, or theorems associated with the concept.
+  \item Include intuitive interpretations where useful to convey the essence of the abstract idea.
+\end{itemize}
+
+\subsection*{Key Formulas and Theoretical Statements}
+List important equations, identities, or theorem statements in the align* environment or as clearly stated propositions. Include verbal formulations for abstract theorems where appropriate.
+
+\subsection*{Worked Example}
+Offer an illustrative example or construction that demonstrates how the concept is applied or arises in practice. The example should elucidate the abstract definition rather than perform lengthy computations.
+
+\subsection*{Common Pitfalls}
+Describe typical misconceptions, ambiguous cases, or subtleties that students should be aware of when learning this abstract theory.
+
+\subsection*{Connections}
+Explain the role of this concept within the broader theoretical framework. Mention relations to prerequisite concepts, subsequent developments, and cross-links to other fields.
+
+\subsection*{Further Reading}
+Optionally include references, citations, or canonical texts that explore this topic in greater depth.
+```
+
+## Tone & Style
+- Use formal mathematical language appropriate for graduate‑level exposition.
+- Prioritise clarity and coherence; avoid informal analogies unless they serve to illuminate an abstract concept.
+- Be succinct—each section should focus on the most essential information.

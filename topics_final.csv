@@ -1,0 +1,1209 @@
+id,domain,topic,subtopic,template
+MATH.1.1,Foundations & Preliminaries,Mathematical Logic & Proof Techniques,Propositional Logic,definition
+MATH.1.1,Foundations & Preliminaries,Mathematical Logic & Proof Techniques,Predicate Logic,definition
+MATH.1.1,Foundations & Preliminaries,Mathematical Logic & Proof Techniques,Formal Systems and Axiomatic Methods,definition
+MATH.1.2,Foundations & Preliminaries,Set Theory & Foundations,"Basic Set Operations (union, intersection, complement)",definition
+MATH.1.2,Foundations & Preliminaries,Set Theory & Foundations,Venn Diagrams,definition
+MATH.1.2,Foundations & Preliminaries,Set Theory & Foundations,"Functions, Relations, and Mappings",definition
+MATH.1.2,Foundations & Preliminaries,Set Theory & Foundations,Cardinality and Infinite Sets,definition
+MATH.1.2,Foundations & Preliminaries,Set Theory & Foundations,Zermelo–Fraenkel Axioms (with Choice),definition
+MATH.1.3,Foundations & Preliminaries,Number Systems,Natural Numbers (ℕ),definition
+MATH.1.3,Foundations & Preliminaries,Number Systems,Integers (ℤ),definition
+MATH.1.3,Foundations & Preliminaries,Number Systems,Rational Numbers (ℚ),definition
+MATH.1.3,Foundations & Preliminaries,Number Systems,Real Numbers (ℝ),definition
+MATH.1.3,Foundations & Preliminaries,Number Systems,Complex Numbers (ℂ),definition
+MATH.2.1,Arithmetic & Elementary Topics,Basic Arithmetic,"Addition, Subtraction, Multiplication, Division",definition
+MATH.2.1,Arithmetic & Elementary Topics,Basic Arithmetic,"Properties of Operations (commutativity, associativity, distributivity)",definition
+MATH.2.2,Arithmetic & Elementary Topics,"Fractions, Decimals & Percentages","Simplification, Conversion, and Comparison",definition
+MATH.2.2,Arithmetic & Elementary Topics,"Fractions, Decimals & Percentages",Ratios and Proportions,definition
+MATH.2.3,Arithmetic & Elementary Topics,Basic Numeracy Skills,Order of Operations,definition
+MATH.2.3,Arithmetic & Elementary Topics,Basic Numeracy Skills,Estimation and Rounding,definition
+MATH.3.1,Algebra,Elementary Algebra,"Variables, Expressions, and Equations",computation
+MATH.3.1,Algebra,Elementary Algebra,Linear Equations and Inequalities,computation
+MATH.3.1,Algebra,Elementary Algebra,"Factoring, Polynomials, and Quadratics",computation
+MATH.3.1,Algebra,Elementary Algebra,Rational Expressions,computation
+MATH.3.2,Algebra,Intermediate Algebra,Exponents and Logarithms,computation
+MATH.3.2,Algebra,Intermediate Algebra,Functions and Graphs,computation
+MATH.3.2,Algebra,Intermediate Algebra,Systems of Equations,computation
+MATH.3.2,Algebra,Intermediate Algebra,"Sequences, Series, and Summations",computation
+MATH.3.3,Algebra,Abstract (Advanced) Algebra,"Group Theory: Groups, Subgroups, Homomorphisms, Cosets, Lagrange’s Theorem",computation
+MATH.3.3,Algebra,Abstract (Advanced) Algebra,"Ring Theory: Rings, Ideals, Ring Homomorphisms",computation
+MATH.3.3,Algebra,Abstract (Advanced) Algebra,"Field Theory: Fields, Extensions, Galois Theory",computation
+MATH.3.3,Algebra,Abstract (Advanced) Algebra,Modules and Vector Spaces,computation
+MATH.4.1,Geometry & Trigonometry,Geometry,"Euclidean Geometry: Points, Lines, Angles, Triangles, Polygons, Circles",computation
+MATH.4.1,Geometry & Trigonometry,Geometry,"Analytic Geometry: Coordinate Systems, Conic Sections, Equations of Geometric Figures",computation
+MATH.4.1,Geometry & Trigonometry,Geometry,Non-Euclidean Geometry: Hyperbolic and Elliptic Geometries,computation
+MATH.4.1,Geometry & Trigonometry,Geometry,"Differential Geometry: Curves, Surfaces, and Manifolds",computation
+MATH.4.2,Geometry & Trigonometry,Trigonometry,"Trigonometric Functions (sine, cosine, tangent, etc.)",computation
+MATH.4.2,Geometry & Trigonometry,Trigonometry,Trigonometric Identities and Equations,computation
+MATH.4.2,Geometry & Trigonometry,Trigonometry,Inverse Trigonometric Functions,computation
+MATH.4.2,Geometry & Trigonometry,Trigonometry,Applications to Periodic Phenomena and Waveforms,computation
+MATH.5.1,Calculus & Analysis,Differential Calculus,Concept of Limits and Continuity,computation
+MATH.5.1,Calculus & Analysis,Differential Calculus,Derivatives and Differentiation Rules,computation
+MATH.5.1,Calculus & Analysis,Differential Calculus,"Applications of Derivatives (tangent lines, optimization, motion)",computation
+MATH.5.2,Calculus & Analysis,Integral Calculus,Antiderivatives and Indefinite Integrals,computation
+MATH.5.2,Calculus & Analysis,Integral Calculus,Definite Integrals and the Fundamental Theorem of Calculus,computation
+MATH.5.2,Calculus & Analysis,Integral Calculus,Techniques of Integration,computation
+MATH.5.2,Calculus & Analysis,Integral Calculus,"Applications (area, volume, accumulation functions)",computation
+MATH.5.3,Calculus & Analysis,Multivariable Calculus,Partial Derivatives and Multiple Integrals,computation
+MATH.5.3,Calculus & Analysis,Multivariable Calculus,"Gradient, Divergence, and Curl",computation
+MATH.5.3,Calculus & Analysis,Multivariable Calculus,Vector Calculus and Line/Surface Integrals,computation
+MATH.5.4,Calculus & Analysis,Real Analysis,"Sequences and Series, Convergence Tests",computation
+MATH.5.4,Calculus & Analysis,Real Analysis,Properties of Real Numbers,computation
+MATH.5.4,Calculus & Analysis,Real Analysis,Metric Spaces and Normed Spaces,computation
+MATH.5.4,Calculus & Analysis,Real Analysis,Uniform Convergence and Continuity in Depth,computation
+MATH.5.5,Calculus & Analysis,Complex Analysis,Complex Functions and Analyticity,computation
+MATH.5.5,Calculus & Analysis,Complex Analysis,Cauchy-Riemann Equations,computation
+MATH.5.5,Calculus & Analysis,Complex Analysis,Contour Integration and Residue Theorem,computation
+MATH.5.5,Calculus & Analysis,Complex Analysis,Conformal Mappings,computation
+MATH.5.6,Calculus & Analysis,Functional Analysis (Advanced),Infinite-Dimensional Vector Spaces,computation
+MATH.5.6,Calculus & Analysis,Functional Analysis (Advanced),Banach and Hilbert Spaces,computation
+MATH.5.6,Calculus & Analysis,Functional Analysis (Advanced),Operators and Spectral Theory,computation
+MATH.6.1,Linear Algebra,Vector Spaces & Subspaces,Definitions and Examples,computation
+MATH.6.1,Linear Algebra,Vector Spaces & Subspaces,Basis and Dimension,computation
+MATH.6.2,Linear Algebra,Matrices and Determinants,"Matrix Operations, Inverses",computation
+MATH.6.2,Linear Algebra,Matrices and Determinants,Determinants and Their Properties,computation
+MATH.6.3,Linear Algebra,Linear Transformations,Kernel and Image,computation
+MATH.6.3,Linear Algebra,Linear Transformations,Change of Basis and Similarity,computation
+MATH.6.4,Linear Algebra,Eigenvalues and Eigenvectors,Characteristic Equation,computation
+MATH.6.4,Linear Algebra,Eigenvalues and Eigenvectors,Diagonalization,computation
+MATH.6.4,Linear Algebra,Eigenvalues and Eigenvectors,Jordan Canonical Form,computation
+MATH.7.1,Differential Equations,Ordinary Differential Equations (ODEs),"First-Order ODEs and Techniques (separable, linear)",computation
+MATH.7.1,Differential Equations,Ordinary Differential Equations (ODEs),Higher-Order ODEs,computation
+MATH.7.1,Differential Equations,Ordinary Differential Equations (ODEs),Systems of ODEs and Stability Analysis,computation
+MATH.7.2,Differential Equations,Partial Differential Equations (PDEs),"Classification (elliptic, parabolic, hyperbolic)",computation
+MATH.7.2,Differential Equations,Partial Differential Equations (PDEs),"Separation of Variables, Fourier Series Methods",computation
+MATH.7.2,Differential Equations,Partial Differential Equations (PDEs),Numerical Methods and Applications,computation
+MATH.8.1,Topology,Point-Set Topology,"Open and Closed Sets, Continuity",abstract
+MATH.8.1,Topology,Point-Set Topology,"Compactness, Connectedness, and Convergence",abstract
+MATH.8.1,Topology,Point-Set Topology,Topological Spaces and Bases,abstract
+MATH.8.2,Topology,Algebraic Topology,Homotopy and Fundamental Groups,abstract
+MATH.8.2,Topology,Algebraic Topology,Homology and Cohomology,abstract
+MATH.8.2,Topology,Algebraic Topology,Applications to Manifolds,abstract
+MATH.9.1,"Probability, Statistics & Combinatorics",Probability Theory,"Basic Concepts: Sample Space, Events, Probability Measures",computation
+MATH.9.1,"Probability, Statistics & Combinatorics",Probability Theory,Discrete and Continuous Random Variables,computation
+MATH.9.1,"Probability, Statistics & Combinatorics",Probability Theory,"Expected Value, Variance, and Higher Moments",computation
+MATH.9.2,"Probability, Statistics & Combinatorics",Statistics,Descriptive Statistics,computation
+MATH.9.2,"Probability, Statistics & Combinatorics",Statistics,"Inferential Statistics: Hypothesis Testing, Confidence Intervals",computation
+MATH.9.2,"Probability, Statistics & Combinatorics",Statistics,Regression Analysis and Data Modeling,computation
+MATH.9.3,"Probability, Statistics & Combinatorics",Combinatorics,"Counting Principles, Permutations, and Combinations",computation
+MATH.9.3,"Probability, Statistics & Combinatorics",Combinatorics,Graph Theory and Network Analysis,computation
+MATH.9.3,"Probability, Statistics & Combinatorics",Combinatorics,Generating Functions and Recurrence Relations,computation
+MATH.10.1,Number Theory,Elementary Number Theory,"Divisibility, Prime Numbers, and the Euclidean Algorithm",computation
+MATH.10.1,Number Theory,Elementary Number Theory,Modular Arithmetic and Congruences,computation
+MATH.10.1,Number Theory,Elementary Number Theory,Diophantine Equations,computation
+MATH.10.2,Number Theory,Advanced Number Theory,"Analytic Number Theory: Distribution of Primes, Riemann Zeta Function",computation
+MATH.10.2,Number Theory,Advanced Number Theory,"Algebraic Number Theory: Number Fields, Ideals, and Class Numbers",computation
+MATH.11.1,Mathematical Logic & Foundations (Advanced),Advanced Set Theory,"Ordinals, Cardinals, and the Continuum Hypothesis",abstract
+MATH.11.1,Mathematical Logic & Foundations (Advanced),Advanced Set Theory,Forcing and Independence Results,abstract
+MATH.11.2,Mathematical Logic & Foundations (Advanced),Computability & Recursion Theory,Turing Machines and Decidability,abstract
+MATH.11.2,Mathematical Logic & Foundations (Advanced),Computability & Recursion Theory,Recursive Functions and Complexity Theory,abstract
+MATH.11.3,Mathematical Logic & Foundations (Advanced),Category Theory,"Categories, Functors, and Natural Transformations",abstract
+MATH.11.3,Mathematical Logic & Foundations (Advanced),Category Theory,Universal Properties and Limits,abstract
+MATH.12.1,Optimization & Operations Research,Optimization Theory,Linear Programming and the Simplex Method,computation
+MATH.12.1,Optimization & Operations Research,Optimization Theory,Nonlinear and Convex Optimization,computation
+MATH.12.1,Optimization & Operations Research,Optimization Theory,Duality Theory and Sensitivity Analysis,computation
+MATH.12.2,Optimization & Operations Research,Operations Research,Network Flows and Transportation Problems,computation
+MATH.12.2,Optimization & Operations Research,Operations Research,Game Theory and Decision Analysis,computation
+MATH.12.2,Optimization & Operations Research,Operations Research,Heuristics and Metaheuristics,computation
+MATH.13.1,Advanced and Interdisciplinary Topics,Dynamical Systems and Chaos,"Stability, Bifurcation, and Strange Attractors",abstract
+MATH.13.1,Advanced and Interdisciplinary Topics,Dynamical Systems and Chaos,"Applications in Physics, Biology, and Economics",abstract
+MATH.13.2,Advanced and Interdisciplinary Topics,Fourier and Harmonic Analysis,"Fourier Series, Fourier Transform",abstract
+MATH.13.2,Advanced and Interdisciplinary Topics,Fourier and Harmonic Analysis,Wavelets and Signal Processing,abstract
+MATH.13.3,Advanced and Interdisciplinary Topics,Information Theory,"Entropy, Mutual Information",abstract
+MATH.13.3,Advanced and Interdisciplinary Topics,Information Theory,Data Compression and Coding Theory,abstract
+MATH.13.4,Advanced and Interdisciplinary Topics,Mathematical Modeling,Formulation and Analysis of Mathematical Models,abstract
+MATH.13.4,Advanced and Interdisciplinary Topics,Mathematical Modeling,Simulation Techniques,abstract
+PHYS.1.1,"Physics: Foundations, Units, and Mathematical Tools",Fundamental Concepts and Philosophy of Physics,"What is Physics? (definition, scope, and the scientific method)",definition
+PHYS.1.1,"Physics: Foundations, Units, and Mathematical Tools",Fundamental Concepts and Philosophy of Physics,Historical overview: from classical mechanics to modern theories,definition
+PHYS.1.1,"Physics: Foundations, Units, and Mathematical Tools",Fundamental Concepts and Philosophy of Physics,The role of models and approximation in describing nature,definition
+PHYS.1.2,"Physics: Foundations, Units, and Mathematical Tools","Units, Measurement, and Dimensional Analysis","SI units, conversion factors, and standard measurements",definition
+PHYS.1.2,"Physics: Foundations, Units, and Mathematical Tools","Units, Measurement, and Dimensional Analysis","Accuracy, precision, and error analysis",definition
+PHYS.1.2,"Physics: Foundations, Units, and Mathematical Tools","Units, Measurement, and Dimensional Analysis",Dimensional analysis and scaling laws,definition
+PHYS.1.3,"Physics: Foundations, Units, and Mathematical Tools",Mathematical Tools for Physics,"Vectors, scalars, and coordinate systems (Cartesian, polar, spherical, cylindrical)",definition
+PHYS.1.3,"Physics: Foundations, Units, and Mathematical Tools",Mathematical Tools for Physics,"Basic calculus (differentiation, integration) and its applications",definition
+PHYS.1.3,"Physics: Foundations, Units, and Mathematical Tools",Mathematical Tools for Physics,Differential equations and linear algebra essentials,definition
+PHYS.1.3,"Physics: Foundations, Units, and Mathematical Tools",Mathematical Tools for Physics,"Tensor analysis (index notation, covariant derivatives)",definition
+PHYS.2.1,Physics: Classical Mechanics,Kinematics,"Motion in one, two, and three dimensions",definition
+PHYS.2.1,Physics: Classical Mechanics,Kinematics,"Concepts of displacement, velocity, and acceleration",definition
+PHYS.2.1,Physics: Classical Mechanics,Kinematics,Equations of motion for constant acceleration,definition
+PHYS.2.2,Physics: Classical Mechanics,Newtonian Mechanics,Newton’s Laws of Motion,definition
+PHYS.2.2,Physics: Classical Mechanics,Newtonian Mechanics,"Forces: friction, tension, normal force, and drag",definition
+PHYS.2.2,Physics: Classical Mechanics,Newtonian Mechanics,Dynamics of motion under various force laws,definition
+PHYS.2.3,Physics: Classical Mechanics,"Work, Energy, and Power",Work-energy theorem,definition
+PHYS.2.3,Physics: Classical Mechanics,"Work, Energy, and Power",Kinetic and potential energy; conservation of energy,definition
+PHYS.2.3,Physics: Classical Mechanics,"Work, Energy, and Power","Power, efficiency, and applications to real systems",definition
+PHYS.2.4,Physics: Classical Mechanics,Momentum and Collisions,"Linear momentum, impulse, and conservation of momentum",definition
+PHYS.2.4,Physics: Classical Mechanics,Momentum and Collisions,Analysis of elastic and inelastic collisions,definition
+PHYS.2.4,Physics: Classical Mechanics,Momentum and Collisions,Center-of-mass motion,definition
+PHYS.2.5,Physics: Classical Mechanics,Rotational Dynamics,"Angular displacement, velocity, and acceleration",definition
+PHYS.2.5,Physics: Classical Mechanics,Rotational Dynamics,"Torque, moment of inertia, and rotational kinetic energy",definition
+PHYS.2.5,Physics: Classical Mechanics,Rotational Dynamics,Rolling motion and gyroscopic effects,definition
+PHYS.2.6,Physics: Classical Mechanics,Gravitation,Newton’s Law of Universal Gravitation,definition
+PHYS.2.6,Physics: Classical Mechanics,Gravitation,Gravitational potential and energy,definition
+PHYS.2.6,Physics: Classical Mechanics,Gravitation,Orbital dynamics and Kepler’s Laws,definition
+PHYS.2.7,Physics: Classical Mechanics,Oscillations & Waves,Simple harmonic motion,definition
+PHYS.2.7,Physics: Classical Mechanics,Oscillations & Waves,Damped and driven oscillators,definition
+PHYS.2.7,Physics: Classical Mechanics,Oscillations & Waves,Wave equation & superposition,definition
+PHYS.2.8,Physics: Classical Mechanics,Fluid Mechanics,Pressure and buoyancy,definition
+PHYS.2.8,Physics: Classical Mechanics,Fluid Mechanics,Bernoulli’s principle & continuity,definition
+PHYS.2.8,Physics: Classical Mechanics,Fluid Mechanics,Navier–Stokes basics,definition
+PHYS.3.1,Physics: Electromagnetism,Electrostatics,"Coulomb's law, electric fields, and electric potential",definition
+PHYS.3.1,Physics: Electromagnetism,Electrostatics,Gauss's law and flux,definition
+PHYS.3.1,Physics: Electromagnetism,Electrostatics,Electric forces in matter (dielectrics and polarization),definition
+PHYS.3.2,Physics: Electromagnetism,Magnetostatics,"Magnetic fields generated by currents (Biot–Savart law, Ampère's law)",definition
+PHYS.3.2,Physics: Electromagnetism,Magnetostatics,Magnetic flux and field lines,definition
+PHYS.3.2,Physics: Electromagnetism,Magnetostatics,Magnetic materials and magnetization,definition
+PHYS.3.3,Physics: Electromagnetism,Electrodynamics,Faraday’s Law of electromagnetic induction,definition
+PHYS.3.3,Physics: Electromagnetism,Electrodynamics,Maxwell’s Equations and their physical significance,definition
+PHYS.3.3,Physics: Electromagnetism,Electrodynamics,Electromagnetic waves and light,definition
+PHYS.3.4,Physics: Electromagnetism,Circuit Theory and Electrical Applications,"Ohm’s Law, resistance, capacitance, and inductance",definition
+PHYS.3.4,Physics: Electromagnetism,Circuit Theory and Electrical Applications,Analysis of DC and AC circuits,definition
+PHYS.3.4,Physics: Electromagnetism,Circuit Theory and Electrical Applications,"Kirchhoff’s rules, transient phenomena, and RLC circuits",definition
+PHYS.3.5,Physics: Electromagnetism,Optics,"Geometric optics (mirrors, lenses, Snell’s law)",definition
+PHYS.3.5,Physics: Electromagnetism,Optics,"Physical/wave optics (diffraction, interference)",definition
+PHYS.4.1,Physics: Thermodynamics & Statistical Mechanics,Laws of Thermodynamics,"Zeroth, First, Second, and Third Laws",definition
+PHYS.4.1,Physics: Thermodynamics & Statistical Mechanics,Laws of Thermodynamics,"Definitions of temperature, heat, work, and internal energy",definition
+PHYS.4.1,Physics: Thermodynamics & Statistical Mechanics,Laws of Thermodynamics,Concepts of thermal equilibrium,definition
+PHYS.4.2,Physics: Thermodynamics & Statistical Mechanics,Thermodynamic Processes and Cycles,"Isobaric, isochoric, isothermal, and adiabatic processes",definition
+PHYS.4.2,Physics: Thermodynamics & Statistical Mechanics,Thermodynamic Processes and Cycles,"Heat engines, refrigerators, and efficiency limits",definition
+PHYS.4.2,Physics: Thermodynamics & Statistical Mechanics,Thermodynamic Processes and Cycles,"Thermodynamic potentials (enthalpy, Helmholtz & Gibbs free energies, Maxwell relations)",definition
+PHYS.4.3,Physics: Thermodynamics & Statistical Mechanics,Statistical Mechanics and Kinetic Theory,"Microstates, macrostates, and the Boltzmann distribution",definition
+PHYS.4.3,Physics: Thermodynamics & Statistical Mechanics,Statistical Mechanics and Kinetic Theory,Partition functions and free energy,definition
+PHYS.4.3,Physics: Thermodynamics & Statistical Mechanics,Statistical Mechanics and Kinetic Theory,Kinetic theory of gases and molecular motion,definition
+PHYS.5.1,Physics: Quantum Mechanics,Foundations and Early Quantum Theory,"Blackbody radiation, the photoelectric effect, and atomic spectra",definition
+PHYS.5.1,Physics: Quantum Mechanics,Foundations and Early Quantum Theory,"Wave–particle duality, de Broglie wavelengths, and early experiments",definition
+PHYS.5.2,Physics: Quantum Mechanics,The Schrödinger Equation and Wavefunctions,Time-dependent and time-independent formulations,definition
+PHYS.5.2,Physics: Quantum Mechanics,The Schrödinger Equation and Wavefunctions,Properties of wavefunctions: normalization and probability densities,definition
+PHYS.5.2,Physics: Quantum Mechanics,The Schrödinger Equation and Wavefunctions,"Solutions for simple potentials (infinite well, harmonic oscillator)",definition
+PHYS.5.3,Physics: Quantum Mechanics,"Operators, Observables, and Quantum States","Hermitian operators, eigenvalues/eigenfunctions, and the uncertainty principle",definition
+PHYS.5.3,Physics: Quantum Mechanics,"Operators, Observables, and Quantum States",Measurement in quantum mechanics and state collapse,definition
+PHYS.5.3,Physics: Quantum Mechanics,"Operators, Observables, and Quantum States",Quantum superposition and interference,definition
+PHYS.5.4,Physics: Quantum Mechanics,Advanced Quantum Topics,Quantum tunneling and barrier penetration,definition
+PHYS.5.4,Physics: Quantum Mechanics,Advanced Quantum Topics,Angular momentum and spin,definition
+PHYS.5.4,Physics: Quantum Mechanics,Advanced Quantum Topics,Quantum statistics: Fermi–Dirac and Bose–Einstein distributions,definition
+PHYS.5.4,Physics: Quantum Mechanics,Advanced Quantum Topics,Path‑integral formulation & introduction to quantum field theory,definition
+PHYS.5.4,Physics: Quantum Mechanics,Advanced Quantum Topics,Applications: the hydrogen atom and scattering theory,definition
+PHYS.6.1,Physics: Relativity,Special Relativity,"Postulates, time dilation, length contraction, and relativity of simultaneity",definition
+PHYS.6.1,Physics: Relativity,Special Relativity,Lorentz transformations and relativistic kinematics,definition
+PHYS.6.1,Physics: Relativity,Special Relativity,Energy–mass equivalence (E = mc²) and implications for particle physics,definition
+PHYS.6.2,Physics: Relativity,General Relativity,The Equivalence Principle,definition
+PHYS.6.2,Physics: Relativity,General Relativity,"Curved spacetime, geodesics, and the Einstein Field Equations",definition
+PHYS.6.2,Physics: Relativity,General Relativity,"Experimental tests (gravitational redshift, perihelion precession)",definition
+PHYS.6.2,Physics: Relativity,General Relativity,"Exact solutions (Schwarzschild, Kerr metrics)",definition
+PHYS.7.1,Physics: Modern and Advanced Physics,Particle and Nuclear Physics,"Fundamental particles, forces, and the Standard Model",definition
+PHYS.7.1,Physics: Modern and Advanced Physics,Particle and Nuclear Physics,Particle interactions and Feynman diagrams,definition
+PHYS.7.1,Physics: Modern and Advanced Physics,Particle and Nuclear Physics,"Nuclear structure, reactions, and decay processes",definition
+PHYS.7.2,Physics: Modern and Advanced Physics,Condensed Matter Physics,"Crystalline and amorphous solids, semiconductors, and metals",definition
+PHYS.7.2,Physics: Modern and Advanced Physics,Condensed Matter Physics,Phenomena such as superconductivity and magnetism,definition
+PHYS.7.2,Physics: Modern and Advanced Physics,Condensed Matter Physics,Phase transitions and critical phenomena,definition
+PHYS.7.3,Physics: Modern and Advanced Physics,Astrophysics and Cosmology,"Stellar structure and evolution, planetary systems",definition
+PHYS.7.3,Physics: Modern and Advanced Physics,Astrophysics and Cosmology,"The Big Bang, cosmic microwave background, and expansion of the universe",definition
+PHYS.7.3,Physics: Modern and Advanced Physics,Astrophysics and Cosmology,"Dark matter, dark energy, and current cosmological models",definition
+PHYS.7.4,Physics: Modern and Advanced Physics,Interdisciplinary and Emerging Fields,Plasma physics and fluid dynamics,definition
+PHYS.7.4,Physics: Modern and Advanced Physics,Interdisciplinary and Emerging Fields,"Nonlinear dynamics, chaos theory, and complex systems",definition
+PHYS.7.4,Physics: Modern and Advanced Physics,Interdisciplinary and Emerging Fields,Quantum information and computation,definition
+PHYS.8.1,Physics: Experimental and Computational Methods,Experimental Techniques in Physics,"Measurement methods, instrumentation, and data acquisition",definition
+PHYS.8.1,Physics: Experimental and Computational Methods,Experimental Techniques in Physics,Laboratory techniques and error analysis,definition
+PHYS.8.1,Physics: Experimental and Computational Methods,Experimental Techniques in Physics,Designing experiments and interpreting empirical data,definition
+PHYS.8.1,Physics: Experimental and Computational Methods,Experimental Techniques in Physics,"Statistical data analysis (regression, hypothesis testing)",definition
+PHYS.8.2,Physics: Experimental and Computational Methods,Computational Physics,Numerical methods and simulation techniques,definition
+PHYS.8.2,Physics: Experimental and Computational Methods,Computational Physics,Monte Carlo methods and algorithmic modeling,definition
+PHYS.8.2,Physics: Experimental and Computational Methods,Computational Physics,Data analysis and visualization in modern physics research,definition
+PHYS.8.2,Physics: Experimental and Computational Methods,Computational Physics,Computational fluid dynamics (CFD),definition
+PHYS.9.1,Physics: Interdisciplinary Applications and Special Topics,Applied Physics Fields,"Biophysics, medical physics, and environmental physics",definition
+PHYS.9.1,Physics: Interdisciplinary Applications and Special Topics,Applied Physics Fields,Material science and nanotechnology,definition
+PHYS.9.1,Physics: Interdisciplinary Applications and Special Topics,Applied Physics Fields,Applied optics and photonics,definition
+PHYS.9.2,Physics: Interdisciplinary Applications and Special Topics,Advanced Mathematical Methods in Physics,"Group theory, symmetry analysis, and Lie algebras",definition
+PHYS.9.2,Physics: Interdisciplinary Applications and Special Topics,Advanced Mathematical Methods in Physics,Special functions and integral transforms in solving physical problems,definition
+PHYS.9.2,Physics: Interdisciplinary Applications and Special Topics,Advanced Mathematical Methods in Physics,Advanced differential equations and complex variable methods,definition
+CHEM.1.1,Chemistry: Fundamentals & Basic Concepts,Matter and Its Properties,"Definition of matter: substances, elements, compounds, mixtures",definition
+CHEM.1.1,Chemistry: Fundamentals & Basic Concepts,Matter and Its Properties,"States of matter: solids, liquids, gases, plasmas",definition
+CHEM.1.1,Chemistry: Fundamentals & Basic Concepts,Matter and Its Properties,Intensive and extensive properties,definition
+CHEM.1.1,Chemistry: Fundamentals & Basic Concepts,Matter and Its Properties,Physical vs. Chemical Properties and Changes,definition
+CHEM.1.2,Chemistry: Fundamentals & Basic Concepts,Atomic Theory and the Periodic Table,Historical development of atomic theory,definition
+CHEM.1.2,Chemistry: Fundamentals & Basic Concepts,Atomic Theory and the Periodic Table,"Structure of the atom (protons, neutrons, electrons)",definition
+CHEM.1.2,Chemistry: Fundamentals & Basic Concepts,Atomic Theory and the Periodic Table,Modern atomic models and electron configurations,definition
+CHEM.1.2,Chemistry: Fundamentals & Basic Concepts,Atomic Theory and the Periodic Table,"Periodic trends (atomic radius, ionization energy, electronegativity)",definition
+CHEM.1.3,Chemistry: Fundamentals & Basic Concepts,Chemical Bonding and Intermolecular Forces,"Ionic, covalent, and metallic bonds",definition
+CHEM.1.3,Chemistry: Fundamentals & Basic Concepts,Chemical Bonding and Intermolecular Forces,"Lewis structures, VSEPR theory",definition
+CHEM.1.3,Chemistry: Fundamentals & Basic Concepts,Chemical Bonding and Intermolecular Forces,Hybridization and molecular geometry,definition
+CHEM.1.3,Chemistry: Fundamentals & Basic Concepts,Chemical Bonding and Intermolecular Forces,"Intermolecular forces: hydrogen bonding, van der Waals forces, dipole–dipole interactions",definition
+CHEM.1.4,Chemistry: Fundamentals & Basic Concepts,Measurement and Laboratory Basics,"Units of measurement, significant figures, and precision",definition
+CHEM.1.4,Chemistry: Fundamentals & Basic Concepts,Measurement and Laboratory Basics,"Concepts of concentration (molarity, molality, percent composition)",definition
+CHEM.1.4,Chemistry: Fundamentals & Basic Concepts,Measurement and Laboratory Basics,"Basic lab safety, equipment, and techniques",definition
+CHEM.1.4,Chemistry: Fundamentals & Basic Concepts,Measurement and Laboratory Basics,Dimensional analysis and error analysis,definition
+CHEM.2.1,Chemistry: Quantitative Chemistry & Stoichiometry,Chemical Formulas and Nomenclature,Naming inorganic and organic compounds,definition
+CHEM.2.1,Chemistry: Quantitative Chemistry & Stoichiometry,Chemical Formulas and Nomenclature,Empirical and molecular formulas,definition
+CHEM.2.2,Chemistry: Quantitative Chemistry & Stoichiometry,Balancing Chemical Equations,Conservation of mass and charge,definition
+CHEM.2.2,Chemistry: Quantitative Chemistry & Stoichiometry,Balancing Chemical Equations,"Reaction stoichiometry, limiting reagents, and yield calculations",definition
+CHEM.2.3,Chemistry: Quantitative Chemistry & Stoichiometry,Quantitative Analysis and Stoichiometry,Mole concept and Avogadro’s number,definition
+CHEM.2.3,Chemistry: Quantitative Chemistry & Stoichiometry,Quantitative Analysis and Stoichiometry,"Calculations involving gases (Ideal Gas Law, gas mixtures)",definition
+CHEM.2.3,Chemistry: Quantitative Chemistry & Stoichiometry,Quantitative Analysis and Stoichiometry,Concepts of solution stoichiometry and titration,definition
+CHEM.2.3,Chemistry: Quantitative Chemistry & Stoichiometry,Quantitative Analysis and Stoichiometry,Percent yield and Atom economy,definition
+CHEM.3.1,Chemistry: Inorganic Chemistry,Periodicity and Elemental Properties,Trends in the periodic table,definition
+CHEM.3.1,Chemistry: Inorganic Chemistry,Periodicity and Elemental Properties,"Groups and periods, block elements (s, p, d, and f blocks)",definition
+CHEM.3.2,Chemistry: Inorganic Chemistry,Main Group Chemistry,"Oxides, acids, bases, and salts",definition
+CHEM.3.2,Chemistry: Inorganic Chemistry,Main Group Chemistry,Covalent vs. ionic character and reactivity patterns,definition
+CHEM.3.3,Chemistry: Inorganic Chemistry,Transition Metal and Coordination Chemistry,Characteristics of transition metals,definition
+CHEM.3.3,Chemistry: Inorganic Chemistry,Transition Metal and Coordination Chemistry,Coordination compounds and ligand theory,definition
+CHEM.3.3,Chemistry: Inorganic Chemistry,Transition Metal and Coordination Chemistry,Crystal field and molecular orbital theory applied to complexes,definition
+CHEM.3.4,Chemistry: Inorganic Chemistry,Advanced Topics in Inorganic Chemistry,Organometallic compounds,definition
+CHEM.3.4,Chemistry: Inorganic Chemistry,Advanced Topics in Inorganic Chemistry,Solid-state chemistry and structure of materials,definition
+CHEM.4.1,Chemistry: Organic Chemistry,Fundamentals of Organic Structure,Types of organic compounds and functional groups,definition
+CHEM.4.1,Chemistry: Organic Chemistry,Fundamentals of Organic Structure,"Hybridization, stereochemistry, and isomerism",definition
+CHEM.4.2,Chemistry: Organic Chemistry,Reaction Mechanisms and Reactivity,"Nucleophiles, electrophiles, and radicals",definition
+CHEM.4.2,Chemistry: Organic Chemistry,Reaction Mechanisms and Reactivity,"Common reaction types (substitution, addition, elimination, rearrangement)",definition
+CHEM.4.2,Chemistry: Organic Chemistry,Reaction Mechanisms and Reactivity,Reaction mechanisms and energy profiles,definition
+CHEM.4.3,Chemistry: Organic Chemistry,Synthesis and Retrosynthetic Analysis,Strategy in organic synthesis,definition
+CHEM.4.3,Chemistry: Organic Chemistry,Synthesis and Retrosynthetic Analysis,Identifying synthetic pathways and planning multi-step syntheses,definition
+CHEM.4.4,Chemistry: Organic Chemistry,Spectroscopic and Analytical Techniques,"Infrared (IR) spectroscopy, Nuclear Magnetic Resonance (NMR), Mass Spectrometry (MS)",definition
+CHEM.4.4,Chemistry: Organic Chemistry,Spectroscopic and Analytical Techniques,"Chromatography methods (GC, HPLC) for purification and analysis",definition
+CHEM.4.5,Chemistry: Organic Chemistry,Polymers and Macromolecules,"Types of polymers, polymerization reactions, and properties of polymers",definition
+CHEM.5.1,Chemistry: Physical Chemistry,Thermodynamics,Laws of thermodynamics,definition
+CHEM.5.1,Chemistry: Physical Chemistry,Thermodynamics,"Enthalpy, entropy, Gibbs free energy",definition
+CHEM.5.1,Chemistry: Physical Chemistry,Thermodynamics,Phase transitions and equilibrium,definition
+CHEM.5.2,Chemistry: Physical Chemistry,Kinetics and Reaction Dynamics,Rate laws and mechanisms,definition
+CHEM.5.2,Chemistry: Physical Chemistry,Kinetics and Reaction Dynamics,Catalysis and reaction pathway analysis,definition
+CHEM.5.2,Chemistry: Physical Chemistry,Kinetics and Reaction Dynamics,Temperature effects and collision theory,definition
+CHEM.5.3,Chemistry: Physical Chemistry,Quantum Chemistry,Principles of quantum mechanics applied to atoms and molecules,definition
+CHEM.5.3,Chemistry: Physical Chemistry,Quantum Chemistry,"Atomic orbitals, molecular orbital theory",definition
+CHEM.5.3,Chemistry: Physical Chemistry,Quantum Chemistry,Electron configuration and spectroscopic transitions,definition
+CHEM.5.4,Chemistry: Physical Chemistry,Electrochemistry,"Redox reactions, electrode potentials",definition
+CHEM.5.4,Chemistry: Physical Chemistry,Electrochemistry,"Electrochemical cells, batteries, and corrosion",definition
+CHEM.5.4,Chemistry: Physical Chemistry,Electrochemistry,Nernst equation and applications in sensors,definition
+CHEM.6.1,Chemistry: Analytical Chemistry,Qualitative Analysis,Techniques for identifying substances,definition
+CHEM.6.1,Chemistry: Analytical Chemistry,Qualitative Analysis,"Chemical tests, precipitation reactions, and colorimetry",definition
+CHEM.6.2,Chemistry: Analytical Chemistry,Quantitative Analysis,Gravimetric and volumetric analysis,definition
+CHEM.6.2,Chemistry: Analytical Chemistry,Quantitative Analysis,Titration methods and calibration,definition
+CHEM.6.2,Chemistry: Analytical Chemistry,Quantitative Analysis,"Instrumental methods (UV-Vis, ICP, etc.)",definition
+CHEM.6.3,Chemistry: Analytical Chemistry,Modern Instrumental Methods,"Chromatographic techniques (HPLC, GC)",definition
+CHEM.6.3,Chemistry: Analytical Chemistry,Modern Instrumental Methods,"Spectroscopic methods (IR, NMR, Mass Spectrometry)",definition
+CHEM.6.3,Chemistry: Analytical Chemistry,Modern Instrumental Methods,"Electroanalytical techniques (potentiometry, voltammetry)",definition
+CHEM.7.1,Chemistry: Biochemistry & Molecular Chemistry,Structure and Function of Biomolecules,"Carbohydrates, proteins, lipids, and nucleic acids",definition
+CHEM.7.1,Chemistry: Biochemistry & Molecular Chemistry,Structure and Function of Biomolecules,"Enzyme structure, function, and kinetics",definition
+CHEM.7.1,Chemistry: Biochemistry & Molecular Chemistry,Structure and Function of Biomolecules,"Vitamins, Cofactors, and Coenzymes",definition
+CHEM.7.2,Chemistry: Biochemistry & Molecular Chemistry,Metabolism and Bioenergetics,"Glycolysis, the citric acid cycle, and oxidative phosphorylation",definition
+CHEM.7.2,Chemistry: Biochemistry & Molecular Chemistry,Metabolism and Bioenergetics,Metabolic regulation and pathways,definition
+CHEM.7.3,Chemistry: Biochemistry & Molecular Chemistry,Molecular Genetics and Bioorganic Chemistry,DNA/RNA structure and replication,definition
+CHEM.7.3,Chemistry: Biochemistry & Molecular Chemistry,Molecular Genetics and Bioorganic Chemistry,Protein synthesis and gene expression regulation,definition
+CHEM.7.3,Chemistry: Biochemistry & Molecular Chemistry,Molecular Genetics and Bioorganic Chemistry,Applications in biotechnology and drug design,definition
+CHEM.8.1,Chemistry: Advanced & Interdisciplinary Topics,Materials Chemistry,"Polymers, ceramics, metals, and composites",definition
+CHEM.8.1,Chemistry: Advanced & Interdisciplinary Topics,Materials Chemistry,Nanotechnology and surface chemistry,definition
+CHEM.8.2,Chemistry: Advanced & Interdisciplinary Topics,Environmental and Green Chemistry,"Pollution analysis, waste management",definition
+CHEM.8.2,Chemistry: Advanced & Interdisciplinary Topics,Environmental and Green Chemistry,Principles of sustainable chemistry and renewable resources,definition
+CHEM.8.3,Chemistry: Advanced & Interdisciplinary Topics,Medicinal and Pharmaceutical Chemistry,Drug discovery and design,definition
+CHEM.8.3,Chemistry: Advanced & Interdisciplinary Topics,Medicinal and Pharmaceutical Chemistry,Pharmacodynamics and pharmacokinetics,definition
+CHEM.8.4,Chemistry: Advanced & Interdisciplinary Topics,Theoretical and Computational Chemistry,Modeling chemical systems,definition
+CHEM.8.4,Chemistry: Advanced & Interdisciplinary Topics,Theoretical and Computational Chemistry,Simulation techniques and quantum chemical calculations,definition
+BIO.1.1,Biology & Life Sciences: Foundations,Introduction to Biology,The Scientific Method in Biology,definition
+BIO.1.1,Biology & Life Sciences: Foundations,Introduction to Biology,History and Philosophy of Biological Thought,definition
+BIO.1.1,Biology & Life Sciences: Foundations,Introduction to Biology,"Overview of Life: Definitions, Characteristics, and Classification",definition
+BIO.1.1,Biology & Life Sciences: Foundations,Introduction to Biology,Viruses and Prions: Characteristics and Biological Roles,definition
+BIO.1.1,Biology & Life Sciences: Foundations,Introduction to Biology,Levels of Biological Organization: From Molecules to Biosphere,definition
+BIO.1.2,Biology & Life Sciences: Foundations,Chemistry of Life,Basic Chemistry Relevant to Biology,definition
+BIO.1.2,Biology & Life Sciences: Foundations,Chemistry of Life,Properties of Water and Its Role in Life,definition
+BIO.1.2,Biology & Life Sciences: Foundations,Chemistry of Life,"Elements and Biomolecules: Carbohydrates, Lipids, Proteins, and Nucleic Acids",definition
+BIO.1.2,Biology & Life Sciences: Foundations,Chemistry of Life,Introduction to Metabolism: Energy Transfer and Thermodynamics in Biological Systems,definition
+BIO.2.1,Biology & Life Sciences: Cell Biology,Fundamentals of the Cell,Cell Theory and Types of Cells (Prokaryotic vs. Eukaryotic),definition
+BIO.2.1,Biology & Life Sciences: Cell Biology,Fundamentals of the Cell,Cellular Components and Organelles,definition
+BIO.2.1,Biology & Life Sciences: Cell Biology,Fundamentals of the Cell,"Cell Membranes: Structure, Function, and Transport Mechanisms",definition
+BIO.2.1,Biology & Life Sciences: Cell Biology,Fundamentals of the Cell,Cytoskeleton and Cellular Architecture,definition
+BIO.2.2,Biology & Life Sciences: Cell Biology,Cellular Processes,Apoptosis (Programmed Cell Death),definition
+BIO.2.2,Biology & Life Sciences: Cell Biology,Cellular Processes,Cell Division: Mitosis and Meiosis,definition
+BIO.2.2,Biology & Life Sciences: Cell Biology,Cellular Processes,Cellular Respiration and Photosynthesis,definition
+BIO.2.2,Biology & Life Sciences: Cell Biology,Cellular Processes,Cell Signaling and Communication,definition
+BIO.2.2,Biology & Life Sciences: Cell Biology,Cellular Processes,Homeostasis and Regulation at the Cellular Level,definition
+BIO.3.1,Biology & Life Sciences: Genetics & Molecular Biology,Genetic Foundations,Mendelian Genetics and Inheritance Patterns,definition
+BIO.3.1,Biology & Life Sciences: Genetics & Molecular Biology,Genetic Foundations,Structure and Function of DNA and RNA,definition
+BIO.3.1,Biology & Life Sciences: Genetics & Molecular Biology,Genetic Foundations,Gene Expression: Transcription and Translation,definition
+BIO.3.1,Biology & Life Sciences: Genetics & Molecular Biology,Genetic Foundations,Regulation of Gene Expression,definition
+BIO.3.1,Biology & Life Sciences: Genetics & Molecular Biology,Genetic Foundations,"Mutations, DNA Repair, and Genetic Variation",definition
+BIO.3.2,Biology & Life Sciences: Genetics & Molecular Biology,Molecular Genetics,"Techniques in Molecular Biology (PCR, Cloning, Sequencing)",definition
+BIO.3.2,Biology & Life Sciences: Genetics & Molecular Biology,Molecular Genetics,Recombinant DNA Technology and Genetic Engineering,definition
+BIO.3.2,Biology & Life Sciences: Genetics & Molecular Biology,Molecular Genetics,Epigenetics and Gene Regulation Mechanisms,definition
+BIO.3.2,Biology & Life Sciences: Genetics & Molecular Biology,Molecular Genetics,Genomics and Bioinformatics Basics,definition
+BIO.4.1,Biology & Life Sciences: Developmental Biology,Principles of Development,Life Cycles and Reproductive Strategies,definition
+BIO.4.1,Biology & Life Sciences: Developmental Biology,Principles of Development,Concepts of Cellular Differentiation and Specialization,definition
+BIO.4.1,Biology & Life Sciences: Developmental Biology,Principles of Development,Embryogenesis: Stages of Development,definition
+BIO.4.1,Biology & Life Sciences: Developmental Biology,Principles of Development,Pattern Formation and Morphogenesis,definition
+BIO.4.1,Biology & Life Sciences: Developmental Biology,Principles of Development,Developmental Genetics and Regulatory Pathways,definition
+BIO.4.2,Biology & Life Sciences: Developmental Biology,Modern Topics in Development,Stem Cells and Regenerative Medicine,definition
+BIO.4.2,Biology & Life Sciences: Developmental Biology,Modern Topics in Development,Evolutionary Developmental Biology (Evo-Devo),definition
+BIO.4.2,Biology & Life Sciences: Developmental Biology,Modern Topics in Development,Environmental Influences on Development,definition
+BIO.5.1,Biology & Life Sciences: Physiology & Anatomy,Plant Physiology and Anatomy,Structure and Function of Plant Cells and Tissues,definition
+BIO.5.1,Biology & Life Sciences: Physiology & Anatomy,Plant Physiology and Anatomy,"Photosynthesis, Respiration, and Nutrient Transport in Plants",definition
+BIO.5.1,Biology & Life Sciences: Physiology & Anatomy,Plant Physiology and Anatomy,Plant Hormones and Growth Regulation,definition
+BIO.5.2,Biology & Life Sciences: Physiology & Anatomy,Animal Physiology and Anatomy,Immune System and Immunology Basics,definition
+BIO.5.2,Biology & Life Sciences: Physiology & Anatomy,Animal Physiology and Anatomy,"Organ Systems Overview: Nervous, Circulatory, Respiratory, Digestive, Excretory, and Reproductive",definition
+BIO.5.2,Biology & Life Sciences: Physiology & Anatomy,Animal Physiology and Anatomy,Homeostatic Mechanisms in Animals,definition
+BIO.5.2,Biology & Life Sciences: Physiology & Anatomy,Animal Physiology and Anatomy,Neurophysiology and Sensory Systems,definition
+BIO.5.2,Biology & Life Sciences: Physiology & Anatomy,Animal Physiology and Anatomy,Comparative Anatomy and Adaptations,definition
+BIO.6.1,Biology & Life Sciences: Evolution & Biodiversity,Evolutionary Theory,Principles of Natural Selection and Adaptation,definition
+BIO.6.1,Biology & Life Sciences: Evolution & Biodiversity,Evolutionary Theory,"Mechanisms of Evolution: Mutation, Gene Flow, Genetic Drift, and Selection",definition
+BIO.6.1,Biology & Life Sciences: Evolution & Biodiversity,Evolutionary Theory,Speciation and Phylogenetics,definition
+BIO.6.1,Biology & Life Sciences: Evolution & Biodiversity,Evolutionary Theory,"Fossils, Extinction, and the History of Life",definition
+BIO.6.2,Biology & Life Sciences: Evolution & Biodiversity,Biodiversity and Systematics,Classification and Taxonomy of Organisms,definition
+BIO.6.2,Biology & Life Sciences: Evolution & Biodiversity,Biodiversity and Systematics,Modern Systematics: Molecular and Morphological Approaches,definition
+BIO.6.2,Biology & Life Sciences: Evolution & Biodiversity,Biodiversity and Systematics,Evolutionary Relationships and the Tree of Life,definition
+BIO.7.1,Biology & Life Sciences: Ecology & Environmental Biology,Fundamentals of Ecology,"Ecosystems: Structure, Function, and Energy Flow",definition
+BIO.7.1,Biology & Life Sciences: Ecology & Environmental Biology,Fundamentals of Ecology,"Population Ecology: Dynamics, Growth Models, and Interactions",definition
+BIO.7.1,Biology & Life Sciences: Ecology & Environmental Biology,Fundamentals of Ecology,"Community Ecology: Species Interactions, Biodiversity, and Succession",definition
+BIO.7.2,Biology & Life Sciences: Ecology & Environmental Biology,Applied Ecology and Conservation,"Environmental Challenges: Pollution, Climate Change, and Habitat Loss",definition
+BIO.7.2,Biology & Life Sciences: Ecology & Environmental Biology,Applied Ecology and Conservation,Conservation Biology and Sustainability,definition
+BIO.7.2,Biology & Life Sciences: Ecology & Environmental Biology,Applied Ecology and Conservation,Restoration Ecology and Ecosystem Management,definition
+BIO.8.1,Biology & Life Sciences: Advanced & Interdisciplinary Topics,Neuroscience and Behavior,Basics of Neuronal Function and Brain Architecture,definition
+BIO.8.1,Biology & Life Sciences: Advanced & Interdisciplinary Topics,Neuroscience and Behavior,"Systems Neuroscience: Sensory Processing, Learning, and Memory",definition
+BIO.8.1,Biology & Life Sciences: Advanced & Interdisciplinary Topics,Neuroscience and Behavior,Behavioral Biology and the Neurobiology of Behavior,definition
+BIO.8.2,Biology & Life Sciences: Advanced & Interdisciplinary Topics,Systems and Computational Biology,Systems Biology: Integrative Approaches to Life Sciences,definition
+BIO.8.2,Biology & Life Sciences: Advanced & Interdisciplinary Topics,Systems and Computational Biology,Mathematical and Computational Modeling in Biology,definition
+BIO.8.2,Biology & Life Sciences: Advanced & Interdisciplinary Topics,Systems and Computational Biology,"Bioinformatics: Data Analysis, Genome Sequencing, and Network Biology",definition
+BIO.8.3,Biology & Life Sciences: Advanced & Interdisciplinary Topics,Emerging Fields,Synthetic Biology and Genetic Circuitry,definition
+BIO.8.3,Biology & Life Sciences: Advanced & Interdisciplinary Topics,Emerging Fields,Biotechnology and Biomedical Engineering,definition
+BIO.8.3,Biology & Life Sciences: Advanced & Interdisciplinary Topics,Emerging Fields,Evolutionary Medicine and Personalized Healthcare,definition
+BIO.8.3,Biology & Life Sciences: Advanced & Interdisciplinary Topics,Emerging Fields,Astrobiology and Extremophiles,definition
+BIO.9.1,Biology & Life Sciences: Experimental & Research Methods,Laboratory Techniques and Protocols,"Microscopy, Spectroscopy, and Imaging Technologies",definition
+BIO.9.1,Biology & Life Sciences: Experimental & Research Methods,Laboratory Techniques and Protocols,"Molecular Techniques: Electrophoresis, Western Blotting, Flow Cytometry",definition
+BIO.9.1,Biology & Life Sciences: Experimental & Research Methods,Laboratory Techniques and Protocols,Field Methods in Ecology and Environmental Sampling,definition
+BIO.9.2,Biology & Life Sciences: Experimental & Research Methods,Data Analysis and Scientific Communication,Statistical Methods in Biology,definition
+BIO.9.2,Biology & Life Sciences: Experimental & Research Methods,Data Analysis and Scientific Communication,Computational Tools for Data Analysis,definition
+BIO.9.2,Biology & Life Sciences: Experimental & Research Methods,Data Analysis and Scientific Communication,"Research Design, Peer Review, and Publication Process",definition
+CS.1.1,Computer Science & Technology: Fundamentals & Theoretical Foundations,Introduction to Computer Science & Technology,"Definition, history, and evolution of computing",definition
+CS.1.1,Computer Science & Technology: Fundamentals & Theoretical Foundations,Introduction to Computer Science & Technology,"Key paradigms (procedural, object-oriented, functional, logic programming)",definition
+CS.1.1,Computer Science & Technology: Fundamentals & Theoretical Foundations,Introduction to Computer Science & Technology,Overview of core subfields and interdisciplinary applications,definition
+CS.1.2,Computer Science & Technology: Fundamentals & Theoretical Foundations,Mathematical Foundations for Computing,"Discrete Mathematics: Set theory, logic, combinatorics",definition
+CS.1.2,Computer Science & Technology: Fundamentals & Theoretical Foundations,Mathematical Foundations for Computing,Graph theory and number theory basics,definition
+CS.1.2,Computer Science & Technology: Fundamentals & Theoretical Foundations,Mathematical Foundations for Computing,"Probability and Statistics: Basic probability, distributions, and statistical inference",definition
+CS.1.2,Computer Science & Technology: Fundamentals & Theoretical Foundations,Mathematical Foundations for Computing,"Computational Thinking: Abstraction, decomposition, pattern recognition, and algorithmic thinking",definition
+CS.1.3,Computer Science & Technology: Fundamentals & Theoretical Foundations,Foundational Programming Concepts,Understanding algorithms and flowcharts,definition
+CS.1.3,Computer Science & Technology: Fundamentals & Theoretical Foundations,Foundational Programming Concepts,"Introduction to one or more programming languages (e.g., Python, Java, C++)",definition
+CS.1.3,Computer Science & Technology: Fundamentals & Theoretical Foundations,Foundational Programming Concepts,"Basic data types, control structures, functions, and debugging techniques",definition
+CS.2.1,"Computer Science & Technology: Programming, Data Structures & Software Development",Programming Fundamentals,"Syntax, semantics, and structures of high-level languages",definition
+CS.2.1,"Computer Science & Technology: Programming, Data Structures & Software Development",Programming Fundamentals,Problem-solving via iterative and recursive approaches,definition
+CS.2.1,"Computer Science & Technology: Programming, Data Structures & Software Development",Programming Fundamentals,Introduction to integrated development environments (IDEs) and version control,definition
+CS.2.2,"Computer Science & Technology: Programming, Data Structures & Software Development",Data Structures & Algorithms,"Data structures: Arrays, linked lists, stacks, queues, trees, and graphs",definition
+CS.2.2,"Computer Science & Technology: Programming, Data Structures & Software Development",Data Structures & Algorithms,"Algorithm design: Sorting, searching, graph algorithms",definition
+CS.2.2,"Computer Science & Technology: Programming, Data Structures & Software Development",Data Structures & Algorithms,Complexity analysis: Big-O notation and resource trade-offs,definition
+CS.2.2,"Computer Science & Technology: Programming, Data Structures & Software Development",Data Structures & Algorithms,"Practical applications: Implementing algorithms in code, efficiency considerations",definition
+CS.2.3,"Computer Science & Technology: Programming, Data Structures & Software Development",Software Engineering Principles,"Software development lifecycles (waterfall, agile, etc.)",definition
+CS.2.3,"Computer Science & Technology: Programming, Data Structures & Software Development",Software Engineering Principles,Design patterns and object-oriented design,definition
+CS.2.3,"Computer Science & Technology: Programming, Data Structures & Software Development",Software Engineering Principles,"Testing, debugging, and documentation practices",definition
+CS.2.3,"Computer Science & Technology: Programming, Data Structures & Software Development",Software Engineering Principles,"Collaboration tools: Version control, code reviews, and continuous integration",definition
+CS.3.1,Computer Science & Technology: Systems & Architecture,Computer Organization & Architecture,Digital logic design and binary arithmetic,definition
+CS.3.1,Computer Science & Technology: Systems & Architecture,Computer Organization & Architecture,"Microprocessors, instruction sets, and assembly language",definition
+CS.3.1,Computer Science & Technology: Systems & Architecture,Computer Organization & Architecture,"Memory hierarchy: Cache, RAM, and disk storage",definition
+CS.3.1,Computer Science & Technology: Systems & Architecture,Computer Organization & Architecture,"Parallel computing, pipelining, and modern processor design",definition
+CS.3.1,Computer Science & Technology: Systems & Architecture,Computer Organization & Architecture,Embedded Systems & Microcontrollers,definition
+CS.3.2,Computer Science & Technology: Systems & Architecture,Operating Systems & System Software,"OS fundamentals: Process management, scheduling, memory management",definition
+CS.3.2,Computer Science & Technology: Systems & Architecture,Operating Systems & System Software,File systems and input/output (I/O) operations,definition
+CS.3.2,Computer Science & Technology: Systems & Architecture,Operating Systems & System Software,"Concurrency, synchronization, and virtualization",definition
+CS.3.2,Computer Science & Technology: Systems & Architecture,Operating Systems & System Software,"Case studies: Unix/Linux, Windows, mobile operating systems",definition
+CS.3.3,Computer Science & Technology: Systems & Architecture,Networking & Distributed Systems,"Network fundamentals: Protocols (TCP/IP, HTTP), addressing, and routing",definition
+CS.3.3,Computer Science & Technology: Systems & Architecture,Networking & Distributed Systems,"Network architecture and design: LAN, WAN, VPN",definition
+CS.3.3,Computer Science & Technology: Systems & Architecture,Networking & Distributed Systems,"Distributed systems: Cloud computing, microservices, and edge computing",definition
+CS.3.3,Computer Science & Technology: Systems & Architecture,Networking & Distributed Systems,Security fundamentals in networking,definition
+CS.3.4,Computer Science & Technology: Systems & Architecture,Database Systems & Data Management,"Relational databases: SQL, normalization, and indexing",definition
+CS.3.4,Computer Science & Technology: Systems & Architecture,Database Systems & Data Management,NoSQL databases and key-value stores,definition
+CS.3.4,Computer Science & Technology: Systems & Architecture,Database Systems & Data Management,Data modeling and database design,definition
+CS.3.4,Computer Science & Technology: Systems & Architecture,Database Systems & Data Management,Big data technologies and distributed data processing frameworks,definition
+CS.4.1,Computer Science & Technology: Theory of Computation & Formal Languages,Automata Theory & Formal Languages,"Finite automata, regular languages, and regular expressions",definition
+CS.4.1,Computer Science & Technology: Theory of Computation & Formal Languages,Automata Theory & Formal Languages,Context-free grammars and pushdown automata,definition
+CS.4.1,Computer Science & Technology: Theory of Computation & Formal Languages,Automata Theory & Formal Languages,Introduction to Turing machines and decidability,definition
+CS.4.2,Computer Science & Technology: Theory of Computation & Formal Languages,Computational Complexity,"Complexity classes (P, NP, NP-complete, NP-hard)",definition
+CS.4.2,Computer Science & Technology: Theory of Computation & Formal Languages,Computational Complexity,"Reductions, completeness, and the limits of computation",definition
+CS.4.2,Computer Science & Technology: Theory of Computation & Formal Languages,Computational Complexity,Insights from algorithmic information theory,definition
+CS.5.1,Computer Science & Technology: Specialized Areas & Advanced Topics,Artificial Intelligence & Machine Learning,"Foundations of AI: Search, logic, and knowledge representation",definition
+CS.5.1,Computer Science & Technology: Specialized Areas & Advanced Topics,Artificial Intelligence & Machine Learning,"Machine Learning basics: Supervised, unsupervised, and reinforcement learning",definition
+CS.5.1,Computer Science & Technology: Specialized Areas & Advanced Topics,Artificial Intelligence & Machine Learning,"Deep learning, neural networks, and natural language processing",definition
+CS.5.1,Computer Science & Technology: Specialized Areas & Advanced Topics,Artificial Intelligence & Machine Learning,"Applications: Computer vision, robotics, and intelligent systems",definition
+CS.5.2,Computer Science & Technology: Specialized Areas & Advanced Topics,Information Retrieval & Web Technologies,"Web search algorithms, indexing techniques, and web crawling",definition
+CS.5.2,Computer Science & Technology: Specialized Areas & Advanced Topics,Information Retrieval & Web Technologies,Applications in search engines and web services,definition
+CS.5.3,Computer Science & Technology: Specialized Areas & Advanced Topics,Human–Computer Interaction (HCI),Design principles for user interfaces and experiences,definition
+CS.5.3,Computer Science & Technology: Specialized Areas & Advanced Topics,Human–Computer Interaction (HCI),Usability testing and accessibility standards,definition
+CS.5.3,Computer Science & Technology: Specialized Areas & Advanced Topics,Human–Computer Interaction (HCI),"Emerging trends: Virtual reality (VR), augmented reality (AR), and wearable technology",definition
+CS.5.4,Computer Science & Technology: Specialized Areas & Advanced Topics,Computer Graphics & Visualization,Fundamentals of 2D/3D graphics and rendering techniques,definition
+CS.5.4,Computer Science & Technology: Specialized Areas & Advanced Topics,Computer Graphics & Visualization,"Animation, simulation, and real-time graphics",definition
+CS.5.4,Computer Science & Technology: Specialized Areas & Advanced Topics,Computer Graphics & Visualization,"Applications in gaming, design, and data visualization",definition
+CS.5.5,Computer Science & Technology: Specialized Areas & Advanced Topics,"Security, Cryptography & Privacy",Principles of cybersecurity and threat models,definition
+CS.5.5,Computer Science & Technology: Specialized Areas & Advanced Topics,"Security, Cryptography & Privacy","Cryptographic algorithms and protocols (symmetric, asymmetric, hashing)",definition
+CS.5.5,Computer Science & Technology: Specialized Areas & Advanced Topics,"Security, Cryptography & Privacy","Network security, ethical hacking, and data privacy regulations",definition
+CS.5.6,Computer Science & Technology: Specialized Areas & Advanced Topics,Data Science & Big Data Analytics,"Data mining, statistical analysis, and predictive modeling",definition
+CS.5.6,Computer Science & Technology: Specialized Areas & Advanced Topics,Data Science & Big Data Analytics,Data visualization techniques and tools,definition
+CS.5.6,Computer Science & Technology: Specialized Areas & Advanced Topics,Data Science & Big Data Analytics,"Frameworks and platforms for big data (e.g., Hadoop, Spark)",definition
+CS.5.6,Computer Science & Technology: Specialized Areas & Advanced Topics,Data Science & Big Data Analytics,Applications in business intelligence and scientific research,definition
+CS.6.1,Computer Science & Technology: Emerging Technologies & Interdisciplinary Applications,Internet of Things (IoT) & Embedded Systems,Fundamentals of embedded programming and hardware interfacing,definition
+CS.6.1,Computer Science & Technology: Emerging Technologies & Interdisciplinary Applications,Internet of Things (IoT) & Embedded Systems,"IoT architectures, protocols, and communication models",definition
+CS.6.1,Computer Science & Technology: Emerging Technologies & Interdisciplinary Applications,Internet of Things (IoT) & Embedded Systems,"Applications: Smart devices, home automation, and industrial IoT",definition
+CS.6.1,Computer Science & Technology: Emerging Technologies & Interdisciplinary Applications,Internet of Things (IoT) & Embedded Systems,Edge Computing and Fog Computing,definition
+CS.6.2,Computer Science & Technology: Emerging Technologies & Interdisciplinary Applications,Quantum Computing,Basic principles of quantum mechanics relevant to computing,definition
+CS.6.2,Computer Science & Technology: Emerging Technologies & Interdisciplinary Applications,Quantum Computing,"Quantum bits (qubits), superposition, and entanglement",definition
+CS.6.2,Computer Science & Technology: Emerging Technologies & Interdisciplinary Applications,Quantum Computing,"Quantum algorithms, error correction, and current hardware challenges",definition
+CS.6.3,Computer Science & Technology: Emerging Technologies & Interdisciplinary Applications,Blockchain & Decentralized Technologies,Concepts of distributed ledgers and consensus algorithms,definition
+CS.6.3,Computer Science & Technology: Emerging Technologies & Interdisciplinary Applications,Blockchain & Decentralized Technologies,"Cryptocurrencies, smart contracts, and decentralized applications",definition
+CS.6.3,Computer Science & Technology: Emerging Technologies & Interdisciplinary Applications,Blockchain & Decentralized Technologies,"Potential impacts on finance, supply chain management, and governance",definition
+CS.6.4,Computer Science & Technology: Emerging Technologies & Interdisciplinary Applications,Interdisciplinary Research & Innovation,"Combining computing with fields like biology (bioinformatics), physics (computational physics), and humanities (digital humanities)",definition
+CS.6.4,Computer Science & Technology: Emerging Technologies & Interdisciplinary Applications,Interdisciplinary Research & Innovation,Emerging areas such as computational social science and ethical AI,definition
+CS.6.4,Computer Science & Technology: Emerging Technologies & Interdisciplinary Applications,Interdisciplinary Research & Innovation,Collaborative projects and research methods across disciplines,definition
+CS.7.1,"Computer Science & Technology: Professional Practice, Research & Ethics",Project Management & Software Entrepreneurship,"Principles of project planning, agile methods, and teamwork",definition
+CS.7.1,"Computer Science & Technology: Professional Practice, Research & Ethics",Project Management & Software Entrepreneurship,"Product design, market research, and startup culture",definition
+CS.7.1,"Computer Science & Technology: Professional Practice, Research & Ethics",Project Management & Software Entrepreneurship,Case studies and lessons from the tech industry,definition
+CS.7.2,"Computer Science & Technology: Professional Practice, Research & Ethics","Ethics, Legal, and Social Implications in Computing","Ethical considerations in AI, data privacy, and cybersecurity",definition
+CS.7.2,"Computer Science & Technology: Professional Practice, Research & Ethics","Ethics, Legal, and Social Implications in Computing","Legal issues: Intellectual property, data protection laws, and digital rights",definition
+CS.7.2,"Computer Science & Technology: Professional Practice, Research & Ethics","Ethics, Legal, and Social Implications in Computing",The societal impact of emerging technologies and digital transformation,definition
+CS.7.3,"Computer Science & Technology: Professional Practice, Research & Ethics",Research Methodologies in Computer Science,"Academic research methods, technical writing, and peer review",definition
+CS.7.3,"Computer Science & Technology: Professional Practice, Research & Ethics",Research Methodologies in Computer Science,Conference presentations and networking in the tech community,definition
+CS.7.3,"Computer Science & Technology: Professional Practice, Research & Ethics",Research Methodologies in Computer Science,Grant writing and funding for research projects,definition
+ENG.1.1,Engineering: Foundations of Engineering,Introduction to Engineering,Definition and Role of Engineering in Society,definition
+ENG.1.1,Engineering: Foundations of Engineering,Introduction to Engineering,History and Evolution of Engineering Disciplines,definition
+ENG.1.1,Engineering: Foundations of Engineering,Introduction to Engineering,The Engineering Design Process and Systems Thinking,definition
+ENG.1.1,Engineering: Foundations of Engineering,Introduction to Engineering,"Overview of Problem Solving, Modeling, and Simulation",definition
+ENG.1.2,Engineering: Foundations of Engineering,Mathematical and Scientific Foundations,"Applied Mathematics for Engineering (Calculus, Linear Algebra, Differential Equations)",definition
+ENG.1.2,Engineering: Foundations of Engineering,Mathematical and Scientific Foundations,"Fundamental Physics Concepts (Mechanics, Electricity, Magnetism, Thermodynamics)",definition
+ENG.1.2,Engineering: Foundations of Engineering,Mathematical and Scientific Foundations,"Basic Chemistry (Material properties, reactions, and thermochemical processes)",definition
+ENG.1.2,Engineering: Foundations of Engineering,Mathematical and Scientific Foundations,Introduction to Engineering Materials and their Properties,definition
+ENG.1.3,Engineering: Foundations of Engineering,Tools and Technologies,Introduction to Computer-Aided Design (CAD),definition
+ENG.1.3,Engineering: Foundations of Engineering,Tools and Technologies,Basics of Engineering Software (Simulation and Modeling Tools),definition
+ENG.1.3,Engineering: Foundations of Engineering,Tools and Technologies,Introduction to Programming and Computational Thinking,definition
+ENG.1.3,Engineering: Foundations of Engineering,Tools and Technologies,"Measurement, Instrumentation, and Data Acquisition",definition
+ENG.1.3,Engineering: Foundations of Engineering,Tools and Technologies,"Understanding Standards, Codes, and Specifications",definition
+ENG.2.1,Engineering: Core Engineering Disciplines,Mechanical Engineering,"Statics and Dynamics: Equilibrium, forces, moments, and kinematics",definition
+ENG.2.1,Engineering: Core Engineering Disciplines,Mechanical Engineering,"Mechanics of Materials: Stress, strain, and material behavior",definition
+ENG.2.1,Engineering: Core Engineering Disciplines,Mechanical Engineering,"Fluid Mechanics and Thermal Sciences: Fluid properties, flow analysis, heat transfer fundamentals, and thermodynamics",definition
+ENG.2.1,Engineering: Core Engineering Disciplines,Mechanical Engineering,"Mechanical Design: Machine elements, mechanisms, and control systems",definition
+ENG.2.1,Engineering: Core Engineering Disciplines,Mechanical Engineering,Manufacturing Processes and Techniques,definition
+ENG.2.2,Engineering: Core Engineering Disciplines,Electrical and Electronic Engineering,"Circuit Analysis: DC and AC circuit fundamentals, network theorems",definition
+ENG.2.2,Engineering: Core Engineering Disciplines,Electrical and Electronic Engineering,Power Systems and Energy Distribution,definition
+ENG.2.2,Engineering: Core Engineering Disciplines,Electrical and Electronic Engineering,"Electromagnetism: Field theory, Maxwell’s equations, and transmission lines",definition
+ENG.2.2,Engineering: Core Engineering Disciplines,Electrical and Electronic Engineering,"Digital Electronics and Signal Processing: Logic circuits, microcontrollers, and digital signal processing",definition
+ENG.2.2,Engineering: Core Engineering Disciplines,Electrical and Electronic Engineering,"Control Systems: Feedback, stability, and industrial instrumentation",definition
+ENG.2.3,Engineering: Core Engineering Disciplines,Civil and Structural Engineering,"Structural Analysis and Design: Load analysis, materials for construction, and structural safety",definition
+ENG.2.3,Engineering: Core Engineering Disciplines,Civil and Structural Engineering,"Geotechnical Engineering: Soil mechanics, foundation design, and slope stability",definition
+ENG.2.3,Engineering: Core Engineering Disciplines,Civil and Structural Engineering,"Water Resources and Environmental Engineering: Hydraulics, fluid systems, environmental impact, and sustainability",definition
+ENG.2.3,Engineering: Core Engineering Disciplines,Civil and Structural Engineering,"Transportation and Construction Management: Infrastructure planning, project management, and construction methodologies",definition
+ENG.2.3,Engineering: Core Engineering Disciplines,Civil and Structural Engineering,Urban Planning and Infrastructure Development,definition
+ENG.2.4,Engineering: Core Engineering Disciplines,Chemical Engineering,"Process Engineering and Design: Mass and energy balances, process flow diagrams, and equipment design",definition
+ENG.2.4,Engineering: Core Engineering Disciplines,Chemical Engineering,"Reaction Engineering: Kinetics, reactor design, and process optimization",definition
+ENG.2.4,Engineering: Core Engineering Disciplines,Chemical Engineering,"Biochemical Engineering: Bioprocessing, Biotechnology, and Pharmaceutical Production",definition
+ENG.2.4,Engineering: Core Engineering Disciplines,Chemical Engineering,"Separation Processes: Distillation, extraction, membrane technologies, and mass transfer",definition
+ENG.2.4,Engineering: Core Engineering Disciplines,Chemical Engineering,"Thermodynamics and Process Control: Phase equilibria, process dynamics, and control strategies",definition
+ENG.3.1,Engineering: Interdisciplinary and Emerging Fields,Systems and Mechatronics Engineering,"Integration of Mechanical, Electrical, and Software Systems",definition
+ENG.3.1,Engineering: Interdisciplinary and Emerging Fields,Systems and Mechatronics Engineering,"Robotics, Automation, and Smart Sensors",definition
+ENG.3.1,Engineering: Interdisciplinary and Emerging Fields,Systems and Mechatronics Engineering,Cyber-Physical Systems and Internet of Things (IoT) in Engineering,definition
+ENG.3.1,Engineering: Interdisciplinary and Emerging Fields,Systems and Mechatronics Engineering,Artificial Intelligence in Engineering Systems,definition
+ENG.3.2,Engineering: Interdisciplinary and Emerging Fields,Biomedical and Environmental Engineering,"Biomedical Engineering: Medical instrumentation, biomechanics, and tissue engineering",definition
+ENG.3.2,Engineering: Interdisciplinary and Emerging Fields,Biomedical and Environmental Engineering,"Environmental Engineering: Pollution control, renewable energy systems, and sustainable design",definition
+ENG.3.2,Engineering: Interdisciplinary and Emerging Fields,Biomedical and Environmental Engineering,Public Health Engineering,definition
+ENG.3.3,Engineering: Interdisciplinary and Emerging Fields,Aerospace and Automotive Engineering,"Aerodynamics, Flight Mechanics, and Propulsion Systems",definition
+ENG.3.3,Engineering: Interdisciplinary and Emerging Fields,Aerospace and Automotive Engineering,"Automotive Systems: Engine design, safety engineering, and hybrid technologies",definition
+ENG.3.3,Engineering: Interdisciplinary and Emerging Fields,Aerospace and Automotive Engineering,Space Systems Engineering,definition
+ENG.3.4,Engineering: Interdisciplinary and Emerging Fields,Nanotechnology and Advanced Materials,Properties and Applications of Nanomaterials,definition
+ENG.3.4,Engineering: Interdisciplinary and Emerging Fields,Nanotechnology and Advanced Materials,"Advances in Composites, Smart Materials, and Surface Engineering",definition
+ENG.4.1,"Engineering: Professional Practice, Management, and Ethics",Engineering Design and Project Management,Product and Process Design Methodologies,definition
+ENG.4.1,"Engineering: Professional Practice, Management, and Ethics",Engineering Design and Project Management,"Project Planning, Scheduling, and Resource Management",definition
+ENG.4.1,"Engineering: Professional Practice, Management, and Ethics",Engineering Design and Project Management,"Cost Analysis, Risk Management, and Quality Control",definition
+ENG.4.2,"Engineering: Professional Practice, Management, and Ethics","Ethics, Sustainability, and Legal Considerations",Professional and Ethical Responsibilities in Engineering,definition
+ENG.4.2,"Engineering: Professional Practice, Management, and Ethics","Ethics, Sustainability, and Legal Considerations",Sustainability in Engineering Design and Practice,definition
+ENG.4.2,"Engineering: Professional Practice, Management, and Ethics","Ethics, Sustainability, and Legal Considerations","Regulatory Standards, Intellectual Property, and Contract Law",definition
+ENG.4.3,"Engineering: Professional Practice, Management, and Ethics",Communication and Collaboration,"Technical Communication: Documentation, presentations, and reports",definition
+ENG.4.3,"Engineering: Professional Practice, Management, and Ethics",Communication and Collaboration,Teamwork and Interdisciplinary Collaboration,definition
+ENG.4.3,"Engineering: Professional Practice, Management, and Ethics",Communication and Collaboration,Leadership and Professional Development in Engineering,definition
+BUS.1.1,"Business, Management & Economics: Foundations & Basic Concepts","Introduction to Business, Management & Economics","Definitions and Scope of Business, Management, and Economics",definition
+BUS.1.1,"Business, Management & Economics: Foundations & Basic Concepts","Introduction to Business, Management & Economics","What is Business? Value creation, profit, entrepreneurship",definition
+BUS.1.1,"Business, Management & Economics: Foundations & Basic Concepts","Introduction to Business, Management & Economics","Management fundamentals: planning, organizing, leading, controlling",definition
+BUS.1.1,"Business, Management & Economics: Foundations & Basic Concepts","Introduction to Business, Management & Economics","Economics in everyday life: scarcity, resource allocation, markets",definition
+BUS.1.1,"Business, Management & Economics: Foundations & Basic Concepts","Introduction to Business, Management & Economics",Evolution of business organizations from barter to global enterprises,definition
+BUS.1.1,"Business, Management & Economics: Foundations & Basic Concepts","Introduction to Business, Management & Economics","Development of economic thought: classical, Keynesian, behavioral",definition
+BUS.1.1,"Business, Management & Economics: Foundations & Basic Concepts","Introduction to Business, Management & Economics",The changing role of management and technology in business,definition
+BUS.1.2,"Business, Management & Economics: Foundations & Basic Concepts",Basic Economic Principles,"Microeconomics: Supply and demand, market equilibrium, elasticity; Consumer behavior, production theory, cost structures",definition
+BUS.1.2,"Business, Management & Economics: Foundations & Basic Concepts",Basic Economic Principles,"Macroeconomics: National income, GDP, inflation, unemployment; Fiscal and monetary policy fundamentals",definition
+BUS.1.2,"Business, Management & Economics: Foundations & Basic Concepts",Basic Economic Principles,"Economic Systems: Comparison of capitalism, socialism, and mixed economies; Globalization and international trade basics",definition
+BUS.1.2,"Business, Management & Economics: Foundations & Basic Concepts",Basic Economic Principles,Foundational Theories: Basic game theory and decision models in economics; Introduction to behavioral economics and bounded rationality,definition
+BUS.1.2,"Business, Management & Economics: Foundations & Basic Concepts",Basic Economic Principles,"Market Failures and Government Intervention: Types of market failures (monopoly, asymmetric information, incomplete markets); Government tools (taxes, subsidies, regulation, antitrust laws); Examples of intervention in financial markets, healthcare, education",definition
+BUS.1.2,"Business, Management & Economics: Foundations & Basic Concepts",Basic Economic Principles,"Externalities and Public Goods: Positive and negative externalities and their impact; Internalizing externalities through Pigouvian taxes, cap-and-trade systems, subsidies; Characteristics of public goods; Free-rider problem and policy solutions",definition
+BUS.1.3,"Business, Management & Economics: Foundations & Basic Concepts",Business Fundamentals,"Business Environment & Structure: Organizational functions (marketing, finance, operations, human resources); Types of business organizations (sole proprietorships, partnerships, corporations); Stakeholder theory: shareholders versus stakeholder value",definition
+BUS.1.3,"Business, Management & Economics: Foundations & Basic Concepts",Business Fundamentals,"Core Business Skills: Business communication, negotiation, professional writing; Introduction to business ethics and corporate social responsibility; Basic financial literacy including reading financial statements, budgeting, cost management; Time Value of Money and interest concepts",definition
+BUS.2.1,"Business, Management & Economics: Intermediate Business Management & Strategy",Organizational Behavior & Structure,"Theories of organization and organizational structures: hierarchical, matrix, flat, and agile models; Leadership styles, team dynamics, and corporate culture",definition
+BUS.2.1,"Business, Management & Economics: Intermediate Business Management & Strategy",Organizational Behavior & Structure,"Management Processes: Decision-making frameworks, strategic planning, change management, and conflict resolution techniques",definition
+BUS.2.2,"Business, Management & Economics: Intermediate Business Management & Strategy",Strategic Management,"Competitive Strategy: Frameworks such as Porter’s Five Forces, SWOT analysis, PESTLE analysis; Business positioning, differentiation, and cost leadership strategies",definition
+BUS.2.2,"Business, Management & Economics: Intermediate Business Management & Strategy",Strategic Management,"Corporate Strategy: Portfolio management, diversification, strategic alliances; Global strategy and competitive dynamics in international markets",definition
+BUS.2.2,"Business, Management & Economics: Intermediate Business Management & Strategy",Strategic Management,Implementation & Performance Measurement: Balanced scorecard and key performance indicators (KPIs); Strategic control systems and performance analytics,definition
+BUS.2.3,"Business, Management & Economics: Intermediate Business Management & Strategy",Marketing Management,"Fundamentals of Marketing: Market segmentation, targeting, positioning; The marketing mix (4Ps: product, price, promotion, place)",definition
+BUS.2.3,"Business, Management & Economics: Intermediate Business Management & Strategy",Marketing Management,"Digital & Social Media Marketing: Online advertising, search engine optimization, content marketing; Customer relationship management (CRM) and brand management",definition
+BUS.2.3,"Business, Management & Economics: Intermediate Business Management & Strategy",Marketing Management,"Sales Strategies: Personal selling, sales force management, negotiation tactics",definition
+BUS.2.4,"Business, Management & Economics: Intermediate Business Management & Strategy",Operations Management,"Process & Supply Chain Management: Lean management, Six Sigma, quality control; Inventory management, logistics, distribution strategies",definition
+BUS.2.4,"Business, Management & Economics: Intermediate Business Management & Strategy",Operations Management,Project Management Fundamentals,definition
+BUS.2.4,"Business, Management & Economics: Intermediate Business Management & Strategy",Operations Management,Sustainability in Supply Chains,definition
+BUS.2.4,"Business, Management & Economics: Intermediate Business Management & Strategy",Operations Management,"Innovation in Operations: Process reengineering, automation, systems optimization; Integration of technology and operations (e.g., ERP systems)",definition
+BUS.2.5,"Business, Management & Economics: Intermediate Business Management & Strategy",Finance & Accounting (Intermediate),"Financial Accounting Basics: Recording transactions, understanding financial statements; Cost accounting, budgeting, variance analysis",definition
+BUS.2.5,"Business, Management & Economics: Intermediate Business Management & Strategy",Finance & Accounting (Intermediate),"Managerial Accounting & Finance: Capital budgeting, forecasting, cash flow management; Investment appraisal techniques and risk management",definition
+BUS.2.5,"Business, Management & Economics: Intermediate Business Management & Strategy",Finance & Accounting (Intermediate),Working Capital Management and Liquidity Planning,definition
+BUS.2.5,"Business, Management & Economics: Intermediate Business Management & Strategy",Finance & Accounting (Intermediate),Ethical Financial Reporting and Transparency,definition
+BUS.3.1,"Business, Management & Economics: Advanced Topics & Specialized Areas",Advanced Corporate Finance and Investments,"Corporate Financial Management: Capital structure decisions, dividend policy, valuation methods; Financial markets, instruments, and corporate governance",definition
+BUS.3.1,"Business, Management & Economics: Advanced Topics & Specialized Areas",Advanced Corporate Finance and Investments,"Investment Strategies: Portfolio management, asset allocation, risk-return tradeoffs; Behavioral finance including market anomalies and investor psychology",definition
+BUS.3.2,"Business, Management & Economics: Advanced Topics & Specialized Areas",Game Theory and Strategic Interactions,"Fundamentals of Game Theory: Key concepts such as Nash equilibrium, dominant strategies, Pareto efficiency; Applications in competitive strategy and negotiation",definition
+BUS.3.2,"Business, Management & Economics: Advanced Topics & Specialized Areas",Game Theory and Strategic Interactions,"Advanced Strategic Models: Cooperative games, bargaining theory, mechanism design; Case studies on strategic decision-making in oligopolistic markets",definition
+BUS.3.3,"Business, Management & Economics: Advanced Topics & Specialized Areas",Advanced Management and Leadership,"Leadership Theories: Transformational and transactional leadership, emotional intelligence; Crisis management and organizational resilience",definition
+BUS.3.3,"Business, Management & Economics: Advanced Topics & Specialized Areas",Advanced Management and Leadership,"Corporate Governance & Ethics: Board structures, stakeholder accountability, regulatory frameworks; Ethics in decision-making and sustainability practices",definition
+BUS.3.3,"Business, Management & Economics: Advanced Topics & Specialized Areas",Advanced Management and Leadership,"Innovation and Change Management: Strategies for fostering innovation and entrepreneurship; Design thinking, agile methodologies, and risk management in dynamic environments",definition
+BUS.3.4,"Business, Management & Economics: Advanced Topics & Specialized Areas",International Economics & Global Business,"International Trade & Finance: Comparative advantage, trade policies, globalization impacts; Exchange rates, balance of payments, and multinational corporations",definition
+BUS.3.4,"Business, Management & Economics: Advanced Topics & Specialized Areas",International Economics & Global Business,"Economic Development & Emerging Markets: Issues of economic growth, income inequality, sustainable development; Regional integration and global economic policy trends",definition
+BUS.3.5,"Business, Management & Economics: Advanced Topics & Specialized Areas",Data Analytics and Decision Science in Business,"Business Intelligence: Data collection, warehousing, dashboard analytics; Descriptive, predictive, and prescriptive analytics techniques",definition
+BUS.3.5,"Business, Management & Economics: Advanced Topics & Specialized Areas",Data Analytics and Decision Science in Business,"Statistical and Econometric Modeling: Regression analysis, forecasting, simulation models; Decision-making under uncertainty and risk analysis",definition
+BUS.3.6,"Business, Management & Economics: Advanced Topics & Specialized Areas",Behavioral Economics and Consumer Psychology,"Behavioral Insights: Cognitive biases, heuristics, and decision-making anomalies",definition
+BUS.3.6,"Business, Management & Economics: Advanced Topics & Specialized Areas",Behavioral Economics and Consumer Psychology,"Applying psychology to marketing, management, and policy design",definition
+BUS.3.6,"Business, Management & Economics: Advanced Topics & Specialized Areas",Behavioral Economics and Consumer Psychology,"Experimental Economics: Laboratory and field experiments in consumer behavior and market dynamics; Case studies exploring the intersection of behavior, economics, and management",definition
+BUS.3.7,"Business, Management & Economics: Advanced Topics & Specialized Areas","Innovation, Entrepreneurship, and Emerging Technologies","Entrepreneurship Fundamentals: Business model innovation, startup ecosystems, venture capital; Lean startup methodology and rapid prototyping",definition
+BUS.3.7,"Business, Management & Economics: Advanced Topics & Specialized Areas","Innovation, Entrepreneurship, and Emerging Technologies","Technology and Digital Transformation: Disruptive innovations such as AI, blockchain, IoT; Impact on traditional industries, business process reengineering, and strategic pivots",definition
+BUS.3.8,"Business, Management & Economics: Advanced Topics & Specialized Areas",Organizational Innovation & Knowledge Management,"Knowledge Creation, Sharing, and Organizational Learning: Learning organizations, knowledge management systems, continuous improvement; Tacit versus explicit knowledge, organizational memory",definition
+BUS.3.8,"Business, Management & Economics: Advanced Topics & Specialized Areas",Organizational Innovation & Knowledge Management,"Intellectual Capital and Strategic R&D: Human, structural, and relational capital as drivers of value; Strategic alignment of research and innovation investments",definition
+BUS.3.8,"Business, Management & Economics: Advanced Topics & Specialized Areas",Organizational Innovation & Knowledge Management,"Intrapreneurship and Technology Transfer: Encouraging innovation within firms and managing internal ventures; Transferring research from lab to market via licensing, spin-offs, and partnerships",definition
+BUS.4.1,"Business, Management & Economics: Professional Practice, Research, and Emerging Trends",Practical Applications and Case Studies,"Real-world Business Simulations: Business case competitions, role-playing, scenario planning; Live projects and internship experiences; Integrated case analyses",definition
+BUS.4.1,"Business, Management & Economics: Professional Practice, Research, and Emerging Trends",Practical Applications and Case Studies,"Comprehensive case studies from different sectors (tech, finance, manufacturing)",definition
+BUS.4.1,"Business, Management & Economics: Professional Practice, Research, and Emerging Trends",Practical Applications and Case Studies,Analysis of failed and successful business strategies,definition
+BUS.4.2,"Business, Management & Economics: Professional Practice, Research, and Emerging Trends",Research Methods in Business and Economics,"Quantitative Research: Survey design, statistical analysis, econometrics; Data visualization and interpretation",definition
+BUS.4.2,"Business, Management & Economics: Professional Practice, Research, and Emerging Trends",Research Methods in Business and Economics,"Qualitative Research: Interviews, focus groups, content analysis, ethnography",definition
+BUS.4.2,"Business, Management & Economics: Professional Practice, Research, and Emerging Trends",Research Methods in Business and Economics,Mixed-methods research to capture complex business phenomena,definition
+BUS.4.3,"Business, Management & Economics: Professional Practice, Research, and Emerging Trends",Professional Development and Ethical Leadership,"Management Training and Leadership Development: Executive coaching, mentorship programs, professional certifications",definition
+BUS.4.3,"Business, Management & Economics: Professional Practice, Research, and Emerging Trends",Professional Development and Ethical Leadership,"Workshops on ethical dilemmas, diversity, and corporate responsibility",definition
+BUS.4.3,"Business, Management & Economics: Professional Practice, Research, and Emerging Trends",Professional Development and Ethical Leadership,"Legal, Regulatory, and Social Implications: Intellectual property rights, trade regulations, compliance; Evolving landscape of digital rights, data privacy, sustainability",definition
+BUS.4.4,"Business, Management & Economics: Professional Practice, Research, and Emerging Trends",Future Trends and Global Perspectives,"Technological Disruption: Automation, robotics, digital transformation in business; Cybersecurity, fintech, and the evolving nature of work",definition
+BUS.4.4,"Business, Management & Economics: Professional Practice, Research, and Emerging Trends",Future Trends and Global Perspectives,"Globalization and Regional Integration: Impact of global crises, trade wars, geopolitical shifts; Sustainability, green business practices, corporate social responsibility",definition
+BUS.4.4,"Business, Management & Economics: Professional Practice, Research, and Emerging Trends",Future Trends and Global Perspectives,"Emerging Markets and New Business Models: Digital startups, platform economies, agile business frameworks; Innovations in supply chain management, remote collaboration, virtual teams",definition
+PHIL.1.1,Philosophy & Critical Thinking: Foundations of Philosophy & Critical Thinking,Introduction to Philosophy,"What is Philosophy? Definition, scope, and the pursuit of wisdom",definition
+PHIL.1.1,Philosophy & Critical Thinking: Foundations of Philosophy & Critical Thinking,Introduction to Philosophy,"Overview of the main branches: Metaphysics, Epistemology, Ethics, Logic, Aesthetics, Political Philosophy",definition
+PHIL.1.1,Philosophy & Critical Thinking: Foundations of Philosophy & Critical Thinking,Introduction to Philosophy,What is Critical Thinking and how philosophical inquiry encourages deep analysis and skepticism,definition
+PHIL.1.1,Philosophy & Critical Thinking: Foundations of Philosophy & Critical Thinking,Introduction to Philosophy,The importance of questioning assumptions,definition
+PHIL.1.2,Philosophy & Critical Thinking: Foundations of Philosophy & Critical Thinking,Historical and Cultural Perspectives,"A Brief History of Philosophical Thought: Ancient origins (Pre-Socratic, Socrates, Plato, Aristotle); Medieval, modern, and contemporary movements",definition
+PHIL.1.2,Philosophy & Critical Thinking: Foundations of Philosophy & Critical Thinking,Historical and Cultural Perspectives,The Evolution of Critical Thinking: From classical rhetoric to modern logical theory; Influential figures and texts that shaped analytical thought,definition
+PHIL.1.3,Philosophy & Critical Thinking: Foundations of Philosophy & Critical Thinking,Introduction to Argumentation and Logic,"Basic Principles of Logical Reasoning: Definitions of argument, premises, conclusions; Distinguishing between deductive and inductive reasoning",definition
+PHIL.1.3,Philosophy & Critical Thinking: Foundations of Philosophy & Critical Thinking,Introduction to Argumentation and Logic,Common Logical Fallacies: Identifying and avoiding errors in reasoning; Examples of fallacies in everyday arguments,definition
+PHIL.2.1,Philosophy & Critical Thinking: Core Tools of Critical Thinking,Formal Logic,"Propositional Logic: Logical connectives, truth tables, validity; Simple and compound propositions",definition
+PHIL.2.1,Philosophy & Critical Thinking: Core Tools of Critical Thinking,Formal Logic,"Predicate Logic: Quantifiers, predicates, logical relations; Formal proofs and symbolic representation",definition
+PHIL.2.2,Philosophy & Critical Thinking: Core Tools of Critical Thinking,Informal Logic and Rhetoric,Evaluating and Constructing Arguments: Criteria for sound and cogent arguments; Recognizing bias and rhetoric in persuasive writing,definition
+PHIL.2.2,Philosophy & Critical Thinking: Core Tools of Critical Thinking,Informal Logic and Rhetoric,Critical Analysis Techniques: Strategies for analyzing texts and speeches; Socratic questioning and dialectical methods,definition
+PHIL.2.3,Philosophy & Critical Thinking: Core Tools of Critical Thinking,Analytical Thinking and Reasoning Strategies,Problem-Solving Methods: Breaking down complex problems into manageable parts; Applying structured approaches to decision-making,definition
+PHIL.2.3,Philosophy & Critical Thinking: Core Tools of Critical Thinking,Analytical Thinking and Reasoning Strategies,"Techniques for Reflection and Self-Assessment: Metacognition, journaling, and reflective writing as tools for critical growth",definition
+PHIL.3.1,Philosophy & Critical Thinking: Major Branches of Philosophy,Metaphysics and Ontology,"The Nature of Reality: Fundamental questions about what is real and what exists; Topics such as substance, causality, time, and space",definition
+PHIL.3.1,Philosophy & Critical Thinking: Major Branches of Philosophy,Metaphysics and Ontology,Theories of Existence: Dualism vs. monism; Materialism vs. idealism,definition
+PHIL.3.2,Philosophy & Critical Thinking: Major Branches of Philosophy,Epistemology,"Theories of Knowledge: What is knowledge? Justified true belief and beyond; Skepticism, empiricism, rationalism",definition
+PHIL.3.2,Philosophy & Critical Thinking: Major Branches of Philosophy,Epistemology,"Sources and Limits of Knowledge: Perception, reason, intuition; The problem of induction and the role of evidence",definition
+PHIL.3.3,Philosophy & Critical Thinking: Major Branches of Philosophy,Ethics and Moral Philosophy,"Normative Ethics: Major theories such as consequentialism, deontology, virtue ethics; Criteria for moral judgment and decision-making",definition
+PHIL.3.3,Philosophy & Critical Thinking: Major Branches of Philosophy,Ethics and Moral Philosophy,"Meta-Ethics and Applied Ethics: Analyzing the nature of moral language and concepts; Case studies in bioethics, business ethics, and environmental ethics",definition
+PHIL.3.4,Philosophy & Critical Thinking: Major Branches of Philosophy,Political and Social Philosophy,"Theories of Justice and Power: Social contract theory, utilitarianism, libertarianism; Rights, responsibilities, and the role of government",definition
+PHIL.3.4,Philosophy & Critical Thinking: Major Branches of Philosophy,Political and Social Philosophy,"Critical Perspectives: Feminist, Marxist, and postcolonial critiques; The interplay between societal structures and individual freedom",definition
+PHIL.3.5,Philosophy & Critical Thinking: Major Branches of Philosophy,Aesthetics and Philosophy of Art,"The Nature of Beauty and Art: Definitions of beauty, the sublime, and taste; The role of interpretation and cultural context in art",definition
+PHIL.3.6,Philosophy & Critical Thinking: Major Branches of Philosophy,Logic and Philosophy of Language,Symbolic and Analytical Methods: How language shapes thought and argumentation,definition
+PHIL.3.6,Philosophy & Critical Thinking: Major Branches of Philosophy,Logic and Philosophy of Language,"Theories of meaning, reference, and truth; Contemporary debates in analytic philosophy concerning mind, language, and the limits of representation",definition
+PHIL.4.1,Philosophy & Critical Thinking: Advanced Topics & Interdisciplinary Areas,Continental Philosophy and Critical Theory,"Key Movements and Thinkers: Phenomenology, existentialism, post-structuralism; Influence of thinkers like Heidegger, Sartre, Foucault, and Derrida",definition
+PHIL.4.1,Philosophy & Critical Thinking: Advanced Topics & Interdisciplinary Areas,Continental Philosophy and Critical Theory,Social Critique and Power Structures: Critical theory applied to social institutions and culture,definition
+PHIL.4.2,Philosophy & Critical Thinking: Advanced Topics & Interdisciplinary Areas,Philosophy of Mind and Cognitive Science,"Consciousness and Personal Identity: The mind-body problem, intentionality, mental states; Intersections with psychology and neuroscience",definition
+PHIL.4.2,Philosophy & Critical Thinking: Advanced Topics & Interdisciplinary Areas,Philosophy of Mind and Cognitive Science,Artificial Intelligence and Ethics: Challenges and promises of machine intelligence; Ethical considerations in technology and algorithmic decision-making,definition
+PHIL.4.3,Philosophy & Critical Thinking: Advanced Topics & Interdisciplinary Areas,Global and Comparative Philosophy,"Eastern Philosophies and Non-Western Thought: Key ideas from Indian, Chinese, African, and Indigenous philosophies",definition
+PHIL.4.3,Philosophy & Critical Thinking: Advanced Topics & Interdisciplinary Areas,Global and Comparative Philosophy,Comparative studies to broaden the scope beyond Western canonical texts,definition
+PHIL.4.4,Philosophy & Critical Thinking: Advanced Topics & Interdisciplinary Areas,Advanced Critical Thinking in Real-World Contexts,"Applying Philosophical Analysis to Contemporary Issues: Case studies in politics, technology, and society; Debates on ethics in emerging fields like bioengineering and digital privacy",definition
+PHIL.4.4,Philosophy & Critical Thinking: Advanced Topics & Interdisciplinary Areas,Advanced Critical Thinking in Real-World Contexts,"Developing Intellectual Virtues: Fostering humility, perseverance, and open-mindedness; Practical strategies for lifelong learning and self-improvement",definition
+PHIL.5.1,"Philosophy & Critical Thinking: Methods, Research, and Practical Application",Research Methodologies in Philosophy,"Qualitative vs. Quantitative Approaches in Humanities: Interpreting texts, using hermeneutics, and discourse analysis; Engaging with academic literature and primary sources",definition
+PHIL.5.1,"Philosophy & Critical Thinking: Methods, Research, and Practical Application",Research Methodologies in Philosophy,"Writing and Argument Construction: Structuring essays and research papers; Peer review, constructive criticism, and revision strategies",definition
+PHIL.5.2,"Philosophy & Critical Thinking: Methods, Research, and Practical Application",Critical Thinking Workshops and Collaborative Learning,"Group Discussions, Debates, and Socratic Seminars: Real-time analysis of complex texts and ethical dilemmas; Practicing respectful disagreement and consensus-building",definition
+PHIL.5.2,"Philosophy & Critical Thinking: Methods, Research, and Practical Application",Critical Thinking Workshops and Collaborative Learning,Case Studies and Problem-Solving Sessions: Applying philosophical frameworks to analyze modern dilemmas; Using role-play and simulation to test theoretical insights,definition
+PHIL.5.3,"Philosophy & Critical Thinking: Methods, Research, and Practical Application",Technology and Philosophy,"Digital Tools for Philosophy: Online courses, discussion forums, and interactive learning platforms; Digital humanities projects that use data visualization to map philosophical ideas",definition
+PHIL.6.1,Philosophy & Critical Thinking: Professional and Personal Development,Philosophical Inquiry in Daily Life,Using Critical Thinking for Personal Decision-Making: Evaluating everyday arguments and media literacy; Developing a habit of reflective thought and inquiry,definition
+PHIL.6.2,Philosophy & Critical Thinking: Professional and Personal Development,Ethical Leadership and Social Responsibility,"Building a Framework for Ethical Decision-Making in Professional Life: Case studies in business, politics, and education; Promoting rational discourse in community and public spheres; Techniques for managing conflicts and fostering inclusive dialogue",definition
+PHIL.6.3,Philosophy & Critical Thinking: Professional and Personal Development,Continual Learning and Self-Reflection,"Establishing a Personal Philosophy: Journaling, mentorship, and lifelong learning practices; Developing a personal framework for ethical and rational living",definition
+HIST.1.1,History: Foundations and Methodologies,Introduction to History,"Definition, scope, and the purpose of studying history",definition
+HIST.1.1,History: Foundations and Methodologies,Introduction to History,"Overview of historical inquiry: events, trends, and processes",definition
+HIST.1.1,History: Foundations and Methodologies,Introduction to History,The distinction between history and other disciplines such as archaeology and anthropology,definition
+HIST.1.2,History: Foundations and Methodologies,Historiography and Theoretical Frameworks,The Evolution of Historical Writing,definition
+HIST.1.2,History: Foundations and Methodologies,Historiography and Theoretical Frameworks,"Major historiographical schools: Marxist, Annales, postmodern, feminist",definition
+HIST.1.2,History: Foundations and Methodologies,Historiography and Theoretical Frameworks,"Key debates: objectivity vs. interpretation, presentism, revisionism",definition
+HIST.1.2,History: Foundations and Methodologies,Historiography and Theoretical Frameworks,"Theoretical Approaches: Social, economic, cultural, political, and intellectual history frameworks; Comparative history and global perspectives",definition
+HIST.1.3,History: Foundations and Methodologies,Research Methods and Sources,Primary vs. Secondary Sources,definition
+HIST.1.3,History: Foundations and Methodologies,Research Methods and Sources,"Types of primary sources: Written records, artifacts, oral history, digital archives",definition
+HIST.1.3,History: Foundations and Methodologies,Research Methods and Sources,"Evaluating sources for bias, authenticity, and reliability",definition
+HIST.1.3,History: Foundations and Methodologies,Research Methods and Sources,"Research Techniques: Archival research, fieldwork, and interdisciplinary methods",definition
+HIST.1.3,History: Foundations and Methodologies,Research Methods and Sources,Digital history and the use of technology in historical research,definition
+HIST.1.4,History: Foundations and Methodologies,Philosophy of History,"The Nature of Historical Interpretation: Causation, contingency, and determinism in historical narratives",definition
+HIST.1.4,History: Foundations and Methodologies,Philosophy of History,The debate over history as science or art,definition
+HIST.1.4,History: Foundations and Methodologies,Philosophy of History,Historical Truth and Meaning: Narrative construction and the problem of objectivity,definition
+HIST.1.4,History: Foundations and Methodologies,Philosophy of History,The role of historians in shaping historical understanding,definition
+HIST.2.1,History: Prehistory and Ancient History,Prehistory,The Origins of Humanity,definition
+HIST.2.1,History: Prehistory and Ancient History,Prehistory,Early hominids and the development of tool use,definition
+HIST.2.1,History: Prehistory and Ancient History,Prehistory,The emergence of language and culture,definition
+HIST.2.1,History: Prehistory and Ancient History,Prehistory,The Neolithic Revolution,definition
+HIST.2.1,History: Prehistory and Ancient History,Prehistory,The transition from hunter-gatherer societies to agriculture,definition
+HIST.2.1,History: Prehistory and Ancient History,Prehistory,Early settlements and the beginnings of social organization,definition
+HIST.2.2,History: Prehistory and Ancient History,Ancient Civilizations,"Mesopotamia, Egypt, and the Ancient Near East: Emergence of urban centers, writing systems (cuneiform, hieroglyphics), political structures, religion, and law such as the Code of Hammurabi",definition
+HIST.2.2,History: Prehistory and Ancient History,Ancient Civilizations,"The Indus Valley and Ancient China: Urban planning, trade, and early state formation; Philosophical and cultural developments in ancient China",definition
+HIST.2.2,History: Prehistory and Ancient History,Ancient Civilizations,"Classical Civilizations: Ancient Greece with democracy, philosophy, and the arts; The Roman Republic and Empire with law, military, governance",definition
+HIST.2.2,History: Prehistory and Ancient History,Ancient Civilizations,"Other regions: Pre-Columbian cultures, sub-Saharan Africa, and early civilizations in the Americas",definition
+HIST.2.3,History: Prehistory and Ancient History,Comparative Early Civilizations,"Common Features of Early Societies: Urbanization, writing systems, religion, trade, and governance; Environmental adaptations and agriculture across regions",definition
+HIST.2.3,History: Prehistory and Ancient History,Comparative Early Civilizations,Cross-Cultural Interactions: Proto-global trade networks and shared technologies; Comparative perspectives on development and decline,definition
+HIST.3.1,History: Medieval History,Early to High Middle Ages,The Rise of Feudalism and Manorialism,definition
+HIST.3.1,History: Medieval History,Early to High Middle Ages,Social and economic structures in medieval Europe,definition
+HIST.3.1,History: Medieval History,Early to High Middle Ages,The role of the Church and monasticism in preserving knowledge,definition
+HIST.3.1,History: Medieval History,Early to High Middle Ages,"Cultural and Intellectual Life: Scholasticism, medieval philosophy, and the transmission of classical texts; Art, architecture (Romanesque and early Gothic), and literature",definition
+HIST.3.2,History: Medieval History,Late Middle Ages,"Transformations and Crises: The impact of the Crusades, the Black Death, and famines; Changes in political power and the rise of nation-states",definition
+HIST.3.2,History: Medieval History,Late Middle Ages,Socioeconomic Developments: Trade expansion and the early rise of capitalism; Shifts in social structure and urbanization,definition
+HIST.4.1,History: Early Modern History,Renaissance and Reformation,"Revival of Classical Learning: Humanism, art, literature, and science during the Renaissance; Changes in educational and cultural paradigms",definition
+HIST.4.1,History: Early Modern History,Renaissance and Reformation,"Religious Reformation and Its Aftermath: Martin Luther, the Protestant Reformation, and the Catholic Counter-Reformation; Impact on politics, society, and identity",definition
+HIST.4.2,History: Early Modern History,Age of Exploration and Colonialism,"Global Exploration and Expansion: Navigational advances, voyages of discovery, encounters between worlds; Establishment of trade routes, colonies, and cultural exchanges",definition
+HIST.4.2,History: Early Modern History,Age of Exploration and Colonialism,"The Columbian Exchange and Its Effects: Diffusion of plants, animals, and diseases; Economic and social transformations in both the Old and New Worlds",definition
+HIST.4.3,History: Early Modern History,Scientific Revolution and Enlightenment,"The Transformation of Knowledge: Emergence of modern science, empirical methods, and rational thought; Key figures such as Galileo and Newton and transformative ideas",definition
+HIST.4.3,History: Early Modern History,Scientific Revolution and Enlightenment,"Political and Social Reforms: Enlightenment ideals including individual rights, democracy, and reason; Impact on political theory and societal change",definition
+HIST.5.1,History: Modern History,The Industrial Revolution,"Technological and Economic Transformations: Innovations in manufacturing, transportation, and communication; Urbanization, labor movements, and the rise of capitalism",definition
+HIST.5.1,History: Modern History,The Industrial Revolution,"Social and Cultural Shifts: Changes in family structures, gender roles, and social hierarchies; Development of modern consumer culture",definition
+HIST.5.2,History: Modern History,Revolutions and Political Transformations,"The Age of Revolutions: American, French, and Latin American revolutions and the birth of modern nation-states; Ideological shifts and the role of Enlightenment thought in political change",definition
+HIST.5.2,History: Modern History,Revolutions and Political Transformations,"Emergence of Modern Ideologies: Liberalism, conservatism, socialism, and nationalism; The impact of these ideologies on global politics",definition
+HIST.5.3,History: Modern History,World Wars and Global Conflicts,"Causes and Consequences of World War I and World War II: Military strategies, technological advancements, and international alliances; Postwar reconstruction, the emergence of the United Nations, and decolonization",definition
+HIST.5.3,History: Modern History,World Wars and Global Conflicts,"The Cold War Era: Ideological conflict between the superpowers, proxy wars, and nuclear arms race; The fall of communism and the reshaping of global power dynamics",definition
+HIST.6.1,History: Contemporary History,Post-Cold War World,"Globalization and Economic Integration: The rise of multinational corporations, trade agreements, and the digital economy; Cultural exchange and the diffusion of global popular culture",definition
+HIST.6.1,History: Contemporary History,Post-Cold War World,"Political and Social Transformations: The evolution of democratic institutions and global governance; Social movements such as civil rights, feminism, environmentalism, and digital activism",definition
+HIST.6.2,History: Contemporary History,Recent Developments and Current Issues,"Technology and Society in the 21st Century: The impact of the internet, social media, and digital transformation on communication and politics; Cybersecurity, privacy issues, and ethical debates in a connected world",definition
+HIST.6.2,History: Contemporary History,Recent Developments and Current Issues,"Global Challenges: Climate change, migration, and resource conflicts; Responses to pandemics, international cooperation, and resilience strategies",definition
+HIST.6.3,History: Contemporary History,"Memory, Identity, and Public History","Public Memory and Commemoration: Memorials, monuments, and national narratives; Museums, heritage sites, and collective memory",definition
+HIST.6.3,History: Contemporary History,"Memory, Identity, and Public History","Contested Histories and Historical Identity: Textbook debates, statue removals, and history in public discourse; The impact of history on national and cultural identity",definition
+HIST.7.1,History: Specialized Areas and Thematic Studies,"Economic, Social, and Cultural History","Economic History: Industrialization, global trade, and financial crises",definition
+HIST.7.1,History: Specialized Areas and Thematic Studies,"Economic, Social, and Cultural History","Social History: Daily life, demographics, and the evolution of social identities",definition
+HIST.7.1,History: Specialized Areas and Thematic Studies,"Economic, Social, and Cultural History","Cultural History: Art, literature, religion, and ideology as reflections of historical change",definition
+HIST.7.2,History: Specialized Areas and Thematic Studies,Intellectual History and the History of Ideas,"The Evolution of Philosophy, Science, and Political Thought; Key movements and thinkers that influenced societies over time; Interaction between ideas and power structures",definition
+HIST.7.3,History: Specialized Areas and Thematic Studies,Histories of Specific Regions,"Regional Histories: Europe, Asia, Africa, the Americas, and Oceania; Comparative approaches and cross-cultural interactions; The role of imperialism, colonization, and postcolonial developments",definition
+HIST.7.4,History: Specialized Areas and Thematic Studies,Environmental and Global History,"Human-Environment Interactions: The impact of agriculture, industry, and technology on natural resources",definition
+HIST.7.4,History: Specialized Areas and Thematic Studies,Environmental and Global History,"Global Histories of Migration, Trade, and Disease: How human movements and exchanges have shaped societies and ecosystems",definition
+HIST.7.5,History: Specialized Areas and Thematic Studies,"History of Science, Technology, and Medicine",Scientific and Technological Change Over Time: Major revolutions and innovations in science and engineering; Historical impacts of communication and industrial technologies,definition
+HIST.7.5,History: Specialized Areas and Thematic Studies,"History of Science, Technology, and Medicine","Medicine and Public Health in Historical Context: Epidemics, healthcare systems, and medical ethics; The relationship between scientific knowledge and social power",definition
+HIST.8.1,History: Historiography and Research Methods,Historiographical Trends,"Major Schools of Thought and Paradigm Shifts in History Writing: Marxist, Annales, postcolonial, feminist, and digital historiography",definition
+HIST.8.1,History: Historiography and Research Methods,Historiographical Trends,"Debates Over Objectivity, Narrative, and Memory in Historical Discourse",definition
+HIST.8.2,History: Historiography and Research Methods,Methodological Approaches,"Qualitative and Quantitative Methods in Historical Research: Archival research, oral history, archaeology, and digital humanities",definition
+HIST.8.2,History: Historiography and Research Methods,Methodological Approaches,"Critical Analysis of Sources: Techniques for source evaluation, contextualization, and corroboration",definition
+HIST.8.3,History: Historiography and Research Methods,Writing and Communication in History,"Structuring Historical Narratives and Arguments: Crafting theses, synthesizing evidence, and engaging with historiographical debates",definition
+HIST.8.3,History: Historiography and Research Methods,Writing and Communication in History,"Presenting Research: Academic writing, conferences, and multimedia projects",definition
+SOCSCI.1,Social Sciences,Foundations & Theoretical Perspectives,Introduction to Social Sciences and its Scope,definition
+SOCSCI.1,Social Sciences,Foundations & Theoretical Perspectives,"Major Theoretical Traditions (Functionalism, Conflict Theory, Symbolic Interactionism, Structuralism, etc.)",definition
+SOCSCI.1,Social Sciences,Foundations & Theoretical Perspectives,Research Methodologies and Methods,definition
+SOCSCI.1,Social Sciences,Foundations & Theoretical Perspectives,Philosophy and Ethics of Social Sciences,definition
+SOCSCI.2,Social Sciences,Core Disciplines,Sociology and Social Structures,definition
+SOCSCI.2,Social Sciences,Core Disciplines,Political Science and Governance,definition
+SOCSCI.2,Social Sciences,Core Disciplines,Anthropology and Cultural Studies,definition
+SOCSCI.2,Social Sciences,Core Disciplines,Social Psychology and Human Behavior,definition
+SOCSCI.2,Social Sciences,Core Disciplines,Human Geography and Spatial Analysis,definition
+SOCSCI.2,Social Sciences,Core Disciplines,Communication and Media Studies,definition
+SOCSCI.2,Social Sciences,Core Disciplines,Demography and Population Studies,definition
+SOCSCI.3,Social Sciences,Interdisciplinary and Applied Fields,Criminology and Criminal Justice,definition
+SOCSCI.3,Social Sciences,Interdisciplinary and Applied Fields,Economics from a Social Science Perspective,definition
+SOCSCI.3,Social Sciences,Interdisciplinary and Applied Fields,Education and Social Policy,definition
+SOCSCI.3,Social Sciences,Interdisciplinary and Applied Fields,Public Health and Social Work,definition
+SOCSCI.3,Social Sciences,Interdisciplinary and Applied Fields,Gender Studies and Intersectionality,definition
+SOCSCI.3,Social Sciences,Interdisciplinary and Applied Fields,Environmental Sociology and Sustainability,definition
+SOCSCI.4,Social Sciences,Research Methods & Theory Integration,Quantitative and Statistical Techniques,definition
+SOCSCI.4,Social Sciences,Research Methods & Theory Integration,Qualitative and Ethnographic Techniques,definition
+SOCSCI.4,Social Sciences,Research Methods & Theory Integration,Comparative and Historical Methods,definition
+SOCSCI.4,Social Sciences,Research Methods & Theory Integration,Theory Integration and Interdisciplinary Research,definition
+SOCSCI.4,Social Sciences,Research Methods & Theory Integration,Philosophy of Method and Meta-methodology,definition
+SOCSCI.5,Social Sciences,Emerging & Global Trends,Globalization and Transnational Issues,definition
+SOCSCI.5,Social Sciences,Emerging & Global Trends,Digital Society and Information Technology,definition
+SOCSCI.5,Social Sciences,Emerging & Global Trends,Environmental Sustainability and Social Justice,definition
+SOCSCI.5,Social Sciences,Emerging & Global Trends,"Social Innovation, Activism and Policy",definition
+SOCSCI.5,Social Sciences,Emerging & Global Trends,Artificial Intelligence and Data Analytics in Social Sciences,definition
+SOCSCI.6,Social Sciences,Professional Practice & Future Directions,Careers and Professional Practice in Social Sciences,definition
+SOCSCI.6,Social Sciences,Professional Practice & Future Directions,"Communication, Dissemination, and Public Engagement",definition
+SOCSCI.6,Social Sciences,Professional Practice & Future Directions,Ethical and Regulatory Frameworks,definition
+SOCSCI.6,Social Sciences,Professional Practice & Future Directions,Lifelong Learning and Continuing Education,definition
+SOCSCI.6,Social Sciences,Professional Practice & Future Directions,"Future Directions, Challenges, and Opportunities",definition
+LING.1,Languages & Linguistics,Foundations of Language & Linguistics,Introduction to Language Studies,definition
+LING.1,Languages & Linguistics,Foundations of Language & Linguistics,Basic Terminology and Linguistic Concepts,definition
+LING.1,Languages & Linguistics,Foundations of Language & Linguistics,Origin and Evolution of Language,definition
+LING.1,Languages & Linguistics,Foundations of Language & Linguistics,Language Typology and Universals,definition
+LING.2,Languages & Linguistics,Theoretical Linguistics,Phonetics and Phonology,definition
+LING.2,Languages & Linguistics,Theoretical Linguistics,Morphology and Lexicon,definition
+LING.2,Languages & Linguistics,Theoretical Linguistics,Syntax and Grammar,definition
+LING.2,Languages & Linguistics,Theoretical Linguistics,Semantics and Pragmatics,definition
+LING.2,Languages & Linguistics,Theoretical Linguistics,Morphophonology and Morphological Processes,definition
+LING.3,Languages & Linguistics,Language Acquisition & Learning,First Language Acquisition and Child Language Development,definition
+LING.3,Languages & Linguistics,Language Acquisition & Learning,Second Language Acquisition and Bilingualism,definition
+LING.3,Languages & Linguistics,Language Acquisition & Learning,Language Learning Methodologies and Pedagogy,definition
+LING.3,Languages & Linguistics,Language Acquisition & Learning,Language Assessment and Proficiency Testing,definition
+LING.3,Languages & Linguistics,Language Acquisition & Learning,Psycholinguistics of Acquisition,definition
+LING.4,Languages & Linguistics,Sociolinguistics & Discourse Studies,Language Variation and Social Identity,definition
+LING.4,Languages & Linguistics,Sociolinguistics & Discourse Studies,Discourse Analysis and Conversation Analysis,definition
+LING.4,Languages & Linguistics,Sociolinguistics & Discourse Studies,Pragmatics and Cross-Cultural Communication,definition
+LING.4,Languages & Linguistics,Sociolinguistics & Discourse Studies,Language in Society and Language Policy,definition
+LING.4,Languages & Linguistics,Sociolinguistics & Discourse Studies,Applied Sociolinguistics and Language Planning,definition
+LING.5,Languages & Linguistics,Historical & Comparative Linguistics,Historical Linguistics and Language Change,definition
+LING.5,Languages & Linguistics,Historical & Comparative Linguistics,Comparative and Typological Linguistics,definition
+LING.5,Languages & Linguistics,Historical & Comparative Linguistics,Etymology and Lexicography,definition
+LING.5,Languages & Linguistics,Historical & Comparative Linguistics,Language Families and Proto-Language Reconstruction,definition
+LING.5,Languages & Linguistics,Historical & Comparative Linguistics,Language Contact and Borrowing,definition
+LING.6,Languages & Linguistics,Psycholinguistics & Neurolinguistics,Cognitive Processes and Language,definition
+LING.6,Languages & Linguistics,Psycholinguistics & Neurolinguistics,Brain and Language,definition
+LING.6,Languages & Linguistics,Psycholinguistics & Neurolinguistics,Speech Perception and Production,definition
+LING.6,Languages & Linguistics,Psycholinguistics & Neurolinguistics,Language Disorders and Aphasia,definition
+LING.6,Languages & Linguistics,Psycholinguistics & Neurolinguistics,Experimental Methods and Neuroimaging,definition
+LING.7,Languages & Linguistics,Applied Linguistics & Language Technologies,Language Teaching and Education,definition
+LING.7,Languages & Linguistics,Applied Linguistics & Language Technologies,Translation and Interpretation,definition
+LING.7,Languages & Linguistics,Applied Linguistics & Language Technologies,Computational Linguistics and NLP,definition
+LING.7,Languages & Linguistics,Applied Linguistics & Language Technologies,Corpus Linguistics and Lexicography,definition
+LING.7,Languages & Linguistics,Applied Linguistics & Language Technologies,Speech and Language Processing,definition
+LING.7,Languages & Linguistics,Applied Linguistics & Language Technologies,Language Documentation and Revitalization,definition
+LING.8,Languages & Linguistics,Research Methodologies & Interdisciplinary Studies,Data Collection and Analysis (Quantitative and Qualitative),definition
+LING.8,Languages & Linguistics,Research Methodologies & Interdisciplinary Studies,Fieldwork and Corpus Studies,definition
+LING.8,Languages & Linguistics,Research Methodologies & Interdisciplinary Studies,Experimental and Psycholinguistic Methods,definition
+LING.8,Languages & Linguistics,Research Methodologies & Interdisciplinary Studies,"Interdisciplinary Research (Cognitive Science, Anthropology, etc.)",definition
+LING.8,Languages & Linguistics,Research Methodologies & Interdisciplinary Studies,"Ethics, Replication, and Reproducibility",definition
+LING.9,Languages & Linguistics,Professional Practice & Career Paths,Academic Research and Teaching,definition
+LING.9,Languages & Linguistics,Professional Practice & Career Paths,"Translation, Interpretation, and Localization",definition
+LING.9,Languages & Linguistics,Professional Practice & Career Paths,Language Policy and Advocacy,definition
+LING.9,Languages & Linguistics,Professional Practice & Career Paths,"Publishing, Editing, and Lexicography",definition
+LING.9,Languages & Linguistics,Professional Practice & Career Paths,Language Education and Assessment,definition
+LING.9,Languages & Linguistics,Professional Practice & Career Paths,Industry and Technology Applications,definition
+ARTS.1,Arts & Literature,Foundations & Perspectives,Introduction and Overview of Arts and Literature,abstract
+ARTS.1,Arts & Literature,Foundations & Perspectives,Historical Perspectives and Evolution of Art and Literature,abstract
+ARTS.1,Arts & Literature,Foundations & Perspectives,Philosophy and Aesthetics of Art and Literature,abstract
+ARTS.1,Arts & Literature,Foundations & Perspectives,Cultural Influences and Contexts,abstract
+ARTS.1,Arts & Literature,Foundations & Perspectives,Roles and Functions of Art and Literature,abstract
+ARTS.2,Arts & Literature,Core Elements & Theoretical Foundations,Aesthetic Theory and Criticism,abstract
+ARTS.2,Arts & Literature,Core Elements & Theoretical Foundations,Literary Theory and Hermeneutics,abstract
+ARTS.2,Arts & Literature,Core Elements & Theoretical Foundations,Principles of Visual Arts,abstract
+ARTS.2,Arts & Literature,Core Elements & Theoretical Foundations,Principles of Performing Arts,abstract
+ARTS.2,Arts & Literature,Core Elements & Theoretical Foundations,Principles of Literary Form and Narrative,abstract
+ARTS.2,Arts & Literature,Core Elements & Theoretical Foundations,Interdisciplinary Theories and Criticism,abstract
+ARTS.3,Arts & Literature,Historical & Cultural Surveys,Literary History and Movements,abstract
+ARTS.3,Arts & Literature,Historical & Cultural Surveys,Art History and Movements,abstract
+ARTS.3,Arts & Literature,Historical & Cultural Surveys,"Performing Arts History (Music, Theatre, Dance)",abstract
+ARTS.3,Arts & Literature,Historical & Cultural Surveys,Cultural and Cross-Cultural Arts,abstract
+ARTS.3,Arts & Literature,Historical & Cultural Surveys,Comparative Literature and Global Traditions,abstract
+ARTS.4,Arts & Literature,Practical Approaches & Creative Processes,Creative Writing and Literary Production,abstract
+ARTS.4,Arts & Literature,Practical Approaches & Creative Processes,Artistic Practice and Studio Methods,abstract
+ARTS.4,Arts & Literature,Practical Approaches & Creative Processes,Performing Arts Techniques and Performance,abstract
+ARTS.4,Arts & Literature,Practical Approaches & Creative Processes,Music Composition and Theory,abstract
+ARTS.4,Arts & Literature,Practical Approaches & Creative Processes,Media and Digital Arts,abstract
+ARTS.4,Arts & Literature,Practical Approaches & Creative Processes,"Exhibition, Publication, and Curation",abstract
+ARTS.4,Arts & Literature,Practical Approaches & Creative Processes,Artistic Entrepreneurship and Industry,abstract
+ARTS.5,Arts & Literature,Research & Critical Engagement,Methodologies for Arts and Literary Research,abstract
+ARTS.5,Arts & Literature,Research & Critical Engagement,Critical Essays and Thematic Studies,abstract
+ARTS.5,Arts & Literature,Research & Critical Engagement,Cultural Studies and Media Analysis,abstract
+ARTS.5,Arts & Literature,Research & Critical Engagement,Interdisciplinary and Intermedial Studies,abstract
+ARTS.5,Arts & Literature,Research & Critical Engagement,Digital Humanities and Data Analysis,abstract
+ARTS.5,Arts & Literature,Research & Critical Engagement,Contemporary Debates and Art Criticism,abstract
+ARTS.6,Arts & Literature,Professional Practice & Future Directions,Career Paths in Arts and Literature,abstract
+ARTS.6,Arts & Literature,Professional Practice & Future Directions,Professional Development and Networking,abstract
+ARTS.6,Arts & Literature,Professional Practice & Future Directions,Intellectual Property and Copyright,abstract
+ARTS.6,Arts & Literature,Professional Practice & Future Directions,Grant Writing and Funding,abstract
+ARTS.6,Arts & Literature,Professional Practice & Future Directions,Innovation and Interdisciplinary Futures,abstract
+ARTS.6,Arts & Literature,Professional Practice & Future Directions,Community Engagement and Social Practice,abstract
+ARTS.6,Arts & Literature,Professional Practice & Future Directions,Technology and New Media,abstract
+PSYC.1,Psychology & Cognitive Science,Foundations & Overview,Introduction to Psychology and Cognitive Science,definition
+PSYC.1,Psychology & Cognitive Science,Foundations & Overview,Historical Background and Key Figures,definition
+PSYC.1,Psychology & Cognitive Science,Foundations & Overview,Scientific Methods and Research Design,definition
+PSYC.1,Psychology & Cognitive Science,Foundations & Overview,Philosophy of Mind and Consciousness,definition
+PSYC.1,Psychology & Cognitive Science,Foundations & Overview,Biological and Physiological Bases,definition
+PSYC.2,Psychology & Cognitive Science,Major Branches of Psychology,Biological Psychology and Neuroscience,definition
+PSYC.2,Psychology & Cognitive Science,Major Branches of Psychology,Cognitive Psychology and Perception,definition
+PSYC.2,Psychology & Cognitive Science,Major Branches of Psychology,Developmental Psychology and Lifespan,definition
+PSYC.2,Psychology & Cognitive Science,Major Branches of Psychology,Social Psychology and Group Dynamics,definition
+PSYC.2,Psychology & Cognitive Science,Major Branches of Psychology,Personality Psychology and Individual Differences,definition
+PSYC.2,Psychology & Cognitive Science,Major Branches of Psychology,Clinical and Counseling Psychology,definition
+PSYC.2,Psychology & Cognitive Science,Major Branches of Psychology,Comparative and Evolutionary Psychology,definition
+PSYC.3,Psychology & Cognitive Science,Core Areas of Cognitive Science,Cognitive Neuroscience and Brain Mapping,definition
+PSYC.3,Psychology & Cognitive Science,Core Areas of Cognitive Science,Computational Modeling and Artificial Intelligence,definition
+PSYC.3,Psychology & Cognitive Science,Core Areas of Cognitive Science,Psycholinguistics and Neurolinguistics,definition
+PSYC.3,Psychology & Cognitive Science,Core Areas of Cognitive Science,Decision Making and Problem Solving,definition
+PSYC.3,Psychology & Cognitive Science,Core Areas of Cognitive Science,Learning and Memory,definition
+PSYC.3,Psychology & Cognitive Science,Core Areas of Cognitive Science,Attention and Cognitive Control,definition
+PSYC.3,Psychology & Cognitive Science,Core Areas of Cognitive Science,Emotion and Motivation,definition
+PSYC.4,Psychology & Cognitive Science,Applied Psychology & Cognitive Science,Educational Psychology and Learning Sciences,definition
+PSYC.4,Psychology & Cognitive Science,Applied Psychology & Cognitive Science,Industrial-Organizational Psychology and Human Resources,definition
+PSYC.4,Psychology & Cognitive Science,Applied Psychology & Cognitive Science,Health Psychology and Behavioral Medicine,definition
+PSYC.4,Psychology & Cognitive Science,Applied Psychology & Cognitive Science,Forensic and Legal Psychology,definition
+PSYC.4,Psychology & Cognitive Science,Applied Psychology & Cognitive Science,Environmental Psychology and Urban Studies,definition
+PSYC.4,Psychology & Cognitive Science,Applied Psychology & Cognitive Science,Human Factors and Ergonomics,definition
+PSYC.4,Psychology & Cognitive Science,Applied Psychology & Cognitive Science,Sports and Performance Psychology,definition
+PSYC.4,Psychology & Cognitive Science,Applied Psychology & Cognitive Science,Consumer and Marketing Psychology,definition
+PSYC.5,Psychology & Cognitive Science,Interdisciplinary & Emerging Topics,Neuropsychology and Psychophysiology,definition
+PSYC.5,Psychology & Cognitive Science,Interdisciplinary & Emerging Topics,Cultural and Cross-Cultural Psychology,definition
+PSYC.5,Psychology & Cognitive Science,Interdisciplinary & Emerging Topics,Consciousness Studies and Phenomenology,definition
+PSYC.5,Psychology & Cognitive Science,Interdisciplinary & Emerging Topics,Positive Psychology and Well-being,definition
+PSYC.5,Psychology & Cognitive Science,Interdisciplinary & Emerging Topics,Evolutionary Cognitive Science and Biopsychology,definition
+PSYC.5,Psychology & Cognitive Science,Interdisciplinary & Emerging Topics,Systems and Dynamical Approaches,definition
+PSYC.5,Psychology & Cognitive Science,Interdisciplinary & Emerging Topics,Embodied Cognition and Enactivism,definition
+PSYC.5,Psychology & Cognitive Science,Interdisciplinary & Emerging Topics,AI and Machine Learning in Cognitive Research,definition
+PSYC.5,Psychology & Cognitive Science,Interdisciplinary & Emerging Topics,Virtual Reality and Immersive Technologies,definition
+PSYC.6,Psychology & Cognitive Science,Research Methods & Analysis,Quantitative and Statistical Methods,definition
+PSYC.6,Psychology & Cognitive Science,Research Methods & Analysis,Experimental Design and Laboratory Methods,definition
+PSYC.6,Psychology & Cognitive Science,Research Methods & Analysis,Qualitative and Mixed Methods,definition
+PSYC.6,Psychology & Cognitive Science,Research Methods & Analysis,Neuroimaging and Electrophysiology,definition
+PSYC.6,Psychology & Cognitive Science,Research Methods & Analysis,Psychometric Testing and Assessment,definition
+PSYC.6,Psychology & Cognitive Science,Research Methods & Analysis,Computational Models and Simulation,definition
+PSYC.6,Psychology & Cognitive Science,Research Methods & Analysis,Ethical Considerations and Open Science,definition
+PSYC.7,Psychology & Cognitive Science,Professional Practice & Future Directions,Clinical Practice and Mental Health Services,definition
+PSYC.7,Psychology & Cognitive Science,Professional Practice & Future Directions,Education and Training Pathways,definition
+PSYC.7,Psychology & Cognitive Science,Professional Practice & Future Directions,Research Careers and Academia,definition
+PSYC.7,Psychology & Cognitive Science,Professional Practice & Future Directions,Ethics and Professional Standards,definition
+PSYC.7,Psychology & Cognitive Science,Professional Practice & Future Directions,Public Policy and Advocacy,definition
+PSYC.7,Psychology & Cognitive Science,Professional Practice & Future Directions,Technology and Innovations,definition
+PSYC.7,Psychology & Cognitive Science,Professional Practice & Future Directions,Future Directions and Societal Impact,definition
+ENV.1,Environmental Science & Sustainability,Foundations & Core Concepts,Introduction and Overview of Environmental Science and Sustainability,definition
+ENV.1,Environmental Science & Sustainability,Foundations & Core Concepts,"Basic Scientific Principles (Thermodynamics, Ecology, Geochemistry)",definition
+ENV.1,Environmental Science & Sustainability,Foundations & Core Concepts,"Key Environmental Concepts (Ecosystems, Biodiversity, Energy Flows, Nutrient Cycles)",definition
+ENV.1,Environmental Science & Sustainability,Foundations & Core Concepts,Systems Thinking and Modeling,definition
+ENV.1,Environmental Science & Sustainability,Foundations & Core Concepts,Interdisciplinary Integration,definition
+ENV.2,Environmental Science & Sustainability,Earth Systems & Natural Processes,Atmospheric Science and Climate,definition
+ENV.2,Environmental Science & Sustainability,Earth Systems & Natural Processes,Hydrosphere and Water Resources,definition
+ENV.2,Environmental Science & Sustainability,Earth Systems & Natural Processes,Geology and Soils,definition
+ENV.2,Environmental Science & Sustainability,Earth Systems & Natural Processes,Biogeochemical Cycles,definition
+ENV.2,Environmental Science & Sustainability,Earth Systems & Natural Processes,Oceanography and Marine Systems,definition
+ENV.2,Environmental Science & Sustainability,Earth Systems & Natural Processes,Extreme Events and Natural Hazards,definition
+ENV.3,Environmental Science & Sustainability,Ecology & Biodiversity,"Fundamentals of Ecology (Populations, Communities, Ecosystems)",definition
+ENV.3,Environmental Science & Sustainability,Ecology & Biodiversity,Biodiversity and Conservation Biology,definition
+ENV.3,Environmental Science & Sustainability,Ecology & Biodiversity,Landscape Ecology and Biogeography,definition
+ENV.3,Environmental Science & Sustainability,Ecology & Biodiversity,Restoration Ecology and Invasive Species,definition
+ENV.3,Environmental Science & Sustainability,Ecology & Biodiversity,Ecosystem Services and Human Well-being,definition
+ENV.4,Environmental Science & Sustainability,Human Impacts & Environmental Challenges,Pollution and Waste Management,definition
+ENV.4,Environmental Science & Sustainability,Human Impacts & Environmental Challenges,Climate Change Impacts and Mitigation,definition
+ENV.4,Environmental Science & Sustainability,Human Impacts & Environmental Challenges,Resource Depletion and Sustainable Use,definition
+ENV.4,Environmental Science & Sustainability,Human Impacts & Environmental Challenges,Population Dynamics and Consumption,definition
+ENV.4,Environmental Science & Sustainability,Human Impacts & Environmental Challenges,Urbanization and Land Use Change,definition
+ENV.4,Environmental Science & Sustainability,Human Impacts & Environmental Challenges,Food Systems and Agriculture,definition
+ENV.4,Environmental Science & Sustainability,Human Impacts & Environmental Challenges,Environmental Justice and Social Dimensions,definition
+ENV.5,Environmental Science & Sustainability,Sustainability & Renewable Solutions,Principles of Sustainability and Sustainable Development Goals,definition
+ENV.5,Environmental Science & Sustainability,Sustainability & Renewable Solutions,"Renewable Energy Technologies (Solar, Wind, Hydro, Geothermal)",definition
+ENV.5,Environmental Science & Sustainability,Sustainability & Renewable Solutions,"Sustainable Resource Management (Water, Forests, Soil, Fisheries)",definition
+ENV.5,Environmental Science & Sustainability,Sustainability & Renewable Solutions,Sustainable Agriculture and Food Systems,definition
+ENV.5,Environmental Science & Sustainability,Sustainability & Renewable Solutions,Circular Economy and Waste Reduction,definition
+ENV.5,Environmental Science & Sustainability,Sustainability & Renewable Solutions,Environmental Design and Green Architecture,definition
+ENV.6,Environmental Science & Sustainability,"Environmental Policy, Management & Ethics",Environmental Law and Policy Frameworks,definition
+ENV.6,Environmental Science & Sustainability,"Environmental Policy, Management & Ethics",Environmental Management and Planning,definition
+ENV.6,Environmental Science & Sustainability,"Environmental Policy, Management & Ethics",Ethical and Social Dimensions,definition
+ENV.6,Environmental Science & Sustainability,"Environmental Policy, Management & Ethics",Environmental Economics and Ecosystem Valuation,definition
+ENV.6,Environmental Science & Sustainability,"Environmental Policy, Management & Ethics",International Agreements and Global Governance,definition
+ENV.6,Environmental Science & Sustainability,"Environmental Policy, Management & Ethics",Stakeholder Engagement and Community-based Approaches,definition
+ENV.7,Environmental Science & Sustainability,Research Methods & Technological Tools,Experimental and Field Research Methods,definition
+ENV.7,Environmental Science & Sustainability,Research Methods & Technological Tools,Remote Sensing and GIS,definition
+ENV.7,Environmental Science & Sustainability,Research Methods & Technological Tools,Data Analysis and Modeling,definition
+ENV.7,Environmental Science & Sustainability,Research Methods & Technological Tools,Interdisciplinary and Participatory Research,definition
+ENV.7,Environmental Science & Sustainability,Research Methods & Technological Tools,Citizen Science and Environmental Monitoring,definition
+ENV.7,Environmental Science & Sustainability,Research Methods & Technological Tools,Innovations and Green Technologies,definition
+ENV.8,Environmental Science & Sustainability,Future Directions & Global Trends,Innovative Solutions and Green Technologies,definition
+ENV.8,Environmental Science & Sustainability,Future Directions & Global Trends,Global Environmental Challenges and Cooperation,definition
+ENV.8,Environmental Science & Sustainability,Future Directions & Global Trends,Education and Advocacy,definition
+ENV.8,Environmental Science & Sustainability,Future Directions & Global Trends,Resilience and Adaptation Strategies,definition
+ENV.8,Environmental Science & Sustainability,Future Directions & Global Trends,Planetary Health and the Anthropocene,definition
+MED.1,Medicine & Health,Foundations & Basic Sciences,Introduction to Medicine and Health,definition
+MED.1,Medicine & Health,Foundations & Basic Sciences,Human Biology and Anatomy,definition
+MED.1,Medicine & Health,Foundations & Basic Sciences,Biochemistry and Molecular Biology,definition
+MED.1,Medicine & Health,Foundations & Basic Sciences,Cellular and Tissue Physiology,definition
+MED.1,Medicine & Health,Foundations & Basic Sciences,Basic Laboratory Methods and Diagnostics,definition
+MED.1,Medicine & Health,Foundations & Basic Sciences,Epidemiology and Biostatistics,definition
+MED.2,Medicine & Health,Core Medical Sciences,Anatomy and Physiology,definition
+MED.2,Medicine & Health,Core Medical Sciences,Pathology and Disease Mechanisms,definition
+MED.2,Medicine & Health,Core Medical Sciences,Microbiology and Immunology,definition
+MED.2,Medicine & Health,Core Medical Sciences,Pharmacology and Therapeutics,definition
+MED.2,Medicine & Health,Core Medical Sciences,Medical Genetics and Genomics,definition
+MED.2,Medicine & Health,Core Medical Sciences,Rehabilitation and Palliative Care,definition
+MED.3,Medicine & Health,Clinical Medicine & Patient Care,General Clinical Principles and Diagnostics,definition
+MED.3,Medicine & Health,Clinical Medicine & Patient Care,"Internal Medicine (Cardiology, Respiratory, Gastroenterology, Renal, Endocrine, etc.)",definition
+MED.3,Medicine & Health,Clinical Medicine & Patient Care,Surgical Specialties and Techniques,definition
+MED.3,Medicine & Health,Clinical Medicine & Patient Care,Pediatrics and Neonatology,definition
+MED.3,Medicine & Health,Clinical Medicine & Patient Care,Obstetrics and Gynecology,definition
+MED.3,Medicine & Health,Clinical Medicine & Patient Care,Psychiatry and Mental Health,definition
+MED.3,Medicine & Health,Clinical Medicine & Patient Care,Emergency and Critical Care Medicine,definition
+MED.3,Medicine & Health,Clinical Medicine & Patient Care,Geriatrics and Long-term Care,definition
+MED.3,Medicine & Health,Clinical Medicine & Patient Care,Family Medicine and Primary Care,definition
+MED.4,Medicine & Health,Preventive Medicine & Public Health,Epidemiology and Disease Surveillance,definition
+MED.4,Medicine & Health,Preventive Medicine & Public Health,Preventive Medicine and Health Promotion,definition
+MED.4,Medicine & Health,Preventive Medicine & Public Health,Vaccination and Immunization Programs,definition
+MED.4,Medicine & Health,Preventive Medicine & Public Health,Nutrition and Lifestyle Medicine,definition
+MED.4,Medicine & Health,Preventive Medicine & Public Health,Environmental and Occupational Health,definition
+MED.4,Medicine & Health,Preventive Medicine & Public Health,Health Policy and Management,definition
+MED.4,Medicine & Health,Preventive Medicine & Public Health,Global Health and Pandemic Preparedness,definition
+MED.5,Medicine & Health,"Research, Technology & Innovation",Medical Research Methodologies and Clinical Trials,definition
+MED.5,Medicine & Health,"Research, Technology & Innovation",Medical Technology and Informatics,definition
+MED.5,Medicine & Health,"Research, Technology & Innovation",Biotechnology and Genetic Engineering,definition
+MED.5,Medicine & Health,"Research, Technology & Innovation",Precision Medicine and Personalized Therapeutics,definition
+MED.5,Medicine & Health,"Research, Technology & Innovation","Innovations and Future Directions (AI, Robotics, Regenerative Medicine)",definition
+MED.5,Medicine & Health,"Research, Technology & Innovation",Open Science and Knowledge Sharing,definition
+MED.6,Medicine & Health,"Ethics, Law & Professional Practice",Medical Ethics and Professionalism,definition
+MED.6,Medicine & Health,"Ethics, Law & Professional Practice",Legal and Regulatory Aspects of Healthcare,definition
+MED.6,Medicine & Health,"Ethics, Law & Professional Practice",Interdisciplinary Collaboration and Communication,definition
+MED.6,Medicine & Health,"Ethics, Law & Professional Practice",Healthcare Delivery and Systems,definition
+MED.6,Medicine & Health,"Ethics, Law & Professional Practice",Health Economics and Resource Allocation,definition
+MED.6,Medicine & Health,"Ethics, Law & Professional Practice",Medical Education and Continuous Professional Development,definition
+MED.6,Medicine & Health,"Ethics, Law & Professional Practice",Cultural Competence and Patient-Centered Care,definition
+MED.7,Medicine & Health,Interdisciplinary & Specialized Topics,Integrative and Complementary Medicine,definition
+MED.7,Medicine & Health,Interdisciplinary & Specialized Topics,Mental Health and Psychosomatic Medicine,definition
+MED.7,Medicine & Health,Interdisciplinary & Specialized Topics,Tropical Medicine and Infectious Diseases,definition
+MED.7,Medicine & Health,Interdisciplinary & Specialized Topics,Space Medicine and Extreme Environment Health,definition
+MED.7,Medicine & Health,Interdisciplinary & Specialized Topics,Sports Medicine and Rehabilitation,definition
+MED.7,Medicine & Health,Interdisciplinary & Specialized Topics,Occupational and Environmental Medicine,definition
+MED.7,Medicine & Health,Interdisciplinary & Specialized Topics,Medical Humanities and Narrative Medicine,definition
+DIY.1,"DIY, Crafts & Cooking",Foundations & Core Principles,Introduction to DIY and Maker Culture,definition
+DIY.1,"DIY, Crafts & Cooking",Foundations & Core Principles,Essential Tools and Materials,definition
+DIY.1,"DIY, Crafts & Cooking",Foundations & Core Principles,Design Thinking and Creative Problem-Solving,definition
+DIY.1,"DIY, Crafts & Cooking",Foundations & Core Principles,Safety Practices and Risk Management,definition
+DIY.1,"DIY, Crafts & Cooking",Foundations & Core Principles,Sustainability and Eco-friendly Practices,definition
+DIY.2,"DIY, Crafts & Cooking",DIY Projects & Home Improvement,Basic Home Repairs and Maintenance,definition
+DIY.2,"DIY, Crafts & Cooking",DIY Projects & Home Improvement,Furniture Making and Carpentry,definition
+DIY.2,"DIY, Crafts & Cooking",DIY Projects & Home Improvement,Electrical and Plumbing Projects,definition
+DIY.2,"DIY, Crafts & Cooking",DIY Projects & Home Improvement,Home Renovation and Décor,definition
+DIY.2,"DIY, Crafts & Cooking",DIY Projects & Home Improvement,Outdoor and Garden Projects,definition
+DIY.2,"DIY, Crafts & Cooking",DIY Projects & Home Improvement,Project Planning and Execution,definition
+DIY.2,"DIY, Crafts & Cooking",DIY Projects & Home Improvement,Upcycling and Recycling Projects,definition
+DIY.3,"DIY, Crafts & Cooking",Crafts & Artistic Expression,"Exploration of Craft Disciplines (Painting, Drawing, Sculpture, Pottery, Textiles, Glass, Metal, Woodworking, Fiber Arts, Paper Crafts)",definition
+DIY.3,"DIY, Crafts & Cooking",Crafts & Artistic Expression,"Techniques and Methodologies (Knitting, Sewing, Quilting, Embroidery, Weaving, Dyeing, Printmaking, Jewelry Making, Origami)",definition
+DIY.3,"DIY, Crafts & Cooking",Crafts & Artistic Expression,Craft Project Development and Design,definition
+DIY.3,"DIY, Crafts & Cooking",Crafts & Artistic Expression,Mixed Media and Multidisciplinary Crafts,definition
+DIY.3,"DIY, Crafts & Cooking",Crafts & Artistic Expression,Craft Communities and Culture,definition
+DIY.4,"DIY, Crafts & Cooking",Culinary Arts & Cooking,"Foundations of Cooking (Knife Skills, Cooking Methods, Food Safety)",definition
+DIY.4,"DIY, Crafts & Cooking",Culinary Arts & Cooking,Exploring Culinary Traditions and World Cuisines,definition
+DIY.4,"DIY, Crafts & Cooking",Culinary Arts & Cooking,Baking and Pastry Arts,definition
+DIY.4,"DIY, Crafts & Cooking",Culinary Arts & Cooking,Advanced Techniques and Molecular Gastronomy,definition
+DIY.4,"DIY, Crafts & Cooking",Culinary Arts & Cooking,Nutrition and Diet Planning,definition
+DIY.4,"DIY, Crafts & Cooking",Culinary Arts & Cooking,Food Presentation and Plating,definition
+DIY.4,"DIY, Crafts & Cooking",Culinary Arts & Cooking,Culinary Creativity and Experimentation,definition
+DIY.5,"DIY, Crafts & Cooking",Manuals & Resource Guides,Reference Manuals for DIY and Crafts,definition
+DIY.5,"DIY, Crafts & Cooking",Manuals & Resource Guides,Cookbooks and Culinary References,definition
+DIY.5,"DIY, Crafts & Cooking",Manuals & Resource Guides,Pattern Books and Recipe Collections,definition
+DIY.5,"DIY, Crafts & Cooking",Manuals & Resource Guides,Online Databases and Video Tutorials,definition
+DIY.5,"DIY, Crafts & Cooking",Manuals & Resource Guides,Tool and Equipment Guides,definition
+DIY.5,"DIY, Crafts & Cooking",Manuals & Resource Guides,Supplier and Material Directories,definition
+DIY.5,"DIY, Crafts & Cooking",Manuals & Resource Guides,Digital Platforms and Apps,definition
+DIY.5,"DIY, Crafts & Cooking",Manuals & Resource Guides,Regulatory and Safety Guidelines,definition
+DIY.6,"DIY, Crafts & Cooking",Practical Applications & Community Engagement,Workshops and Classes (In-person and Online),definition
+DIY.6,"DIY, Crafts & Cooking",Practical Applications & Community Engagement,Community Projects and Volunteering,definition
+DIY.6,"DIY, Crafts & Cooking",Practical Applications & Community Engagement,Maker Spaces and Fab Labs,definition
+DIY.6,"DIY, Crafts & Cooking",Practical Applications & Community Engagement,Collaboration and Sharing Economy,definition
+DIY.6,"DIY, Crafts & Cooking",Practical Applications & Community Engagement,Project-based Learning and Personal Development,definition
+DIY.6,"DIY, Crafts & Cooking",Practical Applications & Community Engagement,"Exhibitions, Markets and Craft Fairs",definition
+DIY.6,"DIY, Crafts & Cooking",Practical Applications & Community Engagement,Career Opportunities and Entrepreneurship,definition
+DIY.6,"DIY, Crafts & Cooking",Practical Applications & Community Engagement,Sustainability and Social Impact,definition
+DIY.6,"DIY, Crafts & Cooking",Practical Applications & Community Engagement,Cultural Preservation and Traditional Crafts,definition
+WELL.1,"Health, Fitness & Lifestyle",Introduction & Foundations of Wellness,Purpose and Scope of Wellness Guides,definition
+WELL.1,"Health, Fitness & Lifestyle",Introduction & Foundations of Wellness,Science and Philosophy of Wellness and Lifestyle,definition
+WELL.1,"Health, Fitness & Lifestyle",Introduction & Foundations of Wellness,"Dimensions of Wellness (Physical, Emotional, Mental, Social, Spiritual)",definition
+WELL.1,"Health, Fitness & Lifestyle",Introduction & Foundations of Wellness,Evidence-Based Approaches to Health and Fitness,definition
+WELL.2,"Health, Fitness & Lifestyle",Physical Fitness & Exercise,Exercise Physiology and Anatomy,definition
+WELL.2,"Health, Fitness & Lifestyle",Physical Fitness & Exercise,Strength Training and Conditioning,definition
+WELL.2,"Health, Fitness & Lifestyle",Physical Fitness & Exercise,Cardiovascular and Aerobic Training,definition
+WELL.2,"Health, Fitness & Lifestyle",Physical Fitness & Exercise,Flexibility and Mobility,definition
+WELL.2,"Health, Fitness & Lifestyle",Physical Fitness & Exercise,Sports and Athletic Performance,definition
+WELL.2,"Health, Fitness & Lifestyle",Physical Fitness & Exercise,Fitness Program Design and Periodization,definition
+WELL.2,"Health, Fitness & Lifestyle",Physical Fitness & Exercise,Injury Prevention and Rehabilitation,definition
+WELL.3,"Health, Fitness & Lifestyle","Nutrition, Diet & Lifestyle",Nutrition Science and Dietary Guidelines,definition
+WELL.3,"Health, Fitness & Lifestyle","Nutrition, Diet & Lifestyle",Meal Planning and Healthy Cooking,definition
+WELL.3,"Health, Fitness & Lifestyle","Nutrition, Diet & Lifestyle",Weight Management and Body Composition,definition
+WELL.3,"Health, Fitness & Lifestyle","Nutrition, Diet & Lifestyle","Special Diets (Vegetarian, Vegan, Keto, etc.)",definition
+WELL.3,"Health, Fitness & Lifestyle","Nutrition, Diet & Lifestyle",Supplements and Functional Foods,definition
+WELL.3,"Health, Fitness & Lifestyle","Nutrition, Diet & Lifestyle",Lifestyle Habits and Behavior Change,definition
+WELL.3,"Health, Fitness & Lifestyle","Nutrition, Diet & Lifestyle",Sleep Science and Circadian Rhythms,definition
+WELL.3,"Health, Fitness & Lifestyle","Nutrition, Diet & Lifestyle",Stress Management and Resilience,definition
+WELL.4,"Health, Fitness & Lifestyle","Mindfulness, Mental Health & Well-being",Meditation and Mindfulness Practices,definition
+WELL.4,"Health, Fitness & Lifestyle","Mindfulness, Mental Health & Well-being",Yoga and Mind-Body Connection,definition
+WELL.4,"Health, Fitness & Lifestyle","Mindfulness, Mental Health & Well-being",Cognitive and Behavioral Strategies,definition
+WELL.4,"Health, Fitness & Lifestyle","Mindfulness, Mental Health & Well-being",Mental Health and Psychological Wellness,definition
+WELL.4,"Health, Fitness & Lifestyle","Mindfulness, Mental Health & Well-being",Emotional Intelligence and Self-Compassion,definition
+WELL.4,"Health, Fitness & Lifestyle","Mindfulness, Mental Health & Well-being",Creative Expression and Art Therapy,definition
+WELL.4,"Health, Fitness & Lifestyle","Mindfulness, Mental Health & Well-being",Social Support and Relationships,definition
+WELL.5,"Health, Fitness & Lifestyle",Biographies & Inspirational Narratives,Stories of Health and Fitness Success,definition
+WELL.5,"Health, Fitness & Lifestyle",Biographies & Inspirational Narratives,Biographies of Athletes and Wellness Leaders,definition
+WELL.5,"Health, Fitness & Lifestyle",Biographies & Inspirational Narratives,Inspirational Journeys and Personal Transformation,definition
+WELL.5,"Health, Fitness & Lifestyle",Biographies & Inspirational Narratives,Documentaries and Media Representations,definition
+WELL.5,"Health, Fitness & Lifestyle",Biographies & Inspirational Narratives,Cross-cultural Perspectives and Community Stories,definition
+WELL.6,"Health, Fitness & Lifestyle",Specialized Topics & Trends,Holistic and Integrative Health,definition
+WELL.6,"Health, Fitness & Lifestyle",Specialized Topics & Trends,Complementary and Alternative Medicine,definition
+WELL.6,"Health, Fitness & Lifestyle",Specialized Topics & Trends,Biohacking and Self-Tracking,definition
+WELL.6,"Health, Fitness & Lifestyle",Specialized Topics & Trends,Aging and Longevity,definition
+WELL.6,"Health, Fitness & Lifestyle",Specialized Topics & Trends,Women’s Health and Gender-specific Training,definition
+WELL.6,"Health, Fitness & Lifestyle",Specialized Topics & Trends,Youth and Pediatric Wellness,definition
+WELL.6,"Health, Fitness & Lifestyle",Specialized Topics & Trends,Workplace Wellness and Corporate Programs,definition
+WELL.6,"Health, Fitness & Lifestyle",Specialized Topics & Trends,Environmental and Outdoor Fitness,definition
+WELL.6,"Health, Fitness & Lifestyle",Specialized Topics & Trends,Technology and Wearables,definition
+WELL.7,"Health, Fitness & Lifestyle",Integrating Wellness Guides into a Holistic Approach,Designing Personal Wellness Plans,definition
+WELL.7,"Health, Fitness & Lifestyle",Integrating Wellness Guides into a Holistic Approach,Learning Pathways and Resource Integration,definition
+WELL.7,"Health, Fitness & Lifestyle",Integrating Wellness Guides into a Holistic Approach,Community Engagement and Support Networks,definition
+WELL.7,"Health, Fitness & Lifestyle",Integrating Wellness Guides into a Holistic Approach,Collaboration with Professionals and Coaches,definition
+WELL.7,"Health, Fitness & Lifestyle",Integrating Wellness Guides into a Holistic Approach,Monitoring and Adjusting for Lifestyle Changes,definition
+WELL.7,"Health, Fitness & Lifestyle",Integrating Wellness Guides into a Holistic Approach,Evidence-based Decision Making,definition
+WELL.7,"Health, Fitness & Lifestyle",Integrating Wellness Guides into a Holistic Approach,Knowledge Synthesis and Reflection,definition
+WELL.8,"Health, Fitness & Lifestyle",Practical Application & Continuous Learning,Implementation Projects and Wellness Challenges,definition
+WELL.8,"Health, Fitness & Lifestyle",Practical Application & Continuous Learning,Measuring Progress and Success,definition
+WELL.8,"Health, Fitness & Lifestyle",Practical Application & Continuous Learning,Staying Informed on Emerging Research,definition
+WELL.8,"Health, Fitness & Lifestyle",Practical Application & Continuous Learning,Adaptation and Habit Formation,definition
+WELL.8,"Health, Fitness & Lifestyle",Practical Application & Continuous Learning,"Reflection, Journaling and Mindful Living",definition
+WELL.8,"Health, Fitness & Lifestyle",Practical Application & Continuous Learning,Lifelong Learning and Growth,definition
+WELL.8,"Health, Fitness & Lifestyle",Practical Application & Continuous Learning,Contribution to Community and Mentoring,definition
+SPIR.1,Spirituality & Religion,Foundations of Spirituality & Religion,Understanding Spirituality and Religion,definition
+SPIR.1,Spirituality & Religion,Foundations of Spirituality & Religion,Comparative Approaches and Definitions,definition
+SPIR.1,Spirituality & Religion,Foundations of Spirituality & Religion,Role of Sacred Texts and Study Methodologies,definition
+SPIR.1,Spirituality & Religion,Foundations of Spirituality & Religion,Philosophy and Psychology of Spiritual Experience,definition
+SPIR.1,Spirituality & Religion,Foundations of Spirituality & Religion,"Rituals, Symbols and Practices",definition
+SPIR.1,Spirituality & Religion,Foundations of Spirituality & Religion,Historical Development of Spiritual Traditions,definition
+SPIR.2,Spirituality & Religion,Core Sacred Texts & Traditions,"Eastern Traditions and Texts (Vedas, Upanishads, Bhagavad Gita, Dhammapada, Tao Te Ching, etc.)",definition
+SPIR.2,Spirituality & Religion,Core Sacred Texts & Traditions,"Western and Abrahamic Texts (Torah/Tanakh, Bible, Quran, Hadith, Talmud, Apocrypha, etc.)",definition
+SPIR.2,Spirituality & Religion,Core Sacred Texts & Traditions,Other Global Sacred Texts and Indigenous Traditions,definition
+SPIR.2,Spirituality & Religion,Core Sacred Texts & Traditions,"Mystical and Esoteric Writings (Kabbalah, Sufism, Gnosticism, Hermeticism, etc.)",definition
+SPIR.2,Spirituality & Religion,Core Sacred Texts & Traditions,Commentary and Exegetical Literature,definition
+SPIR.3,Spirituality & Religion,Interpretative Approaches & Analysis,Historical-Critical Methods and Hermeneutics,definition
+SPIR.3,Spirituality & Religion,Interpretative Approaches & Analysis,Literary and Thematic Analysis,definition
+SPIR.3,Spirituality & Religion,Interpretative Approaches & Analysis,Theological and Philosophical Interpretations,definition
+SPIR.3,Spirituality & Religion,Interpretative Approaches & Analysis,Comparative Religion and Interfaith Dialogue,definition
+SPIR.3,Spirituality & Religion,Interpretative Approaches & Analysis,Feminist and Liberation Theologies,definition
+SPIR.3,Spirituality & Religion,Interpretative Approaches & Analysis,Contextual and Cultural Approaches,definition
+SPIR.3,Spirituality & Religion,Interpretative Approaches & Analysis,Anthropology and Sociology of Religion,definition
+SPIR.3,Spirituality & Religion,Interpretative Approaches & Analysis,Myth and Mythopoeia,definition
+SPIR.4,Spirituality & Religion,Application & Contemporary Relevance,Personal Spiritual Practice and Development,definition
+SPIR.4,Spirituality & Religion,Application & Contemporary Relevance,Spirituality in Health and Well-being,definition
+SPIR.4,Spirituality & Religion,Application & Contemporary Relevance,Ethical and Moral Dimensions,definition
+SPIR.4,Spirituality & Religion,Application & Contemporary Relevance,Religion in Education and Public Life,definition
+SPIR.4,Spirituality & Religion,Application & Contemporary Relevance,Interfaith Dialogue and Religious Pluralism,definition
+SPIR.4,Spirituality & Religion,Application & Contemporary Relevance,Spirituality and Social Justice,definition
+SPIR.4,Spirituality & Religion,Application & Contemporary Relevance,Artistic and Cultural Expressions,definition
+SPIR.4,Spirituality & Religion,Application & Contemporary Relevance,Contemporary Interpretations and Adaptations,definition
+SPIR.4,Spirituality & Religion,Application & Contemporary Relevance,Environmental and Eco-Spirituality,definition
+SPIR.5,Spirituality & Religion,Continuing Study & Future Directions,Expanding Comparative Religion Research,definition
+SPIR.5,Spirituality & Religion,Continuing Study & Future Directions,Emerging Spiritual Movements and Practices,definition
+SPIR.5,Spirituality & Religion,Continuing Study & Future Directions,Digital Innovations and Online Communities,definition
+SPIR.5,Spirituality & Religion,Continuing Study & Future Directions,"Critical Issues (Secularism, Fundamentalism, Globalization)",definition
+SPIR.5,Spirituality & Religion,Continuing Study & Future Directions,"Science and Spirituality (Cosmology, Neuroscience, Psychology, AI)",definition
+SPIR.5,Spirituality & Religion,Continuing Study & Future Directions,Public Scholarship and Education,definition
+SPIR.5,Spirituality & Religion,Continuing Study & Future Directions,Interdisciplinary and Intercultural Collaboration,definition
+SPIR.5,Spirituality & Religion,Continuing Study & Future Directions,Personal and Community Impact,definition
+MATH.1.1,Foundations & Preliminaries,Mathematical Logic & Proof Techniques,Direct and Indirect Proofs (Contradiction and Contrapositive),definition
+MATH.1.1,Foundations & Preliminaries,Mathematical Logic & Proof Techniques,Mathematical Induction and Recursive Reasoning,definition
+MATH.1.1,Foundations & Preliminaries,Mathematical Logic & Proof Techniques,Logical Equivalences and Truth Tables,definition
+MATH.1.1,Foundations & Preliminaries,Mathematical Logic & Proof Techniques,Quantifiers and Formal Reasoning,definition
+MATH.1.2,Foundations & Preliminaries,Set Theory & Foundations,Cartesian Products and Power Sets,definition
+MATH.1.2,Foundations & Preliminaries,Set Theory & Foundations,Equivalence Relations and Partitions,definition
+MATH.1.2,Foundations & Preliminaries,Set Theory & Foundations,Well-Ordering Principle and Ordinal Numbers,definition
+MATH.1.3,Foundations & Preliminaries,Number Systems,Extended Real Numbers,definition
+MATH.1.3,Foundations & Preliminaries,Number Systems,Quaternions and Octonions,definition
+MATH.1.3,Foundations & Preliminaries,Number Systems,p-adic Numbers and Surreal Numbers,definition
+MATH.2.1,Arithmetic & Elementary Topics,Basic Arithmetic,Exponentiation and Roots,definition
+MATH.2.1,Arithmetic & Elementary Topics,Basic Arithmetic,Divisibility and Prime Factorization,definition
+MATH.2.2,Arithmetic & Elementary Topics,"Fractions, Decimals & Percentages",Percentage Change and Compound Interest,definition
+MATH.2.3,Arithmetic & Elementary Topics,Basic Numeracy Skills,Absolute Value and Number Line,definition
+MATH.2.3,Arithmetic & Elementary Topics,Basic Numeracy Skills,Significant Figures and Scientific Notation,definition
+MATH.3.1,Algebra,Elementary Algebra,Radicals and Exponential Expressions,definition
+MATH.3.1,Algebra,Elementary Algebra,Absolute-Value Equations and Inequalities,definition
+MATH.3.1,Algebra,Elementary Algebra,Graphing Linear and Quadratic Functions,definition
+MATH.3.2,Algebra,Intermediate Algebra,Binomial Theorem,definition
+MATH.3.2,Algebra,Intermediate Algebra,Complex Numbers and Polar Form,definition
+MATH.3.2,Algebra,Intermediate Algebra,Rational and Radical Equations,definition
+MATH.3.3,Algebra,Abstract (Advanced) Algebra,Group Actions and Representation Theory,definition
+MATH.3.3,Algebra,Abstract (Advanced) Algebra,Semigroups and Monoids,definition
+MATH.3.3,Algebra,Abstract (Advanced) Algebra,Commutative and Homological Algebra,definition
+MATH.4.1,Geometry & Trigonometry,Geometry,Projective Geometry and Perspective,definition
+MATH.4.1,Geometry & Trigonometry,Geometry,Fractal Geometry,definition
+MATH.4.1,Geometry & Trigonometry,Geometry,Computational Geometry,definition
+MATH.4.2,Geometry & Trigonometry,Trigonometry,Law of Sines and Law of Cosines,definition
+MATH.4.2,Geometry & Trigonometry,Trigonometry,Trigonometric Form of Complex Numbers,definition
+MATH.4.2,Geometry & Trigonometry,Trigonometry,Solving Trigonometric Equations,definition
+MATH.5.1,Calculus & Analysis,Differential Calculus,Implicit Differentiation and Related Rates,definition
+MATH.5.1,Calculus & Analysis,Differential Calculus,Taylor Series and Approximations,definition
+MATH.5.2,Calculus & Analysis,Integral Calculus,Improper Integrals and Convergence,definition
+MATH.5.2,Calculus & Analysis,Integral Calculus,Numerical Integration,definition
+MATH.5.3,Calculus & Analysis,Multivariable Calculus,Coordinate Transformations and Jacobians,definition
+MATH.5.3,Calculus & Analysis,Multivariable Calculus,"Integral Theorems: Green’s, Stokes’, Divergence",definition
+MATH.5.4,Calculus & Analysis,Real Analysis,Measure Theory and Lebesgue Integration,definition
+MATH.5.4,Calculus & Analysis,Real Analysis,Differentiation and Integration on Metric Spaces,definition
+MATH.5.5,Calculus & Analysis,Complex Analysis,Taylor and Laurent Series,definition
+MATH.5.5,Calculus & Analysis,Complex Analysis,Meromorphic Functions and Poles,definition
+MATH.5.5,Calculus & Analysis,Complex Analysis,Analytic Continuation and Riemann Surfaces,definition
+MATH.5.6,Calculus & Analysis,Functional Analysis (Advanced),Distribution Theory and Sobolev Spaces,definition
+MATH.5.6,Calculus & Analysis,Functional Analysis (Advanced),Topological Vector Spaces,definition
+MATH.6.1,Linear Algebra,Vector Spaces & Subspaces,Coordinate Systems and Change of Basis,definition
+MATH.6.2,Linear Algebra,Matrices and Determinants,"LU, QR, and Cholesky Decomposition",definition
+MATH.6.3,Linear Algebra,Linear Transformations,Rank-Nullity Theorem,definition
+MATH.6.3,Linear Algebra,Linear Transformations,Orthogonal Projections,definition
+MATH.6.4,Linear Algebra,Eigenvalues and Eigenvectors,Spectral Theorem and Normal Operators,definition
+MATH.6.4,Linear Algebra,Eigenvalues and Eigenvectors,Singular Value Decomposition,definition
+MATH.7.1,Differential Equations,Ordinary Differential Equations (ODEs),Series Solutions and Frobenius Method,definition
+MATH.7.1,Differential Equations,Ordinary Differential Equations (ODEs),Laplace Transform Methods,definition
+MATH.7.1,Differential Equations,Ordinary Differential Equations (ODEs),Qualitative Analysis of Nonlinear ODEs,definition
+MATH.7.2,Differential Equations,Partial Differential Equations (PDEs),Transform Methods: Fourier and Laplace,definition
+MATH.7.2,Differential Equations,Partial Differential Equations (PDEs),Green’s Functions and Integral Methods,definition
+MATH.7.2,Differential Equations,Partial Differential Equations (PDEs),Finite Difference and Finite Element Methods,definition
+MATH.8.1,Topology,Point-Set Topology,Separation Axioms (T0–T4),definition
+MATH.8.1,Topology,Point-Set Topology,Product and Quotient Topologies,definition
+MATH.8.1,Topology,Point-Set Topology,Metrization Theorems,definition
+MATH.8.2,Topology,Algebraic Topology,CW and Simplicial Complexes,definition
+MATH.8.2,Topology,Algebraic Topology,Higher Homotopy Groups,definition
+MATH.8.2,Topology,Algebraic Topology,Cohomology Operations,definition
+MATH.9.1,"Probability, Statistics & Combinatorics",Probability Theory,Conditional Probability and Bayes’ Theorem,definition
+MATH.9.1,"Probability, Statistics & Combinatorics",Probability Theory,Law of Large Numbers and Central Limit Theorem,definition
+MATH.9.2,"Probability, Statistics & Combinatorics",Statistics,Nonparametric Methods,definition
+MATH.9.2,"Probability, Statistics & Combinatorics",Statistics,Analysis of Variance (ANOVA),definition
+MATH.9.2,"Probability, Statistics & Combinatorics",Statistics,Multivariate Statistics,definition
+MATH.9.3,"Probability, Statistics & Combinatorics",Combinatorics,Pigeonhole Principle and Inclusion–Exclusion,definition
+MATH.9.3,"Probability, Statistics & Combinatorics",Combinatorics,Extremal Combinatorics,definition
+MATH.9.3,"Probability, Statistics & Combinatorics",Combinatorics,Design Theory and Ramsey Theory,definition
+MATH.10.1,Number Theory,Elementary Number Theory,Primality Testing and Factorization Algorithms,definition
+MATH.10.1,Number Theory,Elementary Number Theory,Quadratic Reciprocity and Legendre Symbol,definition
+MATH.10.1,Number Theory,Elementary Number Theory,Partition Functions and Generating Functions,definition
+MATH.10.2,Number Theory,Advanced Number Theory,Elliptic Curves and Modular Forms,definition
+MATH.10.2,Number Theory,Advanced Number Theory,p-adic Analysis and Local Fields,definition
+MATH.10.2,Number Theory,Advanced Number Theory,Transcendental Number Theory,definition
+MATH.11.1,Mathematical Logic & Foundations (Advanced),Advanced Set Theory,Large Cardinals and Axiom of Determinacy,definition
+MATH.11.1,Mathematical Logic & Foundations (Advanced),Advanced Set Theory,Descriptive Set Theory,definition
+MATH.11.2,Mathematical Logic & Foundations (Advanced),Computability & Recursion Theory,Gödel’s Incompleteness Theorems,definition
+MATH.11.2,Mathematical Logic & Foundations (Advanced),Computability & Recursion Theory,Lambda Calculus and Computable Functions,definition
+MATH.11.3,Mathematical Logic & Foundations (Advanced),Category Theory,Monads and Adjunctions,definition
+MATH.11.3,Mathematical Logic & Foundations (Advanced),Category Theory,Higher Categories and ∞‑Categories,definition
+MATH.12.1,Optimization & Operations Research,Optimization Theory,Integer and Combinatorial Optimization,definition
+MATH.12.1,Optimization & Operations Research,Optimization Theory,Dynamic and Stochastic Programming,definition
+MATH.12.2,Optimization & Operations Research,Operations Research,Queueing Theory and Markov Decision Processes,definition
+MATH.12.2,Optimization & Operations Research,Operations Research,Inventory and Supply Chain Models,definition
+MATH.13.1,Advanced and Interdisciplinary Topics,Dynamical Systems and Chaos,Fractals and Self-Similarity,definition
+MATH.13.1,Advanced and Interdisciplinary Topics,Dynamical Systems and Chaos,Ergodic Theory and Measure-Preserving Transformations,definition
+MATH.13.2,Advanced and Interdisciplinary Topics,Fourier and Harmonic Analysis,Distribution Theory and Generalized Functions,definition
+MATH.13.2,Advanced and Interdisciplinary Topics,Fourier and Harmonic Analysis,Time-Frequency Analysis,definition
+MATH.13.3,Advanced and Interdisciplinary Topics,Information Theory,Channel Capacity and Error-Correcting Codes,definition
+MATH.13.3,Advanced and Interdisciplinary Topics,Information Theory,Rate-Distortion Theory,definition
+MATH.13.4,Advanced and Interdisciplinary Topics,Mathematical Modeling,Deterministic vs. Stochastic Modeling,definition
+MATH.13.4,Advanced and Interdisciplinary Topics,Mathematical Modeling,Sensitivity Analysis and Model Validation,definition
+MATH.13.4,Advanced and Interdisciplinary Topics,Mathematical Modeling,Agent-Based and Multi-Scale Models,definition
+PHYS.2.1,Physics: Classical Mechanics,Kinematics,Relative and Projectile Motion,definition
+PHYS.2.5,Physics: Classical Mechanics,Rotational Dynamics,Angular Momentum Conservation,definition
+PHYS.2.7,Physics: Classical Mechanics,Oscillations & Waves,Standing Waves and Resonance,definition
+PHYS.2.8,Physics: Classical Mechanics,Fluid Mechanics,"Viscosity, Laminar and Turbulent Flow",definition
+PHYS.3.5,Physics: Electromagnetism,Optics,Polarization and Dispersion,definition
+PHYS.3.5,Physics: Electromagnetism,Optics,Lasers and Laser Physics,definition
+PHYS.3.4,Physics: Electromagnetism,Circuit Theory and Electrical Applications,"Semiconductors, Diodes, and Transistors",definition
+PHYS.4.2,Physics: Thermodynamics & Statistical Mechanics,Thermodynamic Processes and Cycles,"Heat Transfer: Conduction, Convection, Radiation",definition
+PHYS.4.2,Physics: Thermodynamics & Statistical Mechanics,Thermodynamic Processes and Cycles,Non-Equilibrium Thermodynamics,definition
+PHYS.5.4,Physics: Quantum Mechanics,Advanced Quantum Topics,Perturbation Theory and Approximation Methods,definition
+CHEM.5.3,Chemistry: Physical Chemistry,Quantum Chemistry,Spectroscopy and Molecular Spectra,definition
+BIO.1.2,Biology & Life Sciences: Foundations,Chemistry of Life,Enzyme Structure and Catalysis,definition
+BIO.3.2,Biology & Life Sciences: Genetics & Molecular Biology,Molecular Genetics,CRISPR and Gene Editing Technologies,definition
+BIO.6.1,Biology & Life Sciences: Evolution & Biodiversity,Evolutionary Theory,Coevolution and Biogeography,definition
+BIO.7.1,Biology & Life Sciences: Ecology & Environmental Biology,Fundamentals of Ecology,Ecosystem Modeling and Urban Ecology,definition
+CS.2.1,"Computer Science & Technology: Programming, Data Structures & Software Development",Programming Fundamentals,Memory Management and Data Types,definition
+CS.2.2,"Computer Science & Technology: Programming, Data Structures & Software Development",Data Structures & Algorithms,"Advanced Algorithm Design (Divide & Conquer, Dynamic Programming, Greedy Algorithms)",definition
+CS.3.2,Computer Science & Technology: Systems & Architecture,Operating Systems & System Software,"Security, Virtualization, and Containerization",definition
+CS.4.2,Computer Science & Technology: Theory of Computation & Formal Languages,Computational Complexity,Undecidability and Recursive Functions,definition
+ENG.2.1,Engineering: Core Engineering Disciplines,Mechanical Engineering,Industrial and Systems Engineering Principles,definition
+ENG.3.3,Engineering: Interdisciplinary and Emerging Fields,Aerospace and Automotive Engineering,Autonomous and Electric Vehicles,definition
+ENG.3.3,Engineering: Interdisciplinary and Emerging Fields,Aerospace and Automotive Engineering,Advanced Materials for Aerospace,definition
+ENG.3.2,Engineering: Interdisciplinary and Emerging Fields,Biomedical and Environmental Engineering,Genetic Engineering and Biomechanics,definition
+BUS.1.2,"Business, Management & Economics: Foundations & Basic Concepts",Basic Economic Principles,Marginal Analysis and Market Structures,definition
+BUS.3.7,"Business, Management & Economics: Advanced Topics & Specialized Areas","Innovation, Entrepreneurship, and Emerging Technologies",Social Entrepreneurship and Ethical Startups,definition
+PHIL.3.3,Philosophy & Critical Thinking: Major Branches of Philosophy,Ethics and Moral Philosophy,Environmental Ethics,definition
+PHIL.3.6,Philosophy & Critical Thinking: Major Branches of Philosophy,Logic and Philosophy of Language,Philosophy of Science,definition
+PHIL.3.6,Philosophy & Critical Thinking: Major Branches of Philosophy,Logic and Philosophy of Language,Philosophy of Religion,definition
+HIST.7.5,History: Specialized Areas and Thematic Studies,"History of Science, Technology, and Medicine",History of Medicine and Public Health,definition
+ARTS.3,Arts & Literature,Historical & Cultural Surveys,Film Studies and Cinematic Arts,definition
+ARTS.3,Arts & Literature,Historical & Cultural Surveys,Architecture and Design,definition
+ENV.5,Environmental Science & Sustainability,Sustainability & Renewable Solutions,Life-Cycle Assessment and Environmental Impact Analysis,definition
+MED.3,Medicine & Health,Clinical Medicine & Patient Care,Dermatology and Ophthalmology,definition
+DIY.1,"DIY, Crafts & Cooking",Foundations & Core Principles,"Digital Fabrication (3D Printing, CNC)",definition
+WELL.2,"Health, Fitness & Lifestyle",Physical Fitness & Exercise,Ergonomics and Workplace Health,definition
+SPIR.3,Spirituality & Religion,Interpretative Approaches & Analysis,Philosophy of Religion and Secularism,definition
+CHEM.3.3,Chemistry: Inorganic Chemistry,Transition Metal and Coordination Chemistry,Bioinorganic Chemistry,definition
+CHEM.3.3,Chemistry: Inorganic Chemistry,Transition Metal and Coordination Chemistry,Cluster and Nanochemistry,definition
+CHEM.4.2,Chemistry: Organic Chemistry,Reaction Mechanisms and Reactivity,Heterocyclic and Aromatic Compounds,definition
+CHEM.4.5,Chemistry: Organic Chemistry,Polymers and Macromolecules,Biopolymers and Synthetic Polymers,definition
+CHEM.5.1,Chemistry: Physical Chemistry,Thermodynamics,Statistical Thermodynamics,definition
+CHEM.5.3,Chemistry: Physical Chemistry,Quantum Chemistry,Spectroscopy and Molecular Spectra,definition
+CHEM.6.3,Chemistry: Analytical Chemistry,Modern Instrumental Methods,Electroanalytical Methods,definition
+CHEM.6.3,Chemistry: Analytical Chemistry,Modern Instrumental Methods,Mass Spectrometry,definition
+CHEM.7.2,Chemistry: Biochemistry & Molecular Chemistry,Metabolism and Bioenergetics,Bioenergetics and Metabolic Pathways,definition
+CHEM.8.2,Chemistry: Advanced & Interdisciplinary Topics,Environmental and Green Chemistry,Supramolecular Chemistry,definition
+CHEM.8.2,Chemistry: Advanced & Interdisciplinary Topics,Environmental and Green Chemistry,Atmospheric and Environmental Chemistry,definition
