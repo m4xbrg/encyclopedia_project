@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import csv
-import os
 from pathlib import Path
 from typing import Dict, Iterable
 
@@ -10,8 +9,13 @@ from openai import OpenAI
 
 from utils import render_prompt, slugify
 
-DATA_FILE = Path(__file__).resolve().parent.parent / "data" / "topics_final.csv"
-TEMPLATE_FILE = Path(__file__).resolve().parent.parent / "prompts" / "template.txt"
+DATA_FILE = Path(__file__).resolve().parent.parent / "topics_final.csv"
+PROMPTS_DIR = Path(__file__).resolve().parent.parent / "prompts"
+PROMPT_TEMPLATES = {
+    "definition": PROMPTS_DIR / "prompt_template_definition.txt",
+    "abstract": PROMPTS_DIR / "prompt_template_abstract.txt",
+    "computation": PROMPTS_DIR / "prompt_template_computation.txt",
+}
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "output"
 
 MODEL = "gpt-4o-mini"
@@ -41,10 +45,29 @@ def generate_content(prompt: str) -> str:
 
 
 def main() -> None:
-    template = TEMPLATE_FILE.read_text(encoding="utf-8")
+    template_cache: Dict[str, str] = {}
     OUTPUT_DIR.mkdir(exist_ok=True, parents=True)
 
     for row in load_topics(DATA_FILE):
+        prompt_type = row.get("prompt_type")
+        if not prompt_type:
+            print(
+                f"Error: missing prompt_type for topic '{row.get('topic', 'unknown')}'. Skipping."
+            )
+            continue
+        try:
+            template_path = PROMPT_TEMPLATES[prompt_type]
+        except KeyError:
+            print(
+                f"Error: unknown prompt_type '{prompt_type}' for topic '{row.get('topic', 'unknown')}'. Skipping."
+            )
+            continue
+
+        template = template_cache.get(prompt_type)
+        if template is None:
+            template = template_path.read_text(encoding="utf-8")
+            template_cache[prompt_type] = template
+
         prompt = render_prompt(template, **row)
         content = generate_content(prompt)
         filename = OUTPUT_DIR / f"{slugify(row.get('topic', 'entry'))}.md"
