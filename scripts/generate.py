@@ -3,9 +3,10 @@ from __future__ import annotations
 
 import argparse
 import json
-import logging
+from logger import get_logger
 import os
 import re
+import time
 from datetime import datetime, timezone
 from hashlib import sha1
 from pathlib import Path
@@ -18,6 +19,8 @@ from openai import OpenAI
 
 from utils import render_prompt, slugify, normalize_artifacts, escape_latex
 from registry import TemplateRegistry
+=======
+from utils import render_prompt, slugify, normalize_artifacts, escape_latex, dedupe_path
 
 # ─── Configuration & Globals ───────────────────────────────────────────────────
 ROOT           = Path(__file__).resolve().parent.parent
@@ -59,12 +62,8 @@ MODEL = "gpt-4o-mini"
 
 # ─── Logging Setup ─────────────────────────────────────────────────────────────
 LOGS_DIR.mkdir(exist_ok=True, parents=True)
-logging.basicConfig(
-    filename=LOGS_DIR / f"generation_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log",
-    level=logging.INFO,
-    format="%(asctime)s %(levelname)s %(message)s",
-)
-logger = logging.getLogger(__name__)
+LOG_FILE = LOGS_DIR / f"generation_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+logger = get_logger(__name__, log_file=LOG_FILE)
 
 def log_json(entry: dict) -> None:
     """Append a JSON entry to the generation log."""
@@ -72,18 +71,21 @@ def log_json(entry: dict) -> None:
         f.write(json.dumps(entry) + "\n")
 
 # ─── Content Generation ────────────────────────────────────────────────────────
-def generate_content(prompt: str) -> tuple[str, Optional[str]]:
-    """Call OpenAI and return (content, error_message)."""
-    try:
-        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-        resp = client.chat.completions.create(
-            model=MODEL,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        return resp.choices[0].message.content, None
-    except Exception as e:
-        logger.error(f"API error: {e}")
-        return "%% placeholder content due to API error %%", str(e)
+def generate_content(prompt: str, retries: int = 3) -> tuple[Optional[str], Optional[str]]:
+    """Call OpenAI with retries. Returns (content, error_message)."""
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    for attempt in range(1, retries + 1):
+        try:
+            resp = client.chat.completions.create(
+                model=MODEL,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            return resp.choices[0].message.content, None
+        except Exception as e:
+            logger.error(f"API error on attempt {attempt}/{retries}: {e}")
+            if attempt == retries:
+                return None, str(e)
+            time.sleep(2 ** attempt)
 
 # ─── Markdown → LaTeX Conversion ──────────────────────────────────────────────
 MD_PATTERNS = [
@@ -99,7 +101,7 @@ def _replace_md(seg: str) -> str:
 
 def convert_markdown_to_latex(text: str) -> str:
     """Convert basic Markdown to LaTeX, preserve math, then escape."""
-    math_pat = re.compile(r"\\\$.*?\\\$|\\\\\[.*?\\\\\]", re.DOTALL)
+    math_pat = re.compile(r"(?<!\\)\$(.+?)(?<!\\)\$|\\\[.*?\\\]", re.DOTALL)
     parts, last = [], 0
     for m in math_pat.finditer(text):
         raw = text[last:m.start()]
@@ -129,9 +131,17 @@ def main(
     skip_existing: bool = False,
     overwrite: bool = False,
     log_format: str = "jsonl",
+    start: Optional[int] = None,
+    limit: Optional[int] = None,
+=======
+    retries: int = 3,
 ) -> None:
     load_dotenv(ROOT / ".env")
     start_idx, max_entries = load_config(CONFIG_FILE)
+    if start is not None:
+        start_idx = start
+    if limit is not None:
+        max_entries = limit
     df = pd.read_csv(DATA_FILE)
     topics = df.iloc[start_idx : start_idx + max_entries].to_dict("records")
 
@@ -145,8 +155,11 @@ def main(
         ptype    = (row.get("prompt_type") or "definition").strip()
 
         # Build filename: domain-topic-subtopic.tex
-        d = slugify(domain); t = slugify(topic); s = slugify(subtopic)
+        d = slugify(domain)
+        t = slugify(topic)
+        s = slugify(subtopic)
         filename = OUTPUT_DIR / f"{d}-{t}-{s}.tex"
+        filename = dedupe_path(filename)
         OUTPUT_DIR.mkdir(exist_ok=True, parents=True)
 
         # Prep log entry
@@ -154,20 +167,22 @@ def main(
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "id": sec_id,
             "prompt_type": ptype,
+            "filename": filename.name,
         }
 
         # Skip/Overwrite logic
-        if filename.exists() and not overwrite:
-            status = "skipped"
-            reason = "exists"
-            if skip_existing:
-                entry.update({"status": status, "reason": reason})
-                if enable_log and log_format == "jsonl": log_json(entry)
+        if filename.exists():
+            if overwrite:
+                pass  # Explicit overwrite requested
+            elif skip_existing:
+                entry.update({"status": "skipped", "reason": "exists"})
+                if enable_log and log_format == "jsonl":
+                    log_json(entry)
                 continue
             else:
-                entry.update({"status": status, "reason": reason})
-                if enable_log and log_format == "jsonl": log_json(entry)
-                continue
+                raise FileExistsError(
+                    f"{filename} exists. Use --skip-existing to skip or --overwrite to replace."
+                )
 
         # Render prompt via registry
         tpl = TEMPLATE_REGISTRY.get(ptype) or TEMPLATE_REGISTRY.get("definition")
@@ -183,40 +198,42 @@ def main(
 
         # Call API
         start = datetime.now(timezone.utc)
-        content, err = generate_content(prompt)
+        content, err = generate_content(prompt, retries=retries)
         rt = (datetime.now(timezone.utc) - start).total_seconds()
+        entry["api_response_time"] = rt
 
-        # Convert & wrap
+        if err or content is None:
+            entry.update({"status": "error", "error_message": err})
+            failure += 1
+            if enable_log:
+                if log_format == "jsonl":
+                    log_json(entry)
+                else:
+                    logger.info(json.dumps(entry))
+            continue
+
         body    = convert_markdown_to_latex(content)
         wrapped = TEX_WRAPPER.format(
             title=topic, id=sec_id, domain=domain, topic=topic, body=body
         )
 
-        # Compute hash & finalize log entry
         ch = sha1(wrapped.encode("utf-8")).hexdigest()
-        entry.update({
-            "filename": filename.name,
-            "content_hash": ch,
-            "api_response_time": rt,
-            "status": "error" if err else "success",
-        })
-        if err:
-            entry["error_message"] = err
-            failure += 1
-        else:
-            success += 1
-
-        # Write file
+        entry.update({"content_hash": ch, "status": "success"})
         filename.write_text(wrapped, encoding="utf-8")
+        success += 1
 
-        # Emit log
         if enable_log:
             if log_format == "jsonl":
                 log_json(entry)
             else:
                 logger.info(json.dumps(entry))
 
-    print(f"Processed: {processed}, ✓ {success}, ✗ {failure}")
+    logger.info(
+        "processed summary: %s total, %s succeeded, %s failed",
+        processed,
+        success,
+        failure,
+    )
 
 # ─── CLI Flags ─────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
@@ -229,6 +246,14 @@ if __name__ == "__main__":
                   help="Overwrite existing .tex")
     p.add_argument("--log-format", choices=["jsonl","text"],
                   default="jsonl", help="Log output format")
+    p.add_argument("--start", type=int,
+                  help="Override start_index from config")
+    p.add_argument("--limit", type=int,
+                  help="Override max_entries from config")
+=======
+    p.add_argument("--retries", type=int, default=3,
+                  help="Retry count for API calls")
+ 
 
     args = p.parse_args()
     _enable = str(args.log).lower() not in {"false","0","no"}
@@ -238,4 +263,9 @@ if __name__ == "__main__":
         skip_existing= args.skip_existing,
         overwrite    = args.overwrite,
         log_format   = args.log_format,
+        start        = args.start,
+        limit        = args.limit,
+=======
+=======
+        retries      = args.retries,
     )
