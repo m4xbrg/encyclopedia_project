@@ -113,6 +113,7 @@ def main(
     skip_existing: bool = False,
     overwrite: bool = False,
     log_format: str = "jsonl",
+    metrics_file: Optional[str] = None,
     quiet: bool = False,
     fmt: str = "latex",
 
@@ -131,6 +132,10 @@ def main(
     df = pd.read_csv(DATA_FILE)
     topics = df.iloc[start_idx : start_idx + max_entries].to_dict("records")
 
+    run_start = datetime.now(timezone.utc)
+    processed = success = failure = 0
+    response_times = []
+    for row in topics:
     renderer = LatexRenderer() if fmt == "latex" else HtmlRenderer()
     processed = success = failure = 0
     for row in tqdm(topics, disable=quiet, desc="Generating"):
@@ -191,6 +196,7 @@ def main(
         start = datetime.now(timezone.utc)
         content, err = generate_content(prompt, retries=retries)
         rt = (datetime.now(timezone.utc) - start).total_seconds()
+        response_times.append(rt)
         entry["api_response_time"] = rt
 
         if err or content is None:
@@ -202,7 +208,6 @@ def main(
                 else:
                     logger.info(json.dumps(entry))
             continue
-
         # Convert & wrap
         body = renderer.convert(content)
         wrapped = renderer.wrap(
@@ -222,7 +227,43 @@ def main(
                 log_json(entry)
             else:
                 logger.info(json.dumps(entry))
+    total_time = (datetime.now(timezone.utc) - run_start).total_seconds()
+    attempted = success + failure
+    avg_rt = sum(response_times) / attempted if attempted else 0.0
+    success_rate = success / attempted if attempted else 0.0
+    summary = {
+        "processed": processed,
+        "attempted": attempted,
+        "success": success,
+        "failure": failure,
+        "success_rate": success_rate,
+        "average_response_time": avg_rt,
+        "total_run_time": total_time,
+    }
 
+    print(
+        "Processed: {processed}, ✓ {success}, ✗ {failure}, "
+        "success rate {sr:.2%}, avg latency {rt:.2f}s, run time {tt:.2f}s".format(
+            processed=processed,
+            success=success,
+            failure=failure,
+            sr=success_rate,
+            rt=avg_rt,
+            tt=total_time,
+        )
+    )
+
+    if enable_log:
+        log_entry = {"type": "summary", **summary}
+        if log_format == "jsonl":
+            log_json(log_entry)
+        else:
+            logger.info(json.dumps(log_entry))
+
+    if metrics_file:
+        mpath = Path(metrics_file)
+        mpath.parent.mkdir(parents=True, exist_ok=True)
+        mpath.write_text(json.dumps(summary, indent=2), encoding="utf-8")
     if not quiet:
         print(f"Processed: {processed}, ✓ {success}, ✗ {failure}")
     print(f"Processed: {processed}, ✓ {success}, ✗ {failure}")
@@ -251,6 +292,9 @@ if __name__ == "__main__":
     p.add_argument("--overwrite", action="store_true",
                   help="Overwrite existing output")
     p.add_argument("--log-format", choices=["jsonl","text"],
+                    default="jsonl", help="Log output format")
+    p.add_argument("--metrics-json", default=None,
+                    help="Optional path to write run metrics as JSON")
                   default="jsonl", help="Log output format")
     p.add_argument("--quiet", action="store_true",
                   help="Suppress progress output")
@@ -283,6 +327,9 @@ if __name__ == "__main__":
         skip_existing= args.skip_existing,
         overwrite    = args.overwrite,
         log_format   = args.log_format,
+        metrics_file = args.metrics_json,
+    )
+
         quiet        = args.quiet,
 
         fmt          = args.format,

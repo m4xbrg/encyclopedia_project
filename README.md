@@ -41,6 +41,12 @@ Structured JSON logging with info, warning and error levels is enabled by defaul
 python scripts/generate.py --log false
 ```
 
+The generator prints aggregate success/failure counts and response time
+statistics when it finishes. To export these metrics for monitoring, provide a
+path for the optional JSON output:
+
+```bash
+python scripts/generate.py --metrics-json logs/metrics.json
 If a target `.tex` file already exists, you can control how it's handled:
 
 * `--skip-existing` – leave existing files untouched and skip generation
