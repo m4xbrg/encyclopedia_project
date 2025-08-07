@@ -10,13 +10,13 @@ Input variables
 Output requirements
 - Return only raw LaTeX.
 - Do NOT include any Markdown syntax (e.g., no triple backticks).
-- The output must begin with \section*{$subtopic} and follow the format exactly.
+- The output must begin with \section*{[Subtopic]} and follow the format exactly.
 
 LaTeX Structure:
 
-\section*{$subtopic}
-\subsection*{Domain} $domain
-\subsection*{Subfield} $topic
+\section*{[Subtopic]}
+\subsection*{Domain} [Domain]
+\subsection*{Subfield} [Topic]
 
 \subsection*{Definition}
 Provide a concise, formal definition of the subtopic. Include necessary notation or terminology. Be precise and rigorous.
