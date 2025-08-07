@@ -25,9 +25,23 @@ Generate LaTeX files:
 python scripts/generate.py
 ```
 
-Logging is enabled by default. To disable structured logging:
+Structured JSON logging with info, warning and error levels is enabled by default. To disable logging:
 ```bash
 python scripts/generate.py --log false
+```
+
+If a target `.tex` file already exists, you can control how it's handled:
+
+* `--skip-existing` – leave existing files untouched and skip generation
+* `--overwrite` – replace existing files with newly generated content
+
+By default (without either flag), the script stops with an error if the
+output file already exists. When both flags are provided, `--overwrite`
+takes precedence.
+
+Retry failed API calls (default 3 attempts):
+```bash
+python scripts/generate.py --retries 5
 ```
 
 Compile `.tex` files into PDFs:
@@ -38,4 +52,5 @@ python scripts/compile_pdf.py --file example.tex
 python scripts/compile_pdf.py --all     # force recompilation of all files
 ```
 
-PDFs are saved to `pdf_output/` and a log is written to `logs/compile_log.txt`.
+PDFs are saved to `pdf_output/` and a structured log is written to `logs/compile_log.txt`.
+
