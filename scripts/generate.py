@@ -5,6 +5,7 @@ import argparse
 import json
 import logging
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, Optional
@@ -90,6 +91,35 @@ def generate_content(prompt: str) -> tuple[str, Optional[str]]:
         return "Placeholder content. Replace this with real API output.", str(e)
 
 
+MD_PATTERNS = [
+    (re.compile(r"`([^`]+)`"), r"\\texttt{\1}"),
+    (re.compile(r"\*\*(.+?)\*\*", re.DOTALL), r"\\textbf{\1}"),
+    (re.compile(r"(?<!\*)\*([^*\n]+?)\*(?!\*)", re.DOTALL), r"\\textit{\1}"),
+]
+
+
+def _replace_md(segment: str) -> str:
+    """Apply Markdown-to-LaTeX replacements on a text segment."""
+
+    for pattern, repl in MD_PATTERNS:
+        segment = pattern.sub(repl, segment)
+    return segment
+
+
+def convert_markdown_to_latex(text: str) -> str:
+    """Convert basic Markdown syntax to LaTeX, skipping math environments."""
+
+    math_pattern = re.compile(r"\\$.*?\\$|\\\\\[.*?\\\\\]", re.DOTALL)
+    segments = []
+    last_end = 0
+    for match in math_pattern.finditer(text):
+        segments.append(_replace_md(text[last_end: match.start()]))
+        segments.append(match.group())
+        last_end = match.end()
+    segments.append(_replace_md(text[last_end:]))
+    return "".join(segments)
+
+
 def load_config(config_path: Path) -> tuple[int, int]:
     if not config_path.exists():
         config_path.write_text("start_index = 0\nmax_entries = 10\n", encoding="utf-8")
@@ -126,11 +156,12 @@ def main(enable_log: bool = True) -> None:
         processed += 1
         section_id = row.get("section_id") or row.get("id")
         topic = row.get("topic")
+        subtopic = row.get("subtopic")
         domain = row.get("domain", "TBD")
         prompt_type = (row.get("prompt_type") or "").strip()
 
-        sanitized_topic = slugify(topic or "")
-        filename = OUTPUT_DIR / f"{section_id}-{sanitized_topic}.tex"
+        sanitized_subtopic = slugify(subtopic or "")
+        filename = OUTPUT_DIR / f"{section_id}-{sanitized_subtopic}.tex"
         output_rel_path = str(Path("output") / filename.name)
         log_entry = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -141,7 +172,7 @@ def main(enable_log: bool = True) -> None:
             "output_file": output_rel_path,
         }
 
-        if not section_id or not topic:
+        if not section_id or not subtopic:
             error_msg = f"Missing required fields in row: {row}"
             logger.error(error_msg)
             log_entry.update({"status": "error", "error_message": error_msg})
@@ -178,6 +209,7 @@ def main(enable_log: bool = True) -> None:
         if not content.strip():
             error_msg = error_msg or "Empty response from API"
 
+        content = convert_markdown_to_latex(content)
         wrapped = TEX_WRAPPER.format(
             title=topic,
             id=section_id,
