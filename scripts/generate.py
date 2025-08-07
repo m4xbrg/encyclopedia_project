@@ -16,7 +16,7 @@ from dotenv import load_dotenv
 import openai
 from openai import OpenAI
 
-from utils import render_prompt, sanitize_filename
+from utils import render_prompt, slugify
 
 DATA_FILE = Path(__file__).resolve().parent.parent / "topics_final.csv"
 PROMPTS_DIR = Path(__file__).resolve().parent.parent / "prompts"
@@ -27,6 +27,31 @@ PROMPT_TEMPLATES = {
     "computation": PROMPTS_DIR / "prompt_template_computation.txt",
 }
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "output"
+
+# Template to wrap model response in a compilable LaTeX file
+TEX_WRAPPER = r"""
+\documentclass[12pt]{{article}}
+\usepackage[utf8]{{inputenc}}
+\usepackage{{amsmath, amssymb}}
+\usepackage{{geometry}}
+\usepackage{{titlesec}}
+\usepackage{{hyperref}}
+\geometry{{margin=1in}}
+
+\titleformat{{\section}}[block]{{\large\bfseries}}{{}}{{0em}}{{}}
+\titleformat{{\subsection}}[block]{{\normalsize\bfseries}}{{}}{{0em}}{{}}
+
+\begin{{document}}
+
+% Title: {title}
+% ID: {id}
+% Domain: {domain}
+% Topic: {topic}
+
+{body}
+
+\end{{document}}
+"""
 
 LOGS_DIR = Path(__file__).resolve().parent.parent / "logs"
 LOGS_DIR.mkdir(exist_ok=True, parents=True)
@@ -99,23 +124,25 @@ def main(enable_log: bool = True) -> None:
 
     for row in topics:
         processed += 1
-        subtopic = row.get("subtopic")
-        output_rel_path = (
-            str(Path("output") / sanitize_filename(subtopic)) if subtopic else None
-        )
+        section_id = row.get("section_id") or row.get("id")
+        topic = row.get("topic")
+        domain = row.get("domain", "TBD")
+        prompt_type = (row.get("prompt_type") or "").strip()
+
+        sanitized_topic = slugify(topic or "")
+        filename = OUTPUT_DIR / f"{section_id}-{sanitized_topic}.tex"
+        output_rel_path = str(Path("output") / filename.name)
         log_entry = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
-            "id": row.get("id", ""),
-            "domain": row.get("domain", ""),
-            "topic": row.get("topic", ""),
-            "subtopic": subtopic or "",
-            "prompt_type": row.get("prompt_type", ""),
+            "id": section_id or "",
+            "domain": domain or "",
+            "topic": topic or "",
+            "prompt_type": prompt_type,
             "output_file": output_rel_path,
-         }
+        }
 
-
-        if not subtopic:
-            error_msg = f"Missing subtopic in row: {row}"
+        if not section_id or not topic:
+            error_msg = f"Missing required fields in row: {row}"
             logger.error(error_msg)
             log_entry.update({"status": "error", "error_message": error_msg})
             failures += 1
@@ -123,11 +150,10 @@ def main(enable_log: bool = True) -> None:
                 log_json(log_entry)
             continue
 
-        prompt_type = (row.get("prompt_type") or "").strip()
         template_path = PROMPT_TEMPLATES.get(prompt_type)
         if template_path is None:
             logger.error(
-                f"Unknown prompt_type '{prompt_type}' for subtopic '{subtopic}'. Using definition template.",
+                f"Unknown prompt_type '{prompt_type}' for topic '{topic}'. Using definition template.",
             )
             template_path = PROMPT_TEMPLATES["definition"]
 
@@ -138,7 +164,7 @@ def main(enable_log: bool = True) -> None:
                 template = template_path.read_text(encoding="utf-8")
             except FileNotFoundError:
                 error_msg = f"Prompt template not found: {template_path}"
-                logger.error(f"{error_msg}. Skipping '{subtopic}'.")
+                logger.error(f"{error_msg}. Skipping '{topic}'.")
                 log_entry.update({"status": "error", "error_message": error_msg})
                 failures += 1
                 if enable_log:
@@ -152,19 +178,19 @@ def main(enable_log: bool = True) -> None:
         if not content.strip():
             error_msg = error_msg or "Empty response from API"
 
-        header = (
-            f"% {subtopic}\n"
-            f"% ID: {row.get('id', '')}\n"
-            f"% Domain: {row.get('domain', '')}\n"
-            f"% Topic: {row.get('topic', '')}\n\n"
+        wrapped = TEX_WRAPPER.format(
+            title=topic,
+            id=section_id,
+            domain=domain,
+            topic=topic,
+            body=content,
         )
 
-        filename = OUTPUT_DIR / sanitize_filename(subtopic)
         if filename.exists():
             error_msg = f"File already exists, skipping: {filename}"
             logger.error(error_msg)
         else:
-            filename.write_text(header + content, encoding="utf-8")
+            filename.write_text(wrapped, encoding="utf-8")
             logger.info(f"Wrote {filename}")
             print(f"Wrote {filename}")
 
