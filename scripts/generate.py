@@ -15,6 +15,7 @@ import pandas as pd
 import toml
 from dotenv import load_dotenv
 from openai import OpenAI
+from tqdm import tqdm
 
 from utils import render_prompt, slugify, normalize_artifacts, escape_latex
 
@@ -131,6 +132,7 @@ def main(
     skip_existing: bool = False,
     overwrite: bool = False,
     log_format: str = "jsonl",
+    quiet: bool = False,
 ) -> None:
     load_dotenv(ROOT / ".env")
     start_idx, max_entries = load_config(CONFIG_FILE)
@@ -138,7 +140,7 @@ def main(
     topics = df.iloc[start_idx : start_idx + max_entries].to_dict("records")
 
     processed = success = failure = 0
-    for row in topics:
+    for row in tqdm(topics, disable=quiet, desc="Generating"):
         processed += 1
         sec_id   = row.get("section_id") or row.get("id")
         domain   = row.get("domain", "TBD")
@@ -211,7 +213,8 @@ def main(
             else:
                 logger.info(json.dumps(entry))
 
-    print(f"Processed: {processed}, ✓ {success}, ✗ {failure}")
+    if not quiet:
+        print(f"Processed: {processed}, ✓ {success}, ✗ {failure}")
 
 # ─── CLI Flags ─────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
@@ -224,6 +227,8 @@ if __name__ == "__main__":
                   help="Overwrite existing .tex")
     p.add_argument("--log-format", choices=["jsonl","text"],
                   default="jsonl", help="Log output format")
+    p.add_argument("--quiet", action="store_true",
+                  help="Suppress progress output")
 
     args = p.parse_args()
     _enable = str(args.log).lower() not in {"false","0","no"}
@@ -233,4 +238,5 @@ if __name__ == "__main__":
         skip_existing= args.skip_existing,
         overwrite    = args.overwrite,
         log_format   = args.log_format,
+        quiet        = args.quiet,
     )

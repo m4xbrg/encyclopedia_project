@@ -7,6 +7,7 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 from typing import Tuple
+from tqdm import tqdm
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -79,6 +80,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--all", action="store_true", help="Force recompilation even if PDFs exist"
     )
+    parser.add_argument(
+        "--quiet", action="store_true", help="Suppress progress output"
+    )
     return parser.parse_args()
 
 
@@ -87,27 +91,31 @@ def main() -> None:
     files = [OUTPUT_DIR / args.file] if args.file else sorted(OUTPUT_DIR.glob("*.tex"))
 
     success = failure = 0
-    for tex_file in files:
+    for tex_file in tqdm(files, disable=args.quiet, desc="Compiling"):
         if not tex_file.exists():
             log(tex_file.name, "❌ Failure", "file not found")
-            print(f"Missing {tex_file.name}")
+            if not args.quiet:
+                print(f"Missing {tex_file.name}")
             failure += 1
             continue
 
         ok, reason = compile_tex(tex_file, dry_run=args.dry_run, force=args.all)
         if ok:
             log(tex_file.name, "✅ Success", reason)
-            msg = "Would compile" if args.dry_run else "Compiled"
-            if reason == "already exists":
-                msg = "Skipping"
-            print(f"{msg} {tex_file.name}{' (' + reason + ')' if reason else ''}")
+            if not args.quiet:
+                msg = "Would compile" if args.dry_run else "Compiled"
+                if reason == "already exists":
+                    msg = "Skipping"
+                print(f"{msg} {tex_file.name}{' (' + reason + ')' if reason else ''}")
             success += 1
         else:
             log(tex_file.name, "❌ Failure", reason)
-            print(f"Failed {tex_file.name}: {reason}")
+            if not args.quiet:
+                print(f"Failed {tex_file.name}: {reason}")
             failure += 1
 
-    print(f"✅ {success} successful, ❌ {failure} failed")
+    if not args.quiet:
+        print(f"✅ {success} successful, ❌ {failure} failed")
 
 
 if __name__ == "__main__":

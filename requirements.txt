@@ -5,3 +5,4 @@ weasyprint
 python-dotenv
 toml
 pandas
+tqdm
