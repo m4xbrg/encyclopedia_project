@@ -6,9 +6,10 @@ from typing import Any
 
 # --- Sanitization Helpers ---
 SPECIAL_LATEX_CHARS = {
+    "\\": r"\\textbackslash{}",
     "#": r"\#", "$": r"\$", "%": r"\%", "&": r"\&",
     "~": r"\textasciitilde{}", "_": r"\_", "^": r"\^{}",
-    "\\": r"\textbackslash{}", "{": r"\{", "}": r"\}" ,
+    "{": r"\{", "}": r"\}",
 }
 
 def escape_latex(text: str) -> str:
