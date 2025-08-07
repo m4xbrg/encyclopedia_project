@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import subprocess
 from pathlib import Path
 from typing import Tuple
@@ -86,6 +87,19 @@ def main() -> int:
     files = [OUTPUT_DIR / args.file] if args.file else sorted(OUTPUT_DIR.glob("*.tex"))
 
     success = failure = 0
+    results = []
+    for tex_file in files:
+        if not tex_file.exists():
+            log(tex_file.name, "❌ Failure", "file not found")
+            print(f"Missing {tex_file.name}")
+            results.append(
+                {
+                    "file": tex_file.name,
+                    "status": "failure",
+                    "reason": "file not found",
+                    "log": None,
+                }
+            )
     for tex_file in tqdm(files, disable=args.quiet, desc="Compiling"):
         if not tex_file.exists():
             log(tex_file.name, "❌ Failure", "file not found")
@@ -97,6 +111,7 @@ def main() -> int:
             continue
 
         ok, reason = compile_tex(tex_file, dry_run=args.dry_run, force=args.all)
+        log_file = str(PDF_OUTPUT_DIR / f"{tex_file.stem}.log")
         if ok:
             log(tex_file.name, "✅ Success", reason)
             if not args.quiet:
@@ -115,6 +130,27 @@ def main() -> int:
         print(f"✅ {success} successful, ❌ {failure} failed")
             msg = "Would compile" if args.dry_run else "Compiled"
             if reason == "already exists":
+                msg = "Skipping"
+            print(f"{msg} {tex_file.name}{' (' + reason + ')' if reason else ''}")
+            results.append(
+                {
+                    "file": tex_file.name,
+                    "status": "success",
+                    "reason": reason,
+                }
+            )
+            success += 1
+        else:
+            log(tex_file.name, "❌ Failure", reason)
+            print(f"Failed {tex_file.name}: {reason}")
+            results.append(
+                {
+                    "file": tex_file.name,
+                    "status": "failure",
+                    "reason": reason,
+                    "log": log_file,
+                }
+            )
                 logger.warning("Skipping %s (%s)", tex_file.name, reason)
             else:
                 logger.info("%s %s%s", msg, tex_file.name, f" ({reason})" if reason else "")
@@ -128,6 +164,16 @@ def main() -> int:
 
     logger.info("finished: %s successful, %s failed", success, failure)
  
+
+    summary = {
+        "success": [r["file"] for r in results if r["status"] == "success"],
+        "failure": [
+            {"file": r["file"], "reason": r["reason"], "log": r.get("log")}
+            for r in results
+            if r["status"] == "failure"
+        ],
+    }
+    print(json.dumps(summary, indent=2))
 
 
 if __name__ == "__main__":
