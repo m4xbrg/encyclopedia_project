@@ -101,7 +101,7 @@ def _replace_md(seg: str) -> str:
 
 def convert_markdown_to_latex(text: str) -> str:
     """Convert basic Markdown to LaTeX, preserve math, then escape."""
-    math_pat = re.compile(r"\\\$.*?\\\$|\\\\\[.*?\\\\\]", re.DOTALL)
+    math_pat = re.compile(r"(?<!\\)\$(.+?)(?<!\\)\$|\\\[.*?\\\]", re.DOTALL)
     parts, last = [], 0
     for m in math_pat.finditer(text):
         raw = text[last:m.start()]
