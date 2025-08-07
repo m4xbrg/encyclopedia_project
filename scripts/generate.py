@@ -19,10 +19,10 @@ from openai import OpenAI
 from utils import render_prompt, slugify, normalize_artifacts, escape_latex
 
 # ─── Configuration & Globals ───────────────────────────────────────────────────
-ROOT           = Path(__file__).resolve().parent.parent
-DATA_FILE      = ROOT / "topics_final.csv"
-PROMPTS_DIR    = ROOT / "prompts"
-CONFIG_FILE    = ROOT / "config.toml"
+ROOT              = Path(__file__).resolve().parent.parent
+DEFAULT_DATA_FILE = ROOT / "data" / "topics_final.csv"
+PROMPTS_DIR       = ROOT / "prompts"
+CONFIG_FILE       = ROOT / "config.toml"
 OUTPUT_DIR     = ROOT / "output"
 LOGS_DIR       = ROOT / "logs"
 JSONL_LOG_FILE = LOGS_DIR / "generation_log.jsonl"
@@ -119,11 +119,24 @@ def convert_markdown_to_latex(text: str) -> str:
     return "".join(parts)
 
 # ─── Config Loader ─────────────────────────────────────────────────────────────
-def load_config(path: Path) -> tuple[int, int]:
+def load_config(path: Path) -> tuple[int, int, Path]:
+    """Load generation configuration.
+
+    Creates ``config.toml`` with default values if it does not exist and
+    returns ``start_index``, ``max_entries`` and the resolved path to the
+    topics CSV file.
+    """
     if not path.exists():
-        path.write_text("start_index = 0\nmax_entries = 10\n", encoding="utf-8")
+        path.write_text(
+            "start_index = 0\nmax_entries = 10\ndata_file = \"data/topics_final.csv\"\n",
+            encoding="utf-8",
+        )
+
     cfg = toml.load(path)
-    return int(cfg["start_index"]), int(cfg["max_entries"])
+    data_file = ROOT / cfg.get(
+        "data_file", str(DEFAULT_DATA_FILE.relative_to(ROOT))
+    )
+    return int(cfg["start_index"]), int(cfg["max_entries"]), data_file
 
 # ─── Main Pipeline ────────────────────────────────────────────────────────────
 def main(
@@ -133,8 +146,12 @@ def main(
     log_format: str = "jsonl",
 ) -> None:
     load_dotenv(ROOT / ".env")
-    start_idx, max_entries = load_config(CONFIG_FILE)
-    df = pd.read_csv(DATA_FILE)
+    start_idx, max_entries, data_file = load_config(CONFIG_FILE)
+
+    if not data_file.exists():
+        raise FileNotFoundError(f"Data file not found: {data_file}")
+
+    df = pd.read_csv(data_file)
     topics = df.iloc[start_idx : start_idx + max_entries].to_dict("records")
 
     processed = success = failure = 0

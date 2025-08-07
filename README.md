@@ -3,20 +3,21 @@
 Starter project for generating LaTeX encyclopedia entries with GPT-4 and converting them into PDF files.
 
 ## Project Structure
-- `data/` — place `topics_final.csv` here
+- `data/` — place `topics_final.csv` here (default `config.toml` expects this path)
 - `output/` — generated LaTeX files
 - `prompts/template.txt` — prompt template used for each entry
 - `scripts/`
   - `generate.py` — read topics and create LaTeX entries
   - `compile_pdf.py` — validate `.tex` files and convert to PDFs using `pdflatex`
   - `utils.py` — shared helpers
+- `config.toml` — generation settings (created automatically if missing)
 - `requirements.txt` — Python dependencies
 
 ## Setup
 1. Install Python 3.11+
 2. `pip install -r requirements.txt`
 3. Install a LaTeX distribution that provides `pdflatex`
-4. Add `topics_final.csv` and fill in `prompts/template.txt`
+4. Add `data/topics_final.csv` (or update `config.toml` with your CSV path) and fill in `prompts/template.txt`
 5. Set the `OPENAI_API_KEY` environment variable
 
 ## Usage
