@@ -25,7 +25,7 @@ Generate LaTeX files:
 python scripts/generate.py
 ```
 
-Logging is enabled by default. To disable structured logging:
+Structured JSON logging with info, warning and error levels is enabled by default. To disable logging:
 ```bash
 python scripts/generate.py --log false
 ```
@@ -52,4 +52,5 @@ python scripts/compile_pdf.py --file example.tex
 python scripts/compile_pdf.py --all     # force recompilation of all files
 ```
 
-PDFs are saved to `pdf_output/` and a log is written to `logs/compile_log.txt`.
+PDFs are saved to `pdf_output/` and a structured log is written to `logs/compile_log.txt`.
+

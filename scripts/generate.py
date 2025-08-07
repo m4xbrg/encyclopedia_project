@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
-import logging
+from logger import get_logger
 import os
 import re
 import time
@@ -62,12 +62,8 @@ MODEL = "gpt-4o-mini"
 
 # ─── Logging Setup ─────────────────────────────────────────────────────────────
 LOGS_DIR.mkdir(exist_ok=True, parents=True)
-logging.basicConfig(
-    filename=LOGS_DIR / f"generation_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log",
-    level=logging.INFO,
-    format="%(asctime)s %(levelname)s %(message)s",
-)
-logger = logging.getLogger(__name__)
+LOG_FILE = LOGS_DIR / f"generation_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+logger = get_logger(__name__, log_file=LOG_FILE)
 
 def log_json(entry: dict) -> None:
     """Append a JSON entry to the generation log."""
@@ -218,7 +214,12 @@ def main(
             else:
                 logger.info(json.dumps(entry))
 
-    print(f"Processed: {processed}, ✓ {success}, ✗ {failure}")
+    logger.info(
+        "processed summary: %s total, %s succeeded, %s failed",
+        processed,
+        success,
+        failure,
+    )
 
 # ─── CLI Flags ─────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
@@ -242,5 +243,6 @@ if __name__ == "__main__":
         skip_existing= args.skip_existing,
         overwrite    = args.overwrite,
         log_format   = args.log_format,
+=======
         retries      = args.retries,
     )

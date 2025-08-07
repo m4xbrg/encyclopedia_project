@@ -4,9 +4,10 @@ from __future__ import annotations
 
 import argparse
 import subprocess
-from datetime import datetime
 from pathlib import Path
 from typing import Tuple
+
+from logger import get_logger
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -15,15 +16,7 @@ PDF_OUTPUT_DIR = ROOT / "pdf_output"
 LOG_DIR = ROOT / "logs"
 LOG_FILE = LOG_DIR / "compile_log.txt"
 
-
-def log(filename: str, status: str, reason: str = "") -> None:
-    LOG_DIR.mkdir(parents=True, exist_ok=True)
-    timestamp = datetime.now().isoformat(timespec="seconds")
-    with LOG_FILE.open("a", encoding="utf-8") as f:
-        if reason:
-            f.write(f"{timestamp} | {filename} | {status} | {reason}\n")
-        else:
-            f.write(f"{timestamp} | {filename} | {status}\n")
+logger = get_logger(__name__, log_file=LOG_FILE)
 
 
 def validate_tex(path: Path) -> Tuple[bool, str]:
@@ -91,25 +84,23 @@ def main() -> None:
     success = failure = 0
     for tex_file in files:
         if not tex_file.exists():
-            log(tex_file.name, "❌ Failure", "file not found")
-            print(f"Missing {tex_file.name}")
+            logger.error("file not found: %s", tex_file.name)
             failure += 1
             continue
 
         ok, reason = compile_tex(tex_file, dry_run=args.dry_run, force=args.all)
         if ok:
-            log(tex_file.name, "✅ Success", reason)
             msg = "Would compile" if args.dry_run else "Compiled"
             if reason == "already exists":
-                msg = "Skipping"
-            print(f"{msg} {tex_file.name}{' (' + reason + ')' if reason else ''}")
+                logger.warning("Skipping %s (%s)", tex_file.name, reason)
+            else:
+                logger.info("%s %s%s", msg, tex_file.name, f" ({reason})" if reason else "")
             success += 1
         else:
-            log(tex_file.name, "❌ Failure", reason)
-            print(f"Failed {tex_file.name}: {reason}")
+            logger.error("Failed %s: %s", tex_file.name, reason)
             failure += 1
 
-    print(f"✅ {success} successful, ❌ {failure} failed")
+    logger.info("finished: %s successful, %s failed", success, failure)
 
 
 if __name__ == "__main__":
