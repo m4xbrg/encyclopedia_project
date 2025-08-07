@@ -6,16 +6,40 @@ from typing import Any
 
 # --- Sanitization Helpers ---
 SPECIAL_LATEX_CHARS = {
+    "#": r"\#",
+    "$": r"\$",
+    "%": r"\%",
+    "&": r"\&",
+    "~": r"\textasciitilde{}",
+    "_": r"\_",
+    "^": r"\^{}",
+    "\\": r"\textbackslash{}",
+    "{": r"\{",
+    "}": r"\}",
+    "|": r"\textbar{}",
+    "<": r"\textless{}",
+    ">": r"\textgreater{}",
+=======
     "\\": r"\\textbackslash{}",
     "#": r"\#", "$": r"\$", "%": r"\%", "&": r"\&",
     "~": r"\textasciitilde{}", "_": r"\_", "^": r"\^{}",
     "{": r"\{", "}": r"\}",
 }
 
+SPECIAL_LATEX_RE = re.compile(
+    "|".join(re.escape(char) for char in SPECIAL_LATEX_CHARS)
+)
+
+
 def escape_latex(text: str) -> str:
-    for char, repl in SPECIAL_LATEX_CHARS.items():
-        text = text.replace(char, repl)
-    return text
+    """Escape LaTeX special characters in ``text``.
+
+    Each character listed in ``SPECIAL_LATEX_CHARS`` is replaced in a single
+    regular-expression pass to avoid double-escaping replacements that include
+    other special characters.
+    """
+
+    return SPECIAL_LATEX_RE.sub(lambda m: SPECIAL_LATEX_CHARS[m.group()], text)
 
 
 def normalize_artifacts(text: str) -> str:
