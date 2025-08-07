@@ -131,13 +131,16 @@ def main(
     skip_existing: bool = False,
     overwrite: bool = False,
     log_format: str = "jsonl",
+    metrics_file: Optional[str] = None,
 ) -> None:
     load_dotenv(ROOT / ".env")
     start_idx, max_entries = load_config(CONFIG_FILE)
     df = pd.read_csv(DATA_FILE)
     topics = df.iloc[start_idx : start_idx + max_entries].to_dict("records")
 
+    run_start = datetime.now(timezone.utc)
     processed = success = failure = 0
+    response_times = []
     for row in topics:
         processed += 1
         sec_id   = row.get("section_id") or row.get("id")
@@ -180,6 +183,7 @@ def main(
         start = datetime.now(timezone.utc)
         content, err = generate_content(prompt)
         rt = (datetime.now(timezone.utc) - start).total_seconds()
+        response_times.append(rt)
 
         # Convert & wrap
         body    = convert_markdown_to_latex(content)
@@ -211,7 +215,43 @@ def main(
             else:
                 logger.info(json.dumps(entry))
 
-    print(f"Processed: {processed}, ✓ {success}, ✗ {failure}")
+    total_time = (datetime.now(timezone.utc) - run_start).total_seconds()
+    attempted = success + failure
+    avg_rt = sum(response_times) / attempted if attempted else 0.0
+    success_rate = success / attempted if attempted else 0.0
+    summary = {
+        "processed": processed,
+        "attempted": attempted,
+        "success": success,
+        "failure": failure,
+        "success_rate": success_rate,
+        "average_response_time": avg_rt,
+        "total_run_time": total_time,
+    }
+
+    print(
+        "Processed: {processed}, ✓ {success}, ✗ {failure}, "
+        "success rate {sr:.2%}, avg latency {rt:.2f}s, run time {tt:.2f}s".format(
+            processed=processed,
+            success=success,
+            failure=failure,
+            sr=success_rate,
+            rt=avg_rt,
+            tt=total_time,
+        )
+    )
+
+    if enable_log:
+        log_entry = {"type": "summary", **summary}
+        if log_format == "jsonl":
+            log_json(log_entry)
+        else:
+            logger.info(json.dumps(log_entry))
+
+    if metrics_file:
+        mpath = Path(metrics_file)
+        mpath.parent.mkdir(parents=True, exist_ok=True)
+        mpath.write_text(json.dumps(summary, indent=2), encoding="utf-8")
 
 # ─── CLI Flags ─────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
@@ -223,7 +263,9 @@ if __name__ == "__main__":
     p.add_argument("--overwrite", action="store_true",
                   help="Overwrite existing .tex")
     p.add_argument("--log-format", choices=["jsonl","text"],
-                  default="jsonl", help="Log output format")
+                    default="jsonl", help="Log output format")
+    p.add_argument("--metrics-json", default=None,
+                    help="Optional path to write run metrics as JSON")
 
     args = p.parse_args()
     _enable = str(args.log).lower() not in {"false","0","no"}
@@ -233,4 +275,5 @@ if __name__ == "__main__":
         skip_existing= args.skip_existing,
         overwrite    = args.overwrite,
         log_format   = args.log_format,
+        metrics_file = args.metrics_json,
     )
