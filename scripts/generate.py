@@ -1,4 +1,4 @@
-"""Generate Markdown encyclopedia entries from topics CSV using OpenAI."""
+"""Generate LaTeX encyclopedia entries from topics CSV using OpenAI."""
 from __future__ import annotations
 
 import argparse
@@ -153,10 +153,10 @@ def main(enable_log: bool = True) -> None:
             error_msg = error_msg or "Empty response from API"
 
         header = (
-            f"{subtopic}\n"
-            f"ID: {row.get('id', '')}\n"
-            f"Domain: {row.get('domain', '')}\n"
-            f"Topic: {row.get('topic', '')}\n\n"
+            f"% {subtopic}\n"
+            f"% ID: {row.get('id', '')}\n"
+            f"% Domain: {row.get('domain', '')}\n"
+            f"% Topic: {row.get('topic', '')}\n\n"
         )
 
         filename = OUTPUT_DIR / sanitize_filename(subtopic)
@@ -186,7 +186,7 @@ def main(enable_log: bool = True) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Generate Markdown encyclopedia entries"
+        description="Generate LaTeX encyclopedia entries"
     )
     parser.add_argument(
         "--log",

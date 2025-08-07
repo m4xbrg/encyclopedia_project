@@ -1,19 +1,11 @@
-"""Compile Markdown files in the output directory into PDFs.
-
-This script performs light validation and preprocessing before invoking
-`pandoc` to convert Markdown files into PDFs. Results are written to the
-`pdf_output` directory and a log of successes and failures is appended to
-`logs/compile_log.txt`.
-"""
+"""Compile LaTeX files in the output directory into PDFs using pdflatex."""
 
 from __future__ import annotations
 
 import argparse
-import re
 import subprocess
 from datetime import datetime
 from pathlib import Path
-from tempfile import NamedTemporaryFile
 from typing import Tuple
 
 
@@ -22,9 +14,6 @@ OUTPUT_DIR = ROOT / "output"
 PDF_OUTPUT_DIR = ROOT / "pdf_output"
 LOG_DIR = ROOT / "logs"
 LOG_FILE = LOG_DIR / "compile_log.txt"
-
-PLACEHOLDER_PATTERNS = ["todo", "placeholder", "no content", "tbd"]
-INLINE_LATEX_RE = re.compile(r"(?<![$\\\\])\\(frac|sqrt|alpha|beta|gamma|pi|theta|sum|int|lim)")
 
 
 def log(filename: str, status: str, reason: str = "") -> None:
@@ -37,50 +26,19 @@ def log(filename: str, status: str, reason: str = "") -> None:
             f.write(f"{timestamp} | {filename} | {status}\n")
 
 
-def has_placeholder(text: str) -> bool:
-    lowered = text.strip().lower()
-    return any(pat in lowered for pat in PLACEHOLDER_PATTERNS)
-
-
-def validate_markdown(text: str, min_chars: int) -> Tuple[bool, str]:
+def validate_tex(path: Path) -> Tuple[bool, str]:
+    if not path.exists():
+        return False, "file not found"
+    text = path.read_text(encoding="utf-8")
     if not text.strip():
         return False, "empty file"
-    if len(text) < min_chars:
-        return False, "too short"
-    if has_placeholder(text):
-        return False, "placeholder content"
-    if "\\section*{" not in text:
-        return False, "missing LaTeX \\section* title"
-    if text.count("```") % 2 != 0:
-        return False, "unclosed code block"
-    if text.count("$$") % 2 != 0:
-        return False, "unbalanced $$"
-    if text.count(r"\[") != text.count(r"\]"):
-        return False, "unbalanced \\[\\]"
-    if text.count(r"\(") != text.count(r"\)"):
-        return False, "unbalanced \\(\\)"
-    if text.count("$") % 2 != 0:
-        return False, "unbalanced $"
+    if "\\documentclass" not in text and "\\section*{" not in text:
+        return False, "missing \\documentclass or \\section*{}"
     return True, ""
 
 
-def preprocess_markdown(text: str) -> str:
-    text = text.replace("\\(", "$").replace("\\)", "$")
-
-    def repl(match: re.Match[str]) -> str:
-        return f"${match.group(0)}$"
-
-    text = INLINE_LATEX_RE.sub(repl, text)
-
-    if text.count("```") % 2 != 0:
-        text += "\n```"
-
-    return text
-
-
-def compile_markdown(path: Path, *, dry_run: bool, force: bool, min_chars: int) -> Tuple[bool, str]:
-    content = path.read_text(encoding="utf-8")
-    ok, reason = validate_markdown(content, min_chars)
+def compile_tex(path: Path, *, dry_run: bool, force: bool) -> Tuple[bool, str]:
+    ok, reason = validate_tex(path)
     if not ok:
         return False, reason
 
@@ -92,75 +50,61 @@ def compile_markdown(path: Path, *, dry_run: bool, force: bool, min_chars: int) 
     if dry_run:
         return True, "dry run"
 
-    processed = preprocess_markdown(content)
-
-    with NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as tmp:
-        tmp.write(processed)
-        tmp_path = Path(tmp.name)
-
     cmd = [
-        "pandoc",
-        str(tmp_path),
-        "-f", "markdown+tex_math_dollars+raw_tex",
-        "-o",
-        str(pdf_path),
-        "--pdf-engine=pdflatex",
-        "-V",
-        "mainfont=Latin Modern Roman",
-        "-V",
-        "geometry:margin=1in",
-        "--quiet",
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-output-directory",
+        str(PDF_OUTPUT_DIR),
+        str(path),
     ]
 
     try:
         subprocess.run(cmd, check=True, capture_output=True)
     except subprocess.CalledProcessError as e:
-        tmp_path.unlink(missing_ok=True)
         err = e.stderr.decode("utf-8", "ignore").strip()
-        return False, f"pandoc error: {err}" or "pandoc error"
-    tmp_path.unlink(missing_ok=True)
+        return False, err or "pdflatex failed"
+
+    for ext in (".aux", ".log", ".out"):
+        (PDF_OUTPUT_DIR / f"{path.stem}{ext}").unlink(missing_ok=True)
+
     return True, ""
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Compile Markdown files to PDFs")
-    parser.add_argument("--dry-run", action="store_true", help="Show files but do not compile")
-    parser.add_argument("--file", help="Compile a single Markdown file")
-    parser.add_argument("--all", action="store_true", help="Force recompilation even if PDFs exist")
+    parser = argparse.ArgumentParser(description="Compile LaTeX files to PDFs")
     parser.add_argument(
-        "--min-chars",
-        type=int,
-        default=100,
-        help="Minimum characters required to compile a file",
+        "--dry-run", action="store_true", help="Show files but do not compile"
+    )
+    parser.add_argument("--file", help="Compile a single .tex file")
+    parser.add_argument(
+        "--all", action="store_true", help="Force recompilation even if PDFs exist"
     )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
-    files = [OUTPUT_DIR / args.file] if args.file else sorted(OUTPUT_DIR.glob("*.md"))
+    files = [OUTPUT_DIR / args.file] if args.file else sorted(OUTPUT_DIR.glob("*.tex"))
 
     success = failure = 0
-    for md_file in files:
-        if not md_file.exists():
-            log(md_file.name, "❌ Failure", "file not found")
-            print(f"Missing {md_file.name}")
+    for tex_file in files:
+        if not tex_file.exists():
+            log(tex_file.name, "❌ Failure", "file not found")
+            print(f"Missing {tex_file.name}")
             failure += 1
             continue
 
-        ok, reason = compile_markdown(
-            md_file, dry_run=args.dry_run, force=args.all, min_chars=args.min_chars
-        )
+        ok, reason = compile_tex(tex_file, dry_run=args.dry_run, force=args.all)
         if ok:
-            log(md_file.name, "✅ Success", reason)
+            log(tex_file.name, "✅ Success", reason)
             msg = "Would compile" if args.dry_run else "Compiled"
             if reason == "already exists":
                 msg = "Skipping"
-            print(f"{msg} {md_file.name}{' (' + reason + ')' if reason else ''}")
+            print(f"{msg} {tex_file.name}{' (' + reason + ')' if reason else ''}")
             success += 1
         else:
-            log(md_file.name, "❌ Failure", reason)
-            print(f"Failed {md_file.name}: {reason}")
+            log(tex_file.name, "❌ Failure", reason)
+            print(f"Failed {tex_file.name}: {reason}")
             failure += 1
 
     print(f"✅ {success} successful, ❌ {failure} failed")
@@ -168,3 +112,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
