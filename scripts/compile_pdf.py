@@ -82,7 +82,7 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def main() -> None:
+def main() -> int:
     args = parse_args()
     files = [OUTPUT_DIR / args.file] if args.file else sorted(OUTPUT_DIR.glob("*.tex"))
 
@@ -108,8 +108,11 @@ def main() -> None:
             failure += 1
 
     print(f"✅ {success} successful, ❌ {failure} failed")
+    return 0 if failure == 0 else 1
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+
+    sys.exit(main())
 

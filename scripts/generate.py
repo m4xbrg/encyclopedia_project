@@ -212,9 +212,13 @@ def main(
                 logger.info(json.dumps(entry))
 
     print(f"Processed: {processed}, ✓ {success}, ✗ {failure}")
+    return 0 if failure == 0 else 1
+
 
 # ─── CLI Flags ─────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
+    import sys
+
     p = argparse.ArgumentParser(description="Generate LaTeX entries")
     p.add_argument("--log", default="true",
                   help="Enable structured logging")
@@ -228,9 +232,11 @@ if __name__ == "__main__":
     args = p.parse_args()
     _enable = str(args.log).lower() not in {"false","0","no"}
 
-    main(
-        enable_log   = _enable,
-        skip_existing= args.skip_existing,
-        overwrite    = args.overwrite,
-        log_format   = args.log_format,
+    sys.exit(
+        main(
+            enable_log   = _enable,
+            skip_existing= args.skip_existing,
+            overwrite    = args.overwrite,
+            log_format   = args.log_format,
+        )
     )
