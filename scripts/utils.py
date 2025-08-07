@@ -20,8 +20,8 @@ def slugify(text: str) -> str:
 
 
 def sanitize_filename(text: str) -> str:
-    """Return a sanitized filename for the given text with a .md extension."""
-    return f"{slugify(text)}.md"
+    """Return a sanitized filename for the given text with a .tex extension."""
+    return f"{slugify(text)}.tex"
 
 
 def read_file(path: Path) -> str:
