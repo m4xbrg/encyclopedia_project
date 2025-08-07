@@ -17,6 +17,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 from utils import render_prompt, slugify, normalize_artifacts, escape_latex
+from registry import TemplateRegistry
 
 # ─── Configuration & Globals ───────────────────────────────────────────────────
 ROOT           = Path(__file__).resolve().parent.parent
@@ -27,11 +28,8 @@ OUTPUT_DIR     = ROOT / "output"
 LOGS_DIR       = ROOT / "logs"
 JSONL_LOG_FILE = LOGS_DIR / "generation_log.jsonl"
 
-PROMPT_TEMPLATES = {
-    "definition":  PROMPTS_DIR / "prompt_template_definition.txt",
-    "abstract":    PROMPTS_DIR / "prompt_template_abstract.txt",
-    "computation": PROMPTS_DIR / "prompt_template_computation.txt",
-}
+TEMPLATE_REGISTRY_FILE = ROOT / "prompt_registry.toml"
+TEMPLATE_REGISTRY = TemplateRegistry.from_toml(TEMPLATE_REGISTRY_FILE, ROOT)
 
 TEX_WRAPPER = r"""
 \documentclass[12pt]{{article}}
@@ -171,9 +169,16 @@ def main(
                 if enable_log and log_format == "jsonl": log_json(entry)
                 continue
 
-        # Render prompt
-        tpl = PROMPT_TEMPLATES.get(ptype, PROMPT_TEMPLATES["definition"])
-        template = tpl.read_text(encoding="utf-8")
+        # Render prompt via registry
+        tpl = TEMPLATE_REGISTRY.get(ptype) or TEMPLATE_REGISTRY.get("definition")
+        if tpl is None:
+            raise KeyError(f"No template registered for '{ptype}'")
+        if isinstance(tpl, Path):
+            template = tpl.read_text(encoding="utf-8")
+        elif callable(tpl):
+            template = tpl()
+        else:
+            template = str(tpl)
         prompt = render_prompt(template, **row)
 
         # Call API
