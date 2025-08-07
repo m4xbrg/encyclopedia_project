@@ -131,9 +131,15 @@ def main(
     skip_existing: bool = False,
     overwrite: bool = False,
     log_format: str = "jsonl",
+    start: Optional[int] = None,
+    limit: Optional[int] = None,
 ) -> None:
     load_dotenv(ROOT / ".env")
     start_idx, max_entries = load_config(CONFIG_FILE)
+    if start is not None:
+        start_idx = start
+    if limit is not None:
+        max_entries = limit
     df = pd.read_csv(DATA_FILE)
     topics = df.iloc[start_idx : start_idx + max_entries].to_dict("records")
 
@@ -224,6 +230,10 @@ if __name__ == "__main__":
                   help="Overwrite existing .tex")
     p.add_argument("--log-format", choices=["jsonl","text"],
                   default="jsonl", help="Log output format")
+    p.add_argument("--start", type=int,
+                  help="Override start_index from config")
+    p.add_argument("--limit", type=int,
+                  help="Override max_entries from config")
 
     args = p.parse_args()
     _enable = str(args.log).lower() not in {"false","0","no"}
@@ -233,4 +243,6 @@ if __name__ == "__main__":
         skip_existing= args.skip_existing,
         overwrite    = args.overwrite,
         log_format   = args.log_format,
+        start        = args.start,
+        limit        = args.limit,
     )
