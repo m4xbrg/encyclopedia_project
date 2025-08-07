@@ -1,0 +1,61 @@
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+\titleformat{\section}[block]{\large\bfseries}{}{0em}{}
+\titleformat{\subsection}[block]{\normalsize\bfseries}{}{0em}{}
+
+\begin{document}
+
+% Title: Mathematical Logic & Proof Techniques
+% ID: MATH.1.1
+% Domain: Foundations & Preliminaries
+% Topic: Mathematical Logic & Proof Techniques
+
+\section*{Axiomatic Set Theory}
+\subsection*{Domain} Mathematical Logic \& Foundations
+\subsection*{Subfield} Set Theory
+
+\subsection*{Definition}
+Axiomatic Set Theory is a formal system that defines the properties and membership of sets through a set of axioms. It provides a foundational framework for mathematics by establishing how sets behave and interact without dependence on intuition or informal reasoning.
+
+\subsection*{Core Principles}
+\begin{itemize}
+  \item **Axiom of Extensionality**: Two sets are equal if and only if they have the same elements.
+  \item **Axiom of Empty Set**: There exists a set that contains no elements, denoted as \( \emptyset \).
+  \item **Axiom of Pairing**: For any two sets, there exists a set that contains exactly those two sets.
+  \item **Axiom of Union**: For any set, there exists a set that consists of the union of all elements of that set.
+  \item **Axiom of Power Set**: For any set, there exists a set of all its subsets, known as its power set.
+\end{itemize}
+
+\subsection*{Key Formulas or Symbolic Representations}
+The axioms are often expressed in terms of logical symbols. For example:
+\begin{align*}
+& \forall A \forall B \left( A = B \iff \forall x (x \in A \iff x \in B) \right) \quad \text{(Axiom of Extensionality)} \\
+& \exists x \forall y (y \notin x) \quad \text{(Axiom of Empty Set)} \\
+& \forall a \forall b \exists c \forall x (x \in c \iff (x = a \lor x = b)) \quad \text{(Axiom of Pairing)}
+\end{align*}
+
+\subsection*{Worked Example}
+Consider the sets \( A = \{1, 2\} \) and \( B = \{2, 1\} \). According to the Axiom of Extensionality, \( A = B \) holds true since both sets contain the same elements. Thus, we establish that they represent the same mathematical entity despite their different representations.
+
+\subsection*{Common Pitfalls}
+- Confusing the existence of a set with the properties or identity of that set.
+- Misapplying axioms without logical justification, particularly in the construction of new sets.
+- Overlooking the significance of the empty set and its role in forming other sets.
+
+\subsection*{Connections}
+Axiomatic Set Theory serves as a foundation for various branches of mathematics, including analysis, topology, and algebra. It connects closely with concepts such as functions and relations, which rely on set operations and properties. This framework is also essential for understanding more advanced topics like category theory and model theory.
+
+\subsection*{Further Reading}
+For an in-depth exploration of Axiomatic Set Theory, consider the following references:
+- Kenneth Kunen, *Set Theory: An Introduction to Independence*.
+- Thomas Jech, *Set Theory*.
+- Paul Halmos, *Naive Set Theory*.
+
+\end{document}

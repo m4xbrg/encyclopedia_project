@@ -75,3 +75,5 @@ l.41 \setlength
 2025-08-07T00:55:20 | predicate-logic.tex | ❌ Failure | pdflatex failed
 2025-08-07T00:55:20 | propositional-logic.tex | ❌ Failure | pdflatex failed
 2025-08-07T00:55:20 | venn-diagrams.tex | ❌ Failure | pdflatex failed
+2025-08-07T01:12:32 | MATH.1.1-mathematical-logic-proof-techniques.tex | ✅ Success
+2025-08-07T01:12:33 | MATH.1.2-set-theory-foundations.tex | ❌ Failure | pdflatex failed

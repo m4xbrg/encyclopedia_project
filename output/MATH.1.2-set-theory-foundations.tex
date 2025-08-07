@@ -1,0 +1,59 @@
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+\titleformat{\section}[block]{\large\bfseries}{}{0em}{}
+\titleformat{\subsection}[block]{\normalsize\bfseries}{}{0em}{}
+
+\begin{document}
+
+% Title: Set Theory & Foundations
+% ID: MATH.1.2
+% Domain: Foundations & Preliminaries
+% Topic: Set Theory & Foundations
+
+\section*{Axiomatic Set Theory}
+\subsection*{Domain} Mathematical Logic \& Foundations
+\subsection*{Subfield} Set Theory
+
+\subsection*{Definition}
+Axiomatic Set Theory is a formal system that establishes the properties and structure of sets through a collection of axioms. These axioms define the basic notions of set membership and operations without relying on intuitive or informal concepts.
+
+\subsection*{Core Principles}
+\begin{itemize}
+  \item Axiom of Extensionality: Two sets are equal if they have the same elements.
+  \item Axiom of Empty Set: There exists a set with no elements, denoted by $\emptyset$.
+  \item Axiom of Pairing: For any sets $a$ and $b$, there exists a set containing exactly $a$ and $b$.
+  \item Axiom of Union: For any set $A$, there exists a set that is the union of all elements of $A$.
+  \item Axiom of Power Set: For any set $A$, there exists a set of all subsets of $A$.
+\end{itemize}
+
+\subsection*{Key Formulas or Symbolic Representations}
+\begin{align*}
+    a \in b & : \text{a is an element of set } b \\
+    a = b & : \text{sets } a \text{ and } b \text{ are equal} \\
+    \mathcal{P}(A) & : \text{the power set of } A \\
+    A \cup B & : \text{the union of sets } A \text{ and } B \\
+\end{align*}
+
+\subsection*{Worked Example}
+Consider the sets $A = \{1, 2\}$ and $B = \{2, 3\}$. According to the Axiom of Pairing, the set $C = \{A, B\} = \{\{1, 2\}, \{2, 3\}\}$ is a valid set. The union of sets $A$ and $B$, denoted $A \cup B$, results in the set $\{1, 2, 3\}$, illustrating the Axiom of Union.
+
+\subsection*{Common Pitfalls}
+Learners often confuse the concepts of set membership and set equality, mistakenly assuming that two sets with overlapping elements are equal. Another common error is the misuse of the power set, treating it as if it contains elements rather than subsets.
+
+\subsection*{Connections}
+Axiomatic Set Theory serves as a foundational framework for various other mathematical disciplines, including topology, function theory, and number theory. It is also crucial for understanding the nature of mathematical proofs and logic.
+
+\subsection*{Further Reading}
+For an in-depth exploration of Axiomatic Set Theory, consider the following texts:
+- Zermelo, E., & Frankel, A. (1930). *Die Grundlagen der Mathematik und die Methoden der Wissenschaftlichen Forschung*.
+- Kunen, K. (1980). *Set Theory: An Introduction to Independence*.
+- Jech, T. (2003). *Set Theory*.
+
+\end{document}

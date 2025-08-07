@@ -1,0 +1,11 @@
+2025-08-07 01:07:12,062 INFO Generating entries 0 to 5
+2025-08-07 01:07:24,761 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 01:07:24,768 INFO Wrote C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\MATH.1.1-mathematical-logic-proof-techniques.tex
+2025-08-07 01:07:36,743 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 01:07:36,755 ERROR File already exists, skipping: C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\MATH.1.1-mathematical-logic-proof-techniques.tex
+2025-08-07 01:07:49,973 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 01:07:49,978 ERROR File already exists, skipping: C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\MATH.1.1-mathematical-logic-proof-techniques.tex
+2025-08-07 01:08:02,343 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 01:08:02,364 INFO Wrote C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\MATH.1.2-set-theory-foundations.tex
+2025-08-07 01:08:16,734 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 01:08:16,735 ERROR File already exists, skipping: C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\MATH.1.2-set-theory-foundations.tex
