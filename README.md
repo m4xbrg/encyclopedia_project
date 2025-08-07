@@ -19,6 +19,17 @@ Starter project for generating LaTeX encyclopedia entries with GPT-4 and convert
 4. Add `topics_final.csv` and fill in `prompts/template.txt`
 5. Set the `OPENAI_API_KEY` environment variable
 
+## Makefile Commands
+
+Common tasks are provided via a Makefile:
+
+```bash
+make install  # Install Python dependencies
+make build    # Generate LaTeX files and compile PDFs
+make test     # Run the test suite
+make clean    # Remove generated files and logs
+```
+
 ## Usage
 Generate LaTeX files:
 ```bash
