@@ -17,7 +17,7 @@ import toml
 from dotenv import load_dotenv
 from openai import OpenAI
 
-from utils import render_prompt, slugify, normalize_artifacts, escape_latex
+from utils import render_prompt, slugify, normalize_artifacts, escape_latex, dedupe_path
 
 # ─── Configuration & Globals ───────────────────────────────────────────────────
 ROOT           = Path(__file__).resolve().parent.parent
@@ -152,8 +152,11 @@ def main(
         ptype    = (row.get("prompt_type") or "definition").strip()
 
         # Build filename: domain-topic-subtopic.tex
-        d = slugify(domain); t = slugify(topic); s = slugify(subtopic)
+        d = slugify(domain)
+        t = slugify(topic)
+        s = slugify(subtopic)
         filename = OUTPUT_DIR / f"{d}-{t}-{s}.tex"
+        filename = dedupe_path(filename)
         OUTPUT_DIR.mkdir(exist_ok=True, parents=True)
 
         # Prep log entry
