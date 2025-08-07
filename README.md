@@ -19,15 +19,40 @@ Starter project for generating LaTeX encyclopedia entries with GPT-4 and convert
 4. Add `topics_final.csv` and fill in `prompts/template.txt`
 5. Set the `OPENAI_API_KEY` environment variable
 
+## Makefile Commands
+
+Common tasks are provided via a Makefile:
+
+```bash
+make install  # Install Python dependencies
+make build    # Generate LaTeX files and compile PDFs
+make test     # Run the test suite
+make clean    # Remove generated files and logs
+```
+
 ## Usage
 Generate LaTeX files:
 ```bash
 python scripts/generate.py
 ```
 
-Logging is enabled by default. To disable structured logging:
+Structured JSON logging with info, warning and error levels is enabled by default. To disable logging:
 ```bash
 python scripts/generate.py --log false
+```
+
+If a target `.tex` file already exists, you can control how it's handled:
+
+* `--skip-existing` – leave existing files untouched and skip generation
+* `--overwrite` – replace existing files with newly generated content
+
+By default (without either flag), the script stops with an error if the
+output file already exists. When both flags are provided, `--overwrite`
+takes precedence.
+
+Retry failed API calls (default 3 attempts):
+```bash
+python scripts/generate.py --retries 5
 ```
 
 Compile `.tex` files into PDFs:
@@ -38,4 +63,5 @@ python scripts/compile_pdf.py --file example.tex
 python scripts/compile_pdf.py --all     # force recompilation of all files
 ```
 
-PDFs are saved to `pdf_output/` and a log is written to `logs/compile_log.txt`.
+PDFs are saved to `pdf_output/` and a structured log is written to `logs/compile_log.txt`.
+
