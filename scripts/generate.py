@@ -5,7 +5,6 @@ import argparse
 import json
 import logging
 import os
-import re
 from datetime import datetime, timezone
 from hashlib import sha1
 from pathlib import Path
@@ -16,7 +15,8 @@ import toml
 from dotenv import load_dotenv
 from openai import OpenAI
 
-from utils import render_prompt, slugify, normalize_artifacts, escape_latex
+from utils import render_prompt, slugify
+from renderers import LatexRenderer, HtmlRenderer
 
 # ─── Configuration & Globals ───────────────────────────────────────────────────
 ROOT           = Path(__file__).resolve().parent.parent
@@ -32,30 +32,6 @@ PROMPT_TEMPLATES = {
     "abstract":    PROMPTS_DIR / "prompt_template_abstract.txt",
     "computation": PROMPTS_DIR / "prompt_template_computation.txt",
 }
-
-TEX_WRAPPER = r"""
-\documentclass[12pt]{{article}}
-\usepackage[utf8]{{inputenc}}
-\usepackage{{amsmath, amssymb}}
-\usepackage{{geometry}}
-\usepackage{{titlesec}}
-\usepackage{{hyperref}}
-\geometry{{margin=1in}}
-
-\titleformat{{\section}}[block]{{\large\bfseries}}{{}}{{0em}}{{}}
-\titleformat{{\subsection}}[block]{{\normalsize\bfseries}}{{}}{{0em}}{{}}
-
-\begin{{document}}
-
-% Title: {title}
-% ID: {id}
-% Domain: {domain}
-% Topic: {topic}
-
-{body}
-
-\end{{document}}
-"""
 
 MODEL = "gpt-4o-mini"
 
@@ -87,36 +63,6 @@ def generate_content(prompt: str) -> tuple[str, Optional[str]]:
         logger.error(f"API error: {e}")
         return "%% placeholder content due to API error %%", str(e)
 
-# ─── Markdown → LaTeX Conversion ──────────────────────────────────────────────
-MD_PATTERNS = [
-    (re.compile(r"`([^`]+)`"),        r"\\texttt{\1}"),
-    (re.compile(r"\*\*(.+?)\*\*", re.DOTALL), r"\\textbf{\1}"),
-    (re.compile(r"(?<!\*)\*([^*\n]+?)\*(?!\*)", re.DOTALL), r"\\textit{\1}"),
-]
-
-def _replace_md(seg: str) -> str:
-    for pat, repl in MD_PATTERNS:
-        seg = pat.sub(repl, seg)
-    return seg
-
-def convert_markdown_to_latex(text: str) -> str:
-    """Convert basic Markdown to LaTeX, preserve math, then escape."""
-    math_pat = re.compile(r"\\\$.*?\\\$|\\\\\[.*?\\\\\]", re.DOTALL)
-    parts, last = [], 0
-    for m in math_pat.finditer(text):
-        raw = text[last:m.start()]
-        raw = _replace_md(raw)
-        raw = normalize_artifacts(raw)
-        raw = escape_latex(raw)
-        parts.append(raw)
-        parts.append(m.group())
-        last = m.end()
-    tail = text[last:]
-    tail = _replace_md(tail)
-    tail = normalize_artifacts(tail)
-    tail = escape_latex(tail)
-    parts.append(tail)
-    return "".join(parts)
 
 # ─── Config Loader ─────────────────────────────────────────────────────────────
 def load_config(path: Path) -> tuple[int, int]:
@@ -131,12 +77,14 @@ def main(
     skip_existing: bool = False,
     overwrite: bool = False,
     log_format: str = "jsonl",
+    fmt: str = "latex",
 ) -> None:
     load_dotenv(ROOT / ".env")
     start_idx, max_entries = load_config(CONFIG_FILE)
     df = pd.read_csv(DATA_FILE)
     topics = df.iloc[start_idx : start_idx + max_entries].to_dict("records")
 
+    renderer = LatexRenderer() if fmt == "latex" else HtmlRenderer()
     processed = success = failure = 0
     for row in topics:
         processed += 1
@@ -146,9 +94,9 @@ def main(
         subtopic = row.get("subtopic", "")
         ptype    = (row.get("prompt_type") or "definition").strip()
 
-        # Build filename: domain-topic-subtopic.tex
+        # Determine output filename
         d = slugify(domain); t = slugify(topic); s = slugify(subtopic)
-        filename = OUTPUT_DIR / f"{d}-{t}-{s}.tex"
+        filename = OUTPUT_DIR / f"{d}-{t}-{s}.{renderer.extension}"
         OUTPUT_DIR.mkdir(exist_ok=True, parents=True)
 
         # Prep log entry
@@ -182,8 +130,8 @@ def main(
         rt = (datetime.now(timezone.utc) - start).total_seconds()
 
         # Convert & wrap
-        body    = convert_markdown_to_latex(content)
-        wrapped = TEX_WRAPPER.format(
+        body = renderer.convert(content)
+        wrapped = renderer.wrap(
             title=topic, id=sec_id, domain=domain, topic=topic, body=body
         )
 
@@ -215,15 +163,17 @@ def main(
 
 # ─── CLI Flags ─────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    p = argparse.ArgumentParser(description="Generate LaTeX entries")
+    p = argparse.ArgumentParser(description="Generate entries")
     p.add_argument("--log", default="true",
                   help="Enable structured logging")
     p.add_argument("--skip-existing", action="store_true",
-                  help="Skip if .tex exists")
+                  help="Skip if output file exists")
     p.add_argument("--overwrite", action="store_true",
-                  help="Overwrite existing .tex")
+                  help="Overwrite existing output")
     p.add_argument("--log-format", choices=["jsonl","text"],
                   default="jsonl", help="Log output format")
+    p.add_argument("--format", choices=["latex", "html"],
+                  default="latex", help="Output format")
 
     args = p.parse_args()
     _enable = str(args.log).lower() not in {"false","0","no"}
@@ -233,4 +183,5 @@ if __name__ == "__main__":
         skip_existing= args.skip_existing,
         overwrite    = args.overwrite,
         log_format   = args.log_format,
+        fmt          = args.format,
     )
