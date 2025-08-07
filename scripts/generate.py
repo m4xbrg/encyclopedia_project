@@ -165,17 +165,18 @@ def main(
         }
 
         # Skip/Overwrite logic
-        if filename.exists() and not overwrite:
-            status = "skipped"
-            reason = "exists"
-            if skip_existing:
-                entry.update({"status": status, "reason": reason})
-                if enable_log and log_format == "jsonl": log_json(entry)
+        if filename.exists():
+            if overwrite:
+                pass  # Explicit overwrite requested
+            elif skip_existing:
+                entry.update({"status": "skipped", "reason": "exists"})
+                if enable_log and log_format == "jsonl":
+                    log_json(entry)
                 continue
             else:
-                entry.update({"status": status, "reason": reason})
-                if enable_log and log_format == "jsonl": log_json(entry)
-                continue
+                raise FileExistsError(
+                    f"{filename} exists. Use --skip-existing to skip or --overwrite to replace."
+                )
 
         # Render prompt
         tpl = PROMPT_TEMPLATES.get(ptype, PROMPT_TEMPLATES["definition"])
