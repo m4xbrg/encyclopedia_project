@@ -5,6 +5,7 @@ import argparse
 import json
 from logger import get_logger
 import os
+
 import re
 import time
 from datetime import datetime, timezone
@@ -17,9 +18,12 @@ import toml
 from dotenv import load_dotenv
 from openai import OpenAI
 
+from utils import render_prompt, slugify
+from renderers import LatexRenderer, HtmlRenderer
+
 from utils import render_prompt, slugify, normalize_artifacts, escape_latex
 from registry import TemplateRegistry
-=======
+
 from utils import render_prompt, slugify, normalize_artifacts, escape_latex, dedupe_path
 
 # ─── Configuration & Globals ───────────────────────────────────────────────────
@@ -33,30 +37,6 @@ JSONL_LOG_FILE = LOGS_DIR / "generation_log.jsonl"
 
 TEMPLATE_REGISTRY_FILE = ROOT / "prompt_registry.toml"
 TEMPLATE_REGISTRY = TemplateRegistry.from_toml(TEMPLATE_REGISTRY_FILE, ROOT)
-
-TEX_WRAPPER = r"""
-\documentclass[12pt]{{article}}
-\usepackage[utf8]{{inputenc}}
-\usepackage{{amsmath, amssymb}}
-\usepackage{{geometry}}
-\usepackage{{titlesec}}
-\usepackage{{hyperref}}
-\geometry{{margin=1in}}
-
-\titleformat{{\section}}[block]{{\large\bfseries}}{{}}{{0em}}{{}}
-\titleformat{{\subsection}}[block]{{\normalsize\bfseries}}{{}}{{0em}}{{}}
-
-\begin{{document}}
-
-% Title: {title}
-% ID: {id}
-% Domain: {domain}
-% Topic: {topic}
-
-{body}
-
-\end{{document}}
-"""
 
 MODEL = "gpt-4o-mini"
 
@@ -86,6 +66,7 @@ def generate_content(prompt: str, retries: int = 3) -> tuple[Optional[str], Opti
             if attempt == retries:
                 return None, str(e)
             time.sleep(2 ** attempt)
+
 
 # ─── Markdown → LaTeX Conversion ──────────────────────────────────────────────
 MD_PATTERNS = [
@@ -131,10 +112,13 @@ def main(
     skip_existing: bool = False,
     overwrite: bool = False,
     log_format: str = "jsonl",
+    fmt: str = "latex",
+
     start: Optional[int] = None,
     limit: Optional[int] = None,
-=======
+
     retries: int = 3,
+  
 ) -> None:
     load_dotenv(ROOT / ".env")
     start_idx, max_entries = load_config(CONFIG_FILE)
@@ -145,6 +129,7 @@ def main(
     df = pd.read_csv(DATA_FILE)
     topics = df.iloc[start_idx : start_idx + max_entries].to_dict("records")
 
+    renderer = LatexRenderer() if fmt == "latex" else HtmlRenderer()
     processed = success = failure = 0
     for row in topics:
         processed += 1
@@ -153,6 +138,10 @@ def main(
         topic    = row.get("topic", "")
         subtopic = row.get("subtopic", "")
         ptype    = (row.get("prompt_type") or "definition").strip()
+
+        # Determine output filename
+        d = slugify(domain); t = slugify(topic); s = slugify(subtopic)
+        filename = OUTPUT_DIR / f"{d}-{t}-{s}.{renderer.extension}"
 
         # Build filename: domain-topic-subtopic.tex
         d = slugify(domain)
@@ -212,6 +201,10 @@ def main(
                     logger.info(json.dumps(entry))
             continue
 
+        # Convert & wrap
+        body = renderer.convert(content)
+        wrapped = renderer.wrap(
+
         body    = convert_markdown_to_latex(content)
         wrapped = TEX_WRAPPER.format(
             title=topic, id=sec_id, domain=domain, topic=topic, body=body
@@ -237,23 +230,27 @@ def main(
 
 # ─── CLI Flags ─────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    p = argparse.ArgumentParser(description="Generate LaTeX entries")
+    p = argparse.ArgumentParser(description="Generate entries")
     p.add_argument("--log", default="true",
                   help="Enable structured logging")
     p.add_argument("--skip-existing", action="store_true",
-                  help="Skip if .tex exists")
+                  help="Skip if output file exists")
     p.add_argument("--overwrite", action="store_true",
-                  help="Overwrite existing .tex")
+                  help="Overwrite existing output")
     p.add_argument("--log-format", choices=["jsonl","text"],
                   default="jsonl", help="Log output format")
+    p.add_argument("--format", choices=["latex", "html"],
+                  default="latex", help="Output format")
+
     p.add_argument("--start", type=int,
                   help="Override start_index from config")
     p.add_argument("--limit", type=int,
                   help="Override max_entries from config")
-=======
+
     p.add_argument("--retries", type=int, default=3,
                   help="Retry count for API calls")
  
+
 
     args = p.parse_args()
     _enable = str(args.log).lower() not in {"false","0","no"}
@@ -263,9 +260,12 @@ if __name__ == "__main__":
         skip_existing= args.skip_existing,
         overwrite    = args.overwrite,
         log_format   = args.log_format,
+        fmt          = args.format,
+    )
+
         start        = args.start,
         limit        = args.limit,
-=======
-=======
+
+
         retries      = args.retries,
     )
