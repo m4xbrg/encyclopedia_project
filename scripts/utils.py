@@ -43,11 +43,15 @@ def escape_latex(text: str) -> str:
 
 
 def normalize_artifacts(text: str) -> str:
-    return (
+    text = (
         text.replace("“", '"').replace("”", '"')
             .replace("‘", "'").replace("’", "'")
-            .replace("--", "---").replace("...", r"\ldots{}")
     )
+    # Replace double dashes not part of a longer run with an em-dash
+    text = re.sub(r"(?<!-)--(?!-)", "---", text)
+    # Replace standalone triple dots with a LaTeX ellipsis
+    text = re.sub(r"(?<!\.)\.{3}(?!\.)", lambda _: r"\ldots{}", text)
+    return text
 
 # --- Prompt & Filename Helpers ---
 def render_prompt(template_str: str, **kwargs: Any) -> str:
