@@ -1,0 +1,4 @@
+[templates]
+definition = "prompts/prompt_template_definition.txt"
+abstract   = "prompts/prompt_template_abstract.txt"
+computation = "prompts/prompt_template_computation.txt"
