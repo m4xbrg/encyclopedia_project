@@ -30,6 +30,20 @@ Structured JSON logging with info, warning and error levels is enabled by defaul
 python scripts/generate.py --log false
 ```
 
+If a target `.tex` file already exists, you can control how it's handled:
+
+* `--skip-existing` – leave existing files untouched and skip generation
+* `--overwrite` – replace existing files with newly generated content
+
+By default (without either flag), the script stops with an error if the
+output file already exists. When both flags are provided, `--overwrite`
+takes precedence.
+
+Retry failed API calls (default 3 attempts):
+```bash
+python scripts/generate.py --retries 5
+```
+
 Compile `.tex` files into PDFs:
 ```bash
 python scripts/compile_pdf.py          # compile all valid files

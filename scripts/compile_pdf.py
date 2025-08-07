@@ -53,6 +53,8 @@ def compile_tex(path: Path, *, dry_run: bool, force: bool) -> Tuple[bool, str]:
 
     try:
         subprocess.run(cmd, check=True, capture_output=True)
+    except FileNotFoundError:
+        return False, "pdflatex not found. Install TeX Live."
     except subprocess.CalledProcessError as e:
         err = e.stderr.decode("utf-8", "ignore").strip()
         return False, err or "pdflatex failed"
