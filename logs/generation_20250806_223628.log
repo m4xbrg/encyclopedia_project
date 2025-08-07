@@ -1,0 +1,11 @@
+2025-08-06 22:36:28,094 INFO Generating entries 0 to 5
+2025-08-06 22:36:45,063 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 22:36:45,083 ERROR File already exists, skipping: C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\propositional-logic.md
+2025-08-06 22:36:56,390 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 22:36:56,398 ERROR File already exists, skipping: C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\predicate-logic.md
+2025-08-06 22:37:11,711 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 22:37:11,712 ERROR File already exists, skipping: C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\formal-systems-and-axiomatic-methods.md
+2025-08-06 22:37:26,127 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 22:37:26,127 ERROR File already exists, skipping: C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\basic-set-operations-union-intersection-complement.md
+2025-08-06 22:37:35,898 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 22:37:35,902 ERROR File already exists, skipping: C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\venn-diagrams.md

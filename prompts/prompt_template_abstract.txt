@@ -12,6 +12,8 @@ You are a specialist in advanced theoretical subjects.  Generate a LaTeX entry f
 2. **Follow the prescribed structure**:
 
 ```
+[Subtopic]
+
 \section*{[Subtopic]}
 \subsection*{Domain} [Domain]
 \subsection*{Subfield} [Topic]

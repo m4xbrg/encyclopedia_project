@@ -1,0 +1,72 @@
+2025-08-06T22:47:57 | basic-set-operations-union-intersection-complement.md | ❌ Failure | missing title header
+2025-08-06T22:47:57 | formal-systems-and-axiomatic-methods.md | ❌ Failure | missing title header
+2025-08-06T22:47:57 | functions-relations-and-mappings.md | ❌ Failure | missing title header
+2025-08-06T22:47:57 | predicate-logic.md | ❌ Failure | missing title header
+2025-08-06T22:47:57 | propositional-logic.md | ❌ Failure | missing title header
+2025-08-06T22:47:57 | venn-diagrams.md | ❌ Failure | missing title header
+2025-08-06T23:00:06 | basic-set-operations-union-intersection-complement.md | ❌ Failure | missing title header
+2025-08-06T23:00:06 | formal-systems-and-axiomatic-methods.md | ❌ Failure | missing title header
+2025-08-06T23:00:06 | predicate-logic.md | ❌ Failure | missing title header
+2025-08-06T23:00:06 | propositional-logic.md | ❌ Failure | missing title header
+2025-08-06T23:00:06 | venn-diagrams.md | ❌ Failure | missing title header
+2025-08-06T23:11:21 | basic-set-operations-union-intersection-complement.md | ❌ Failure | missing sections
+2025-08-06T23:11:21 | formal-systems-and-axiomatic-methods.md | ❌ Failure | missing sections
+2025-08-06T23:11:21 | predicate-logic.md | ❌ Failure | missing sections
+2025-08-06T23:11:21 | propositional-logic.md | ❌ Failure | missing sections
+2025-08-06T23:11:21 | venn-diagrams.md | ❌ Failure | missing sections
+2025-08-06T23:22:17 | basic-set-operations-union-intersection-complement.md | ❌ Failure | pandoc error: pdflatex not found. Please select a different --pdf-engine or install pdflatex
+2025-08-06T23:22:17 | formal-systems-and-axiomatic-methods.md | ❌ Failure | pandoc error: pdflatex not found. Please select a different --pdf-engine or install pdflatex
+2025-08-06T23:22:17 | predicate-logic.md | ❌ Failure | pandoc error: pdflatex not found. Please select a different --pdf-engine or install pdflatex
+2025-08-06T23:22:17 | propositional-logic.md | ❌ Failure | pandoc error: pdflatex not found. Please select a different --pdf-engine or install pdflatex
+2025-08-06T23:22:17 | venn-diagrams.md | ❌ Failure | pandoc error: pdflatex not found. Please select a different --pdf-engine or install pdflatex
+2025-08-06T23:24:52 | basic-set-operations-union-intersection-complement.md | ❌ Failure | pandoc error: pdflatex not found. Please select a different --pdf-engine or install pdflatex
+2025-08-06T23:24:52 | formal-systems-and-axiomatic-methods.md | ❌ Failure | pandoc error: pdflatex not found. Please select a different --pdf-engine or install pdflatex
+2025-08-06T23:24:52 | predicate-logic.md | ❌ Failure | pandoc error: pdflatex not found. Please select a different --pdf-engine or install pdflatex
+2025-08-06T23:24:52 | propositional-logic.md | ❌ Failure | pandoc error: pdflatex not found. Please select a different --pdf-engine or install pdflatex
+2025-08-06T23:24:53 | venn-diagrams.md | ❌ Failure | pandoc error: pdflatex not found. Please select a different --pdf-engine or install pdflatex
+2025-08-06T23:36:15 | basic-set-operations-union-intersection-complement.md | ❌ Failure | pandoc error: Error producing PDF.
+! LaTeX Error: File `geometry.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.41 \setlength
+2025-08-06T23:37:30 | basic-set-operations-union-intersection-complement.md | ✅ Success
+2025-08-06T23:37:31 | formal-systems-and-axiomatic-methods.md | ✅ Success
+2025-08-06T23:37:32 | predicate-logic.md | ✅ Success
+2025-08-06T23:37:32 | propositional-logic.md | ✅ Success
+2025-08-06T23:37:33 | venn-diagrams.md | ✅ Success
+2025-08-06T23:49:20 | basic-set-operations-union-intersection-complement.md | ✅ Success
+2025-08-06T23:49:21 | formal-systems-and-axiomatic-methods.md | ✅ Success
+2025-08-06T23:49:22 | predicate-logic.md | ✅ Success
+2025-08-06T23:49:23 | propositional-logic.md | ✅ Success
+2025-08-06T23:49:23 | venn-diagrams.md | ✅ Success
+2025-08-06T23:53:06 | basic-set-operations-union-intersection-complement.md | ✅ Success
+2025-08-06T23:53:07 | formal-systems-and-axiomatic-methods.md | ✅ Success
+2025-08-06T23:53:07 | predicate-logic.md | ✅ Success
+2025-08-06T23:53:08 | propositional-logic.md | ✅ Success
+2025-08-06T23:53:09 | venn-diagrams.md | ✅ Success
+2025-08-06T23:53:22 | basic-set-operations-union-intersection-complement.md | ✅ Success
+2025-08-06T23:53:22 | formal-systems-and-axiomatic-methods.md | ✅ Success
+2025-08-06T23:53:23 | predicate-logic.md | ✅ Success
+2025-08-06T23:53:24 | propositional-logic.md | ✅ Success
+2025-08-06T23:53:25 | venn-diagrams.md | ✅ Success
+2025-08-06T23:57:48 | basic-set-operations-union-intersection-complement.md | ❌ Failure | pandoc error: Unknown input format markdowns
+2025-08-06T23:57:48 | formal-systems-and-axiomatic-methods.md | ❌ Failure | pandoc error: Unknown input format markdowns
+2025-08-06T23:57:48 | predicate-logic.md | ❌ Failure | pandoc error: Unknown input format markdowns
+2025-08-06T23:57:48 | propositional-logic.md | ❌ Failure | pandoc error: Unknown input format markdowns
+2025-08-06T23:57:48 | venn-diagrams.md | ❌ Failure | pandoc error: Unknown input format markdowns
+2025-08-06T23:57:52 | basic-set-operations-union-intersection-complement.md | ❌ Failure | pandoc error: Unknown input format markdowns
+2025-08-06T23:57:52 | formal-systems-and-axiomatic-methods.md | ❌ Failure | pandoc error: Unknown input format markdowns
+2025-08-06T23:57:52 | predicate-logic.md | ❌ Failure | pandoc error: Unknown input format markdowns
+2025-08-06T23:57:52 | propositional-logic.md | ❌ Failure | pandoc error: Unknown input format markdowns
+2025-08-06T23:57:52 | venn-diagrams.md | ❌ Failure | pandoc error: Unknown input format markdowns
+2025-08-06T23:58:04 | basic-set-operations-union-intersection-complement.md | ✅ Success
+2025-08-06T23:58:05 | formal-systems-and-axiomatic-methods.md | ✅ Success
+2025-08-06T23:58:06 | predicate-logic.md | ✅ Success
+2025-08-06T23:58:06 | propositional-logic.md | ✅ Success
+2025-08-06T23:58:07 | venn-diagrams.md | ✅ Success

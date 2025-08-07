@@ -5,7 +5,7 @@ import argparse
 import json
 import logging
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, Optional
 
@@ -104,14 +104,15 @@ def main(enable_log: bool = True) -> None:
             str(Path("output") / sanitize_filename(subtopic)) if subtopic else None
         )
         log_entry = {
-            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "timestamp": datetime.now(timezone.utc).isoformat(),
             "id": row.get("id", ""),
             "domain": row.get("domain", ""),
             "topic": row.get("topic", ""),
             "subtopic": subtopic or "",
             "prompt_type": row.get("prompt_type", ""),
             "output_file": output_rel_path,
-        }
+         }
+
 
         if not subtopic:
             error_msg = f"Missing subtopic in row: {row}"

@@ -12,6 +12,8 @@ You are an expert educator tasked with generating a LaTeX reference entry for a 
 2. **Use the following template**:
 
 ```
+[Subtopic]
+
 \section*{[Subtopic]}
 \subsection*{Domain} [Domain]
 \subsection*{Subfield} [Topic]

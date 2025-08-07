@@ -12,6 +12,8 @@ You are an expert academic writer tasked with generating a concise, formal LaTeX
 2. **Follow the section order exactly**:
 
 ```
+[Subtopic]
+
 \section*{[Subtopic]}
 \subsection*{Domain} [Domain]
 \subsection*{Subfield} [Topic]

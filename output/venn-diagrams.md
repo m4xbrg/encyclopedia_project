@@ -3,41 +3,47 @@ ID: MATH.1.2
 Domain: Foundations & Preliminaries
 Topic: Set Theory & Foundations
 
+```
+[Axiomatic Set Theory]
+
 \section*{Axiomatic Set Theory}
 \subsection*{Domain} Mathematical Logic & Foundations
 \subsection*{Subfield} Set Theory
 
 \subsection*{Definition}
-Axiomatic set theory is a formal framework in which the properties of sets are derived from a specified set of axioms. It provides a rigorous foundation for set theory and is used to avoid paradoxes associated with naive set definitions. Notably, it employs a formal language, typically first-order logic, to express the axioms and theorems.
+Axiomatic set theory is a formalized framework for constructing set theory using a set of axioms from which theorems can be derived. These axioms serve as foundational statements regarding the properties and relationships of sets. 
 
 \subsection*{Core Principles}
 \begin{itemize}
-  \item Axiom of Extensionality: Two sets are equal if and only if they have the same elements.
-  \item Axiom of Regularity: Every non-empty set A contains an element that is disjoint from A.
-  \item Axiom of Infinity: There exists a set that contains the empty set and is closed under the operation of forming unions.
-  \item Axiom of Union: For any set A, there exists a set that is the union of all elements of A.
-  \item Axiom Schema of Specification: For any set A, and any property P(x), there exists a subset of A containing exactly those elements of A that satisfy P.
+  \item **Axiom of Extensionality**: Two sets are equal if and only if they have the same elements.
+  \item **Axiom of Pairing**: For any two sets, there exists a set that contains exactly these two sets.
+  \item **Axiom of Union**: For any set, there exists a set that contains all elements of the elements of the first set.
+  \item **Axiom of Power Set**: For any set, there exists a set of all its subsets.
+  \item **Axiom of Infinity**: There exists a set that contains the empty set and is closed under the operation of forming singleton sets.
 \end{itemize}
 
 \subsection*{Key Formulas or Symbolic Representations}
 \begin{align*}
-  & A = \{ x \mid P(x) \} \quad \text{(Set-builder notation)} \\
-  & A \cap B = \{ x \mid x \in A \text{ and } x \in B \} \quad \text{(Intersection)} \\
-  & A \cup B = \{ x \mid x \in A \text{ or } x \in B \} \quad \text{(Union)}
+\forall A, B (A = B \iff \forall x (x \in A \iff x \in B)) \quad & (\text{Axiom of Extensionality}) \\
+\exists C \forall x (x \in C \iff x = a \lor x = b) \quad & (\text{Axiom of Pairing}) \\
+\exists U \forall x (x \in U \iff \exists y (y \in A \land x \in y)) \quad & (\text{Axiom of Union}) \\
+\exists P \forall x (x \in P \iff x \subseteq A) \quad & (\text{Axiom of Power Set}) \\
+\exists I (\emptyset \in I \land \forall x (x \in I \rightarrow (x \cup \{x\} \in I))) \quad & (\text{Axiom of Infinity})
 \end{align*}
 
 \subsection*{Worked Example}
-Consider a set \( A = \{1, 2, 3\} \). By the Axiom of Extensionality, another set \( B \) defined as \( B = \{3, 2, 1\} \) is equal to \( A \) since both sets contain the same elements. This illustrates that the order of elements does not affect set equality.
+Consider the set \( A = \{ 1, 2, 3 \} \). By the Axiom of Pairing, we can form the set \( B = \{ A, A \} \) which includes the set \( A \) itself as an element. The Union Axiom guarantees the existence of a set \( U \) such that \( U = 1 \cup 2 \cup 3 \), demonstrating the merger of initial elements.
 
 \subsection*{Common Pitfalls}
-- Confusing the concept of set membership with subset relations.
-- Misinterpreting the definition of an empty set and its properties.
-- Assuming that sets can be defined through self-reference without regard for the Axiom of Regularity.
+- Confusing set equality with the equality of their individual elements.
+- Assuming the existence of sets without properly applying the axioms.
+- Misunderstanding the distinction between sets and their elements.
 
 \subsection*{Connections}
-Axiomatic set theory is foundational to various areas of mathematics, including topology, algebra, and analysis. It serves as a backdrop for discussing other mathematical structures, such as functions and relations, which rely on set-theoretic definitions. Understanding axiomatic set theory is crucial for engaging with more advanced topics like model theory and category theory.
+Axiomatic set theory underpins many areas of mathematics, establishing a rigorous foundation for concepts such as functions, relations, and cardinality. It is often a prerequisite for advanced studies in mathematical logic and topology.
 
 \subsection*{Further Reading}
-- Jech, T. J. (2003). *Set Theory*. Springer.
-- Halmos, P. R. (1974). *Naive Set Theory*. Springer.
-- Cohen, P. J. (1966). *Set Theory and the Continuum Hypothesis*. Addison-Wesley.
+- Zermelo, E. (1908). \"A New Approach to the Foundations of Set Theory.\" 
+- Cohen, P. J. (1966). \"Set Theory and the Continuum Hypothesis.\"
+- Jech, T. (2003). \"Set Theory.\" Springer.
+```

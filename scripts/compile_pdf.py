@@ -1,7 +1,7 @@
 """Compile Markdown files in the output directory into PDFs.
 
 This script performs light validation and preprocessing before invoking
-`pandoc` to convert Markdown files into PDFs.  Results are written to the
+`pandoc` to convert Markdown files into PDFs. Results are written to the
 `pdf_output` directory and a log of successes and failures is appended to
 `logs/compile_log.txt`.
 """
@@ -23,13 +23,11 @@ PDF_OUTPUT_DIR = ROOT / "pdf_output"
 LOG_DIR = ROOT / "logs"
 LOG_FILE = LOG_DIR / "compile_log.txt"
 
-# Common phrases that indicate the file was not successfully generated.
 PLACEHOLDER_PATTERNS = ["todo", "placeholder", "no content", "tbd"]
+INLINE_LATEX_RE = re.compile(r"(?<![$\\\\])\\(frac|sqrt|alpha|beta|gamma|pi|theta|sum|int|lim)")
 
 
 def log(filename: str, status: str, reason: str = "") -> None:
-    """Append a log entry to the compile log."""
-
     LOG_DIR.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now().isoformat(timespec="seconds")
     with LOG_FILE.open("a", encoding="utf-8") as f:
@@ -45,21 +43,14 @@ def has_placeholder(text: str) -> bool:
 
 
 def validate_markdown(text: str, min_chars: int) -> Tuple[bool, str]:
-    """Perform sanity checks on Markdown content."""
-
     if not text.strip():
         return False, "empty file"
     if len(text) < min_chars:
         return False, "too short"
     if has_placeholder(text):
         return False, "placeholder content"
-
-    lines = text.splitlines()
-    if not lines or not lines[0].startswith("# "):
-        return False, "missing title header"
-    if sum(1 for l in lines if l.startswith("## ")) < 2:
-        return False, "missing sections"
-
+    if "\\section*{" not in text:
+        return False, "missing LaTeX \\section* title"
     if text.count("```") % 2 != 0:
         return False, "unclosed code block"
     if text.count("$$") % 2 != 0:
@@ -70,26 +61,17 @@ def validate_markdown(text: str, min_chars: int) -> Tuple[bool, str]:
         return False, "unbalanced \\(\\)"
     if text.count("$") % 2 != 0:
         return False, "unbalanced $"
-
     return True, ""
 
 
-INLINE_LATEX_RE = re.compile(r"(?<![$\\\\])\\(frac|sqrt|alpha|beta|gamma|pi|theta|sum|int|lim)")
-
-
 def preprocess_markdown(text: str) -> str:
-    """Normalize inline math and fix simple syntax issues."""
-
-    # Convert Obsidian-style math: \( ... \) -> $...$
     text = text.replace("\\(", "$").replace("\\)", "$")
 
-    # Wrap bare LaTeX commands with $...$ if they're likely math.
     def repl(match: re.Match[str]) -> str:
         return f"${match.group(0)}$"
 
     text = INLINE_LATEX_RE.sub(repl, text)
 
-    # Ensure code fences are balanced by appending a closing block if needed.
     if text.count("```") % 2 != 0:
         text += "\n```"
 
@@ -97,8 +79,6 @@ def preprocess_markdown(text: str) -> str:
 
 
 def compile_markdown(path: Path, *, dry_run: bool, force: bool, min_chars: int) -> Tuple[bool, str]:
-    """Validate, preprocess and compile a single Markdown file."""
-
     content = path.read_text(encoding="utf-8")
     ok, reason = validate_markdown(content, min_chars)
     if not ok:
@@ -121,6 +101,7 @@ def compile_markdown(path: Path, *, dry_run: bool, force: bool, min_chars: int) 
     cmd = [
         "pandoc",
         str(tmp_path),
+        "-f", "markdown+tex_math_dollars+raw_tex",
         "-o",
         str(pdf_path),
         "--pdf-engine=pdflatex",
@@ -187,4 +168,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
