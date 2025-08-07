@@ -17,6 +17,7 @@ import pandas as pd
 import toml
 from dotenv import load_dotenv
 from openai import OpenAI
+from tqdm import tqdm
 
 from utils import render_prompt, slugify
 from renderers import LatexRenderer, HtmlRenderer
@@ -112,6 +113,7 @@ def main(
     skip_existing: bool = False,
     overwrite: bool = False,
     log_format: str = "jsonl",
+    quiet: bool = False,
     fmt: str = "latex",
 
     start: Optional[int] = None,
@@ -131,7 +133,7 @@ def main(
 
     renderer = LatexRenderer() if fmt == "latex" else HtmlRenderer()
     processed = success = failure = 0
-    for row in topics:
+    for row in tqdm(topics, disable=quiet, desc="Generating"):
         processed += 1
         sec_id   = row.get("section_id") or row.get("id")
         domain   = row.get("domain", "TBD")
@@ -221,6 +223,8 @@ def main(
             else:
                 logger.info(json.dumps(entry))
 
+    if not quiet:
+        print(f"Processed: {processed}, ✓ {success}, ✗ {failure}")
     print(f"Processed: {processed}, ✓ {success}, ✗ {failure}")
     return 0 if failure == 0 else 1
 
@@ -248,6 +252,8 @@ if __name__ == "__main__":
                   help="Overwrite existing output")
     p.add_argument("--log-format", choices=["jsonl","text"],
                   default="jsonl", help="Log output format")
+    p.add_argument("--quiet", action="store_true",
+                  help="Suppress progress output")
     p.add_argument("--format", choices=["latex", "html"],
                   default="latex", help="Output format")
 
@@ -277,6 +283,8 @@ if __name__ == "__main__":
         skip_existing= args.skip_existing,
         overwrite    = args.overwrite,
         log_format   = args.log_format,
+        quiet        = args.quiet,
+
         fmt          = args.format,
     )
 
