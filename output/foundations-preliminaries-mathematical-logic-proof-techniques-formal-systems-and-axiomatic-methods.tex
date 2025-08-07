@@ -1,0 +1,62 @@
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+\titleformat{\section}[block]{\large\bfseries}{}{0em}{}
+\titleformat{\subsection}[block]{\normalsize\bfseries}{}{0em}{}
+
+\begin{document}
+
+% Title: Mathematical Logic & Proof Techniques
+% ID: MATH.1.1
+% Domain: Foundations & Preliminaries
+% Topic: Mathematical Logic & Proof Techniques
+
+\textbackslash\{\}section*\{Axiomatic Set Theory\}
+\textbackslash\{\}subsection*\{Domain\} Mathematical Logic \textbackslash\{\}& Foundations
+\textbackslash\{\}subsection*\{Subfield\} Set Theory
+
+\textbackslash\{\}subsection*\{Definition\}
+Axiomatic Set Theory is a formalized approach to set theory that establishes a collection of axioms from which the entirety of set theoretic notions is derived. This includes foundational concepts such as sets, membership, and operations on sets, all articulated through a symbolic language.
+
+\textbackslash\{\}subsection*\{Core Principles\}
+\textbackslash\{\}begin\{itemize\}
+  \textbackslash\{\}item \textbackslash\{\}textbf\{Axiom of Extensionality:\} Two sets are equal if they have the same elements.
+  \textbackslash\{\}item \textbackslash\{\}textbf\{Axiom of Pairing:\} For any two sets, there exists a set that contains exactly these two sets.
+  \textbackslash\{\}item \textbackslash\{\}textbf\{Axiom of Union:\} For any set, there is a set that contains all elements of the elements of that set.
+  \textbackslash\{\}item \textbackslash\{\}textbf\{Axiom of Power Set:\} For any set, there exists a set of all its subsets.
+  \textbackslash\{\}item \textbackslash\{\}textbf\{Axiom of Infinity:\} There exists a set that contains the empty set and is closed under the operation of forming singleton sets.
+\textbackslash\{\}end\{itemize\}
+
+\textbackslash\{\}subsection*\{Key Formulas or Symbolic Representations\}
+The axioms of set theory can often be expressed symbolically. For example:
+
+\textbackslash\{\}begin\{align*\}
+\textbackslash\{\}& \textbackslash\{\}forall A, B \textbackslash\{\} (A = B \textbackslash\{\}iff \textbackslash\{\}forall x \textbackslash\{\} (x \textbackslash\{\}in A \textbackslash\{\}iff x \textbackslash\{\}in B)) \textbackslash\{\}quad \textbackslash\{\}text\{(Axiom of Extensionality)\} \textbackslash\{\}\textbackslash\{\}
+\textbackslash\{\}& \textbackslash\{\}forall x, y \textbackslash\{\} \textbackslash\{\}exists z \textbackslash\{\} (z = \textbackslash\{\}\{x, y\textbackslash\{\}\}) \textbackslash\{\}quad \textbackslash\{\}text\{(Axiom of Pairing)\} \textbackslash\{\}\textbackslash\{\}
+\textbackslash\{\}& \textbackslash\{\}forall A \textbackslash\{\} \textbackslash\{\}exists B \textbackslash\{\} (B = \textbackslash\{\}bigcup A) \textbackslash\{\}quad \textbackslash\{\}text\{(Axiom of Union)\} \textbackslash\{\}\textbackslash\{\}
+\textbackslash\{\}& \textbackslash\{\}forall A \textbackslash\{\} \textbackslash\{\}exists B \textbackslash\{\} (B = \textbackslash\{\}mathcal\{P\}(A)) \textbackslash\{\}quad \textbackslash\{\}text\{(Axiom of Power Set)\} \textbackslash\{\}\textbackslash\{\}
+\textbackslash\{\}& \textbackslash\{\}exists A\textbackslash\{\}_0 \textbackslash\{\} (\textbackslash\{\}varnothing \textbackslash\{\}in A\textbackslash\{\}_0 \textbackslash\{\}land \textbackslash\{\}forall x (x \textbackslash\{\}in A\textbackslash\{\}_0 \textbackslash\{\}implies x \textbackslash\{\}cup \textbackslash\{\}\{x\textbackslash\{\}\} \textbackslash\{\}in A\textbackslash\{\}_0)) \textbackslash\{\}quad \textbackslash\{\}text\{(Axiom of Infinity)\}
+\textbackslash\{\}end\{align*\}
+
+\textbackslash\{\}subsection*\{Worked Example\}
+Consider the set \textbackslash\{\}( A = \textbackslash\{\}\{1, 2\textbackslash\{\}\} \textbackslash\{\}). By the Axiom of Pairing, the set \textbackslash\{\}( \textbackslash\{\}\{1, 2\textbackslash\{\}\} \textbackslash\{\}) can be constructed from its elements. Then, using the Axiom of Union, the union of set \textbackslash\{\}( A \textbackslash\{\}) with itself is \textbackslash\{\}( A \textbackslash\{\}) itself, exemplifying the closure property under union.
+
+\textbackslash\{\}subsection*\{Common Pitfalls\}
+Students often confuse sets with their elements, leading to incorrect assumptions about membership. It is also common to misinterpret the notion of equality in sets, forgetting that equality is based solely on content, not on the way sets are constructed.
+
+\textbackslash\{\}subsection*\{Connections\}
+Axiomatic Set Theory serves as the foundation for various branches within mathematics, including mathematical analysis and topology. It is intimately connected with other logical systems such as model theory and truth theory, providing a framework for discussing properties of mathematical objects.
+
+\textbackslash\{\}subsection*\{Further Reading\}
+For an extensive understanding of Axiomatic Set Theory, see the following texts:
+- Cohen, P. J. (1966). \textbackslash\{\}textit\{Set Theory and the Continuum Hypothesis\}.
+- Jech, T. (2003). \textbackslash\{\}textit\{Set Theory: The Third Millennium Edition\}.
+- Suppes, P. (1972). \textbackslash\{\}textit\{Axiomatic Set Theory\}.
+
+\end{document}

@@ -1,0 +1,62 @@
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+\titleformat{\section}[block]{\large\bfseries}{}{0em}{}
+\titleformat{\subsection}[block]{\normalsize\bfseries}{}{0em}{}
+
+\begin{document}
+
+% Title: Set Theory & Foundations
+% ID: MATH.1.2
+% Domain: Foundations & Preliminaries
+% Topic: Set Theory & Foundations
+
+\textbackslash\{\}section*\{Axiomatic Set Theory\}
+\textbackslash\{\}subsection*\{Domain\} Mathematical Logic \textbackslash\{\}& Foundations
+\textbackslash\{\}subsection*\{Subfield\} Set Theory
+
+\textbackslash\{\}subsection*\{Definition\}
+Axiomatic Set Theory is a branch of mathematical logic that investigates the properties and structure of sets through a formal system defined by axioms. It establishes a foundational framework for mathematics, specifying how sets can be constructed and manipulated through formal axioms, such as those presented in Zermelo-Fraenkel set theory (ZF).
+
+\textbackslash\{\}subsection*\{Core Principles\}
+\textbackslash\{\}begin\{itemize\}
+  \textbackslash\{\}item Axiom of Extensionality: Two sets are equal if they have the same elements.
+  \textbackslash\{\}item Axiom of Pairing: For any two sets, there is a set containing exactly those two sets.
+  \textbackslash\{\}item Axiom of Union: For any set, there exists a set that contains all the elements of the subsets of that set.
+  \textbackslash\{\}item Axiom of Power Set: For any set, there exists a set of all its subsets.
+  \textbackslash\{\}item Axiom of Infinity: There exists a set that contains the empty set and is closed under the operation of forming singletons.
+\textbackslash\{\}end\{itemize\}
+
+\textbackslash\{\}subsection*\{Key Formulas or Symbolic Representations\}
+The axioms may be represented symbolically as follows:
+\textbackslash\{\}begin\{align*\}
+    \textbackslash\{\}forall A \textbackslash\{\}, (A = B \textbackslash\{\}iff \textbackslash\{\}forall x \textbackslash\{\}, (x \textbackslash\{\}in A \textbackslash\{\}iff x \textbackslash\{\}in B)) \textbackslash\{\}& \textbackslash\{\}quad \textbackslash\{\}text\{(Extensionality)\} \textbackslash\{\}\textbackslash\{\}
+    \textbackslash\{\}exists C \textbackslash\{\}, \textbackslash\{\}forall x \textbackslash\{\}, (x \textbackslash\{\}in C \textbackslash\{\}iff (x = a \textbackslash\{\}lor x = b)) \textbackslash\{\}& \textbackslash\{\}quad \textbackslash\{\}text\{(Pairing)\} \textbackslash\{\}\textbackslash\{\}
+    \textbackslash\{\}exists U \textbackslash\{\}, \textbackslash\{\}forall x \textbackslash\{\}, (x \textbackslash\{\}in U \textbackslash\{\}iff \textbackslash\{\}exists y \textbackslash\{\}, (y \textbackslash\{\}in A \textbackslash\{\}land x \textbackslash\{\}in y)) \textbackslash\{\}& \textbackslash\{\}quad \textbackslash\{\}text\{(Union)\} \textbackslash\{\}\textbackslash\{\}
+    \textbackslash\{\}exists P \textbackslash\{\}, \textbackslash\{\}forall x \textbackslash\{\}, (x \textbackslash\{\}in P \textbackslash\{\}iff x \textbackslash\{\}subseteq A) \textbackslash\{\}& \textbackslash\{\}quad \textbackslash\{\}text\{(Power Set)\} \textbackslash\{\}\textbackslash\{\}
+    \textbackslash\{\}exists I \textbackslash\{\}, (\textbackslash\{\}emptyset \textbackslash\{\}in I \textbackslash\{\}land \textbackslash\{\}forall x \textbackslash\{\}, (x \textbackslash\{\}in I \textbackslash\{\}rightarrow x \textbackslash\{\}cup \textbackslash\{\}\{x\textbackslash\{\}\} \textbackslash\{\}in I)) \textbackslash\{\}& \textbackslash\{\}quad \textbackslash\{\}text\{(Infinity)\}
+\textbackslash\{\}end\{align*\}
+
+\textbackslash\{\}subsection*\{Worked Example\}
+Consider the construction of the set of natural numbers using the Axiom of Infinity. Define the empty set as \textbackslash\{\}( \textbackslash\{\}emptyset = \textbackslash\{\}\{\textbackslash\{\}\} \textbackslash\{\}). According to the axiom, we can construct the subsequent sets: \textbackslash\{\}( 0 = \textbackslash\{\}emptyset \textbackslash\{\}), \textbackslash\{\}( 1 = \textbackslash\{\}\{0\textbackslash\{\}\} = \textbackslash\{\}\{\textbackslash\{\}emptyset\textbackslash\{\}\} \textbackslash\{\}), \textbackslash\{\}( 2 = \textbackslash\{\}\{0, 1\textbackslash\{\}\} = \textbackslash\{\}\{ \textbackslash\{\}emptyset, \textbackslash\{\}\{ \textbackslash\{\}emptyset \textbackslash\{\}\} \textbackslash\{\}\} \textbackslash\{\}), continuing indefinitely. This iterative process highlights how natural numbers can be represented as sets.
+
+\textbackslash\{\}subsection*\{Common Pitfalls\}
+- Confusing the identity of sets with the order of their elements, neglecting the Axiom of Extensionality.
+- Misunderstanding the interpretation of the empty set and its implications in other axioms.
+- Overlooking the necessity of specifying elements' relationships when defining sets.
+
+\textbackslash\{\}subsection*\{Connections\}
+Axiomatic Set Theory serves as a foundational element for various other areas in mathematics, including algebra, topology, and analysis. It establishes the necessary underpinnings for discussions on functions, relations, and cardinality. Furthermore, it connects closely with model theory, showing how different axiomatic systems can lead to varied mathematical universes.
+
+\textbackslash\{\}subsection*\{Further Reading\}
+- Cohen, P. J., \textbackslash\{\}& Zermelo, E. (1965). \textbackslash\{\}textit\{Set Theory and the Continuum Hypothesis\}. 
+- Jech, T. (2003). \textbackslash\{\}textit\{Set Theory\}. Springer.
+- Halmos, P. R. (1960). \textbackslash\{\}textit\{Naive Set Theory\}. Springer.
+
+\end{document}

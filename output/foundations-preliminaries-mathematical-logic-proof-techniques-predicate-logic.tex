@@ -1,0 +1,62 @@
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+\titleformat{\section}[block]{\large\bfseries}{}{0em}{}
+\titleformat{\subsection}[block]{\normalsize\bfseries}{}{0em}{}
+
+\begin{document}
+
+% Title: Mathematical Logic & Proof Techniques
+% ID: MATH.1.1
+% Domain: Foundations & Preliminaries
+% Topic: Mathematical Logic & Proof Techniques
+
+\textbackslash\{\}section*\{Axiomatic Set Theory\}
+\textbackslash\{\}subsection*\{Domain\} Mathematical Logic \textbackslash\{\}& Foundations
+\textbackslash\{\}subsection*\{Subfield\} Set Theory
+
+\textbackslash\{\}subsection*\{Definition\}
+Axiomatic Set Theory is a formal system that provides a set of axioms for the foundations of set theory, aiming to define sets and their properties rigorously. The most notable axiom systems include Zermelo-Fraenkel set theory with the Axiom of Choice (ZFC). A set is typically denoted by curly braces, e.g., \textbackslash\{\}( S = \textbackslash\{\}\{ x \textbackslash\{\},|\textbackslash\{\}, P(x) \textbackslash\{\}\} \textbackslash\{\}), where \textbackslash\{\}( P(x) \textbackslash\{\}) is a property defining the elements of \textbackslash\{\}( S \textbackslash\{\}).
+
+\textbackslash\{\}subsection*\{Core Principles\}
+\textbackslash\{\}begin\{itemize\}
+  \textbackslash\{\}item \textbackslash\{\}textbf\{Axiom of Extensionality\}: Two sets are equal if they have the same elements.
+  \textbackslash\{\}item \textbackslash\{\}textbf\{Axiom of Pairing\}: For any two sets, there exists a set that contains exactly those two sets.
+  \textbackslash\{\}item \textbackslash\{\}textbf\{Axiom of Union\}: For any set, there exists a set that contains all elements of the members of that set.
+  \textbackslash\{\}item \textbackslash\{\}textbf\{Axiom of Power Set\}: For any set, there exists a set of all its subsets.
+  \textbackslash\{\}item \textbackslash\{\}textbf\{Axiom of Infinity\}: There exists a set that contains an empty set and the successor of every set.
+\textbackslash\{\}end\{itemize\}
+
+\textbackslash\{\}subsection*\{Key Formulas or Symbolic Representations\}
+The axioms can be expressed symbolically, as follows:
+
+\textbackslash\{\}begin\{align*\}
+  \textbackslash\{\}& \textbackslash\{\}forall A \textbackslash\{\}forall B \textbackslash\{\}, [A = B \textbackslash\{\}iff \textbackslash\{\}forall x \textbackslash\{\}, (x \textbackslash\{\}in A \textbackslash\{\}iff x \textbackslash\{\}in B)] \textbackslash\{\}quad \textbackslash\{\}text\{(Extensionality)\} \textbackslash\{\}\textbackslash\{\}
+  \textbackslash\{\}& \textbackslash\{\}exists C \textbackslash\{\}, \textbackslash\{\}forall x \textbackslash\{\}, [x \textbackslash\{\}in C \textbackslash\{\}iff (x = a \textbackslash\{\}lor x = b)] \textbackslash\{\}quad \textbackslash\{\}text\{(Pairing)\} \textbackslash\{\}\textbackslash\{\}
+  \textbackslash\{\}& \textbackslash\{\}exists U \textbackslash\{\}, \textbackslash\{\}forall y \textbackslash\{\}, [y \textbackslash\{\}in U \textbackslash\{\}iff \textbackslash\{\}exists x \textbackslash\{\}in A \textbackslash\{\}, (y \textbackslash\{\}in x)] \textbackslash\{\}quad \textbackslash\{\}text\{(Union)\} \textbackslash\{\}\textbackslash\{\}
+  \textbackslash\{\}& \textbackslash\{\}exists P \textbackslash\{\}, \textbackslash\{\}forall x \textbackslash\{\}, [x \textbackslash\{\}in P \textbackslash\{\}iff x \textbackslash\{\}subseteq A] \textbackslash\{\}quad \textbackslash\{\}text\{(Power Set)\} \textbackslash\{\}\textbackslash\{\}
+  \textbackslash\{\}& \textbackslash\{\}exists I \textbackslash\{\}, [\textbackslash\{\}emptyset \textbackslash\{\}in I \textbackslash\{\}land \textbackslash\{\}forall x \textbackslash\{\}, (x \textbackslash\{\}in I \textbackslash\{\}implies x \textbackslash\{\}cup \textbackslash\{\}\{x\textbackslash\{\}\} \textbackslash\{\}in I)] \textbackslash\{\}quad \textbackslash\{\}text\{(Infinity)\}
+\textbackslash\{\}end\{align*\}
+
+\textbackslash\{\}subsection*\{Worked Example\}
+Consider the set \textbackslash\{\}( A = \textbackslash\{\}\{ 1, 2 \textbackslash\{\}\} \textbackslash\{\}) and apply the Axiom of Union. The union set \textbackslash\{\}( U \textbackslash\{\}) will contain the elements of the subsets defined by \textbackslash\{\}( A \textbackslash\{\}), thus \textbackslash\{\}( U = \textbackslash\{\}\{ 1, 2 \textbackslash\{\}\} \textbackslash\{\}). If you consider sets defined as \textbackslash\{\}( B = \textbackslash\{\}\{ 1 \textbackslash\{\}\}, C = \textbackslash\{\}\{ 2 \textbackslash\{\}\} \textbackslash\{\}), then the union \textbackslash\{\}( B \textbackslash\{\}cup C = U \textbackslash\{\}).
+
+\textbackslash\{\}subsection*\{Common Pitfalls\}
+Learners often confuse sets with their elements, neglect the importance of distinct sets (such as the empty set), or misapply axioms, particularly in defining subsets and unions.
+
+\textbackslash\{\}subsection*\{Connections\}
+Axiomatic Set Theory serves as a fundamental building block for various areas in mathematical logic, such as model theory and topology. It connects to modern mathematical structures like categories and functions. Understanding its axioms is crucial for further studies in logic and mathematical foundations.
+
+\textbackslash\{\}subsection*\{Further Reading\}
+For a thorough exploration of Axiomatic Set Theory, refer to:
+- Cohen, P. J. (1966). \textbackslash\{\}textit\{Set Theory and the Continuum Hypothesis\}. 
+- Jech, T. (2003). \textbackslash\{\}textit\{Set Theory\}.
+- Halmos, P. R. (1960). \textbackslash\{\}textit\{Naive Set Theory\}.
+
+\end{document}

@@ -1,0 +1,11 @@
+2025-08-07 12:35:53,608 INFO Generating entries 0 to 5
+2025-08-07 12:36:07,872 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 12:36:07,882 INFO Wrote C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\MATH.1.1-propositional-logic.tex
+2025-08-07 12:36:22,890 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 12:36:22,894 INFO Wrote C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\MATH.1.1-predicate-logic.tex
+2025-08-07 12:36:34,642 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 12:36:34,647 INFO Wrote C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\MATH.1.1-formal-systems-and-axiomatic-methods.tex
+2025-08-07 12:36:47,596 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 12:36:47,623 INFO Wrote C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\MATH.1.2-basic-set-operations-union-intersection-complement.tex
+2025-08-07 12:36:59,748 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 12:36:59,760 INFO Wrote C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\MATH.1.2-venn-diagrams.tex
