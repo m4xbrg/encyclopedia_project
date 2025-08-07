@@ -1,10 +1,9 @@
-import sys
 from pathlib import Path
-
+import sys
 import pytest
 
 sys.path.append(str(Path(__file__).resolve().parents[1] / "scripts"))
-from utils import slugify, dedupe_path
+from utils import slugify, dedupe_path, normalize_artifacts
 
 
 def test_slugify_rejects_too_long():
@@ -28,13 +27,6 @@ def test_dedupe_path_appends_suffix(tmp_path: Path):
     next_path.touch()
     third = dedupe_path(first)
     assert third.name == "entry-3.tex"
-
-=======
-import pathlib
-import sys
-
-sys.path.append(str(pathlib.Path(__file__).resolve().parent.parent / "scripts"))
-from utils import normalize_artifacts
 
 
 def test_basic_replacements():
