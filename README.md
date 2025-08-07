@@ -32,37 +32,33 @@ make clean    # Remove generated files and logs
 ```
 
 ## Usage
-Generate LaTeX files:
+
+### Generate LaTeX files
 ```bash
 python scripts/generate.py
 ```
 
-Structured JSON logging with info, warning and error levels is enabled by default. To disable logging:
+Structured logging is enabled by default. Disable it with:
 ```bash
 python scripts/generate.py --log false
 ```
 
-The generator prints aggregate success/failure counts and response time
-statistics when it finishes. To export these metrics for monitoring, provide a
-path for the optional JSON output:
-
+Export run metrics:
 ```bash
 python scripts/generate.py --metrics-json logs/metrics.json
-If a target `.tex` file already exists, you can control how it's handled:
+```
 
-* `--skip-existing` – leave existing files untouched and skip generation
-* `--overwrite` – replace existing files with newly generated content
+Handling existing files:
 
-By default (without either flag), the script stops with an error if the
-output file already exists. When both flags are provided, `--overwrite`
-takes precedence.
+- `--skip-existing` – leave existing files untouched and skip generation
+- `--overwrite` – replace existing files with newly generated content (takes precedence over `--skip-existing`)
 
 Retry failed API calls (default 3 attempts):
 ```bash
 python scripts/generate.py --retries 5
 ```
 
-Compile `.tex` files into PDFs:
+### Compile `.tex` files into PDFs
 ```bash
 python scripts/compile_pdf.py          # compile all valid files
 python scripts/compile_pdf.py --dry-run # preview which files would be compiled
@@ -71,4 +67,9 @@ python scripts/compile_pdf.py --all     # force recompilation of all files
 ```
 
 PDFs are saved to `pdf_output/` and a structured log is written to `logs/compile_log.txt`.
+
+### Run the tests
+```bash
+pytest
+```
 
