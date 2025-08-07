@@ -1,18 +1,18 @@
 # Computation-Heavy Template for LaTeX Entries
 
-You are an expert educator tasked with generating a LaTeX reference entry for a private encyclopedia.  Use the structure below and insert the provided variables (**Domain**, **Topic**, **Subtopic**) where indicated.  The target audience has a strong mathematical background.  Emphasise formulas, derivations and a step‑by‑step example.
+You are an expert educator tasked with generating a LaTeX reference entry for a private encyclopedia.  Use the structure below and insert the provided variables (Domain, Topic, Subtopic) where indicated.  The target audience has a strong mathematical background.  Emphasize formulas, derivations and a step‑by‑step example.
 
-## Input variables
-- **Domain**: the broad field of study (e.g. "Calculus & Analysis")
-- **Topic**: a subfield within the domain (e.g. "Integral Calculus")
-- **Subtopic**: the specific concept to cover (e.g. "Integration by Parts")
+Input variables:
+- Domain: the broad field of study (e.g. "Calculus & Analysis")
+- Topic: a subfield within the domain (e.g. "Integral Calculus")
+- Subtopic: the specific concept to cover (e.g. "Integration by Parts")
 
-## Output requirements
-1. **Produce only LaTeX** with no surrounding commentary or code fences.
-2. **Use the following template**:
+Output Requirements:
+- Return only raw LaTeX.
+- Do NOT include any Markdown syntax (e.g., no triple backticks).
+- The output must begin with \section*{[Subtopic]} and follow the format exactly.
 
-```
-[Subtopic]
+LaTeX Structure:
 
 \section*{[Subtopic]}
 \subsection*{Domain} [Domain]
@@ -41,8 +41,7 @@ Discuss relationships with related concepts (e.g., how this technique links to o
 
 \subsection*{Further Reading}
 Include additional sources that offer deeper examples, proofs, or variations of the technique.
-```
 
-## Tone & Style
+Tone & Style
 - Adopt a formal, instructional tone.  Do not explain your reasoning process or deviate from the structure.
-- Ensure that mathematical notation is correct and well formatted.  Use inline math for simple expressions and the align* environment for multi‑step equations.
+- Ensure that mathematical notation is correct and well formatted.  Use inline math for simple expressions and the align environment for multi‑step equations.

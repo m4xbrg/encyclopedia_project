@@ -70,3 +70,8 @@ l.41 \setlength
 2025-08-06T23:58:06 | predicate-logic.md | ✅ Success
 2025-08-06T23:58:06 | propositional-logic.md | ✅ Success
 2025-08-06T23:58:07 | venn-diagrams.md | ✅ Success
+2025-08-07T00:55:19 | basic-set-operations-union-intersection-complement.tex | ❌ Failure | pdflatex failed
+2025-08-07T00:55:20 | formal-systems-and-axiomatic-methods.tex | ❌ Failure | pdflatex failed
+2025-08-07T00:55:20 | predicate-logic.tex | ❌ Failure | pdflatex failed
+2025-08-07T00:55:20 | propositional-logic.tex | ❌ Failure | pdflatex failed
+2025-08-07T00:55:20 | venn-diagrams.tex | ❌ Failure | pdflatex failed

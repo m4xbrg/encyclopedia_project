@@ -1,0 +1,46 @@
+% Predicate Logic
+% ID: MATH.1.1
+% Domain: Foundations & Preliminaries
+% Topic: Mathematical Logic & Proof Techniques
+
+\section*{Axiomatic Set Theory}
+\subsection*{Domain} Mathematical Logic & Foundations
+\subsection*{Subfield} Set Theory
+
+\subsection*{Definition}
+Axiomatic Set Theory is a formalized approach to the study of sets, which establishes the properties and relationships of sets through a system of axioms. These axioms serve as foundational truths from which set-related theorems can be derived. Common axiomatic systems include Zermelo-Fraenkel Set Theory (ZF) with the Axiom of Choice (ZFC).
+
+\subsection*{Core Principles}
+\begin{itemize}
+  \item Axiom of Extensionality: Two sets are equal if they have the same elements.
+  \item Axiom of Pairing: For any two sets, there exists a set that contains exactly these two sets.
+  \item Axiom of Union: For any set of sets, there exists a set that contains all elements of these sets.
+  \item Axiom of Power Set: For any set, there exists a set of all its subsets.
+\end{itemize}
+
+\subsection*{Key Formulas or Symbolic Representations}
+\begin{align*}
+  & \text{Axiom of Extensionality: } \forall A \forall B \left( \forall x \left( x \in A \iff x \in B \right) \implies A = B \right) \\
+  & \text{Axiom of Pairing: } \forall A \forall B \exists C \forall x \left( x \in C \iff (x = A \lor x = B) \right) \\
+  & \text{Axiom of Union: } \forall A \exists B \forall x \left( x \in B \iff \exists C \left( x \in C \land x \in A \right) \right) \\
+  & \text{Axiom of Power Set: } \forall A \exists B \forall C \left( C \in B \iff C \subseteq A \right) 
+\end{align*}
+
+\subsection*{Worked Example}
+Consider a set \( A = \{1, 2\} \). By the Axiom of Pairing, we can construct a set \( B \) containing exactly \( A \) and another set \( C = \{3\} \): 
+\[
+\text{Let } B = \{A, C\} = \{\{1, 2\}, \{3\}\}.
+\]
+By the Axiom of Union, the union of set \( B \) will yield the set \( \{1, 2, 3\} \).
+
+\subsection*{Common Pitfalls}
+Learners often confuse the distinction between sets and their elements, incorrectly applying operations intended for one to the other. Additionally, the assumption that a set can contain itself as an element can lead to paradoxes, such as Russell's Paradox.
+
+\subsection*{Connections}
+Axiomatic Set Theory forms the basis for many areas within mathematical logic, such as model theory, ordinal and cardinal numbers, and categorical theories. A solid understanding of axiomatic frameworks is required to study the foundations of mathematics rigorously.
+
+\subsection*{Further Reading}
+For more detailed exploration, see:
+- Cohen, P. J., & Keisler, H. J. (2015). *Set Theory: An Introduction to Independence*. Dover Publications.
+- Enderton, H. B. (1977). *Elements of Set Theory*. Academic Press.
+- Jech, T. (2003). *Set Theory*. Springer.

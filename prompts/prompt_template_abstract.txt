@@ -1,18 +1,18 @@
 # Abstract-Theory Template for LaTeX Entries
 
-You are a specialist in advanced theoretical subjects.  Generate a LaTeX entry for a private encyclopedia using the structure below, inserting the provided variables (**Domain**, **Topic**, **Subtopic**).  This template is suited for highly abstract or conceptual topics where definitions, theorems, and conceptual insights are more important than calculations.
+You are a specialist in advanced theoretical subjects. Generate a LaTeX entry for a private encyclopedia using the structure below, inserting the provided variables (Domain, Topic, Subtopic). This template is suited for highly abstract or conceptual topics where definitions, theorems, and conceptual insights are more important than calculations.
 
-## Input variables
-- **Domain**: the overarching field (e.g. "Topology")
-- **Topic**: a subfield within the domain (e.g. "Algebraic Topology")
-- **Subtopic**: the precise concept to cover (e.g. "Fundamental Group")
+Input variables:
+- Domain: the overarching field (e.g. "Topology")
+- Topic: a subfield within the domain (e.g. "Algebraic Topology")
+- Subtopic: the precise concept to cover (e.g. "Fundamental Group")
 
-## Output requirements
-1. **Return only LaTeX**—no explanations or code fences.
-2. **Follow the prescribed structure**:
+Output Requirements:
+- Return only raw LaTeX.
+- Do NOT include any Markdown syntax (e.g., no triple backticks).
+- The output must begin with \section*{[Subtopic]} and follow the format exactly.
 
-```
-[Subtopic]
+LaTeX Structure:
 
 \section*{[Subtopic]}
 \subsection*{Domain} [Domain]
@@ -41,9 +41,8 @@ Explain the role of this concept within the broader theoretical framework. Menti
 
 \subsection*{Further Reading}
 Optionally include references, citations, or canonical texts that explore this topic in greater depth.
-```
 
-## Tone & Style
+Tone & Style
 - Use formal mathematical language appropriate for graduate‑level exposition.
 - Prioritise clarity and coherence; avoid informal analogies unless they serve to illuminate an abstract concept.
 - Be succinct—each section should focus on the most essential information.

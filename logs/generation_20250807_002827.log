@@ -1,0 +1,11 @@
+2025-08-07 00:28:27,261 INFO Generating entries 0 to 5
+2025-08-07 00:28:42,938 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 00:28:42,950 INFO Wrote C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\propositional-logic.tex
+2025-08-07 00:28:59,713 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 00:28:59,733 INFO Wrote C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\predicate-logic.tex
+2025-08-07 00:29:15,245 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 00:29:15,255 INFO Wrote C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\formal-systems-and-axiomatic-methods.tex
+2025-08-07 00:29:30,434 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 00:29:30,472 INFO Wrote C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\basic-set-operations-union-intersection-complement.tex
+2025-08-07 00:29:49,653 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 00:29:49,662 INFO Wrote C:\Users\m4xbr\OneDrive\Documents\GitHub\encyclopedia_project\output\venn-diagrams.tex

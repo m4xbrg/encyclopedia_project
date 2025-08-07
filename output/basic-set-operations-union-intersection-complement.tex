@@ -1,0 +1,44 @@
+% Basic Set Operations (union, intersection, complement)
+% ID: MATH.1.2
+% Domain: Foundations & Preliminaries
+% Topic: Set Theory & Foundations
+
+\section*{Axiomatic Set Theory}
+\subsection*{Domain} Mathematical Logic & Foundations
+\subsection*{Subfield} Set Theory
+
+\subsection*{Definition}
+Axiomatic Set Theory is the branch of mathematical logic that establishes the foundations of set theory through formally stated axioms. It aims to provide a rigorous framework for reasoning about sets, where a set is defined as a collection of distinct objects, called elements, and set membership is denoted by the symbol \( \in \).
+
+\subsection*{Core Principles}
+\begin{itemize}
+  \item **Axiom of Extensionality**: Two sets are equal if they have the same elements.
+  \item **Axiom of Empty Set**: There exists a set with no elements, denoted as \( \emptyset \).
+  \item **Axiom of Pairing**: For any two sets, there exists a set that contains exactly those two sets.
+  \item **Axiom of Union**: For any set, there exists a set that contains all elements of the subsets of the given set.
+  \item **Axiom of Power Set**: For any set \( A \), there exists a set containing all subsets of \( A \).
+\end{itemize}
+
+\subsection*{Key Formulas or Symbolic Representations}
+The formalization of axiomatic set theory typically involves expressions such as:
+\begin{align*}
+    A = B & \iff \forall x (x \in A \iff x \in B) \\
+    A \in B & \text{ (read as "A is an element of B")} \\
+    \mathcal{P}(A) & \text{ denotes the power set of } A 
+\end{align*}
+
+\subsection*{Worked Example}
+Consider the sets \( A = \{1, 2\} \) and \( B = \{2, 1\} \). According to the Axiom of Extensionality, we can assert that \( A = B \), as both sets contain the same elements. This example illustrates that the order of elements within a set does not affect their equality.
+
+\subsection*{Common Pitfalls}
+- Confusing the set notation with elements: \( \{1, 2\} \) is a set, while \( 1 \) and \( 2 \) are its elements.
+- Assuming that a set can contain itself as an element without considering the implications of self-reference.
+- Misunderstanding the distinction between a set and a class, particularly in higher set theory.
+
+\subsection*{Connections}
+Axiomatic Set Theory underpins many areas of mathematics, including topology, analysis, and combinatorics. It is essential for understanding other logical frameworks, such as model theory and category theory. The axioms also serve as a baseline for developing consistency proofs and exploring foundational questions in mathematics.
+
+\subsection*{Further Reading}
+- Cohen, P. J., & Gödel, K. (1971). *Set Theory and the Continuum Hypothesis*. 
+- Jech, T. (2003). *Set Theory*. 
+- Halmos, P. R. (1960). *Naive Set Theory*.
