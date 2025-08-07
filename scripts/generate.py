@@ -7,12 +7,14 @@ from typing import Dict
 import pandas as pd
 
 import os
+import logging
+from datetime import datetime
 
 from dotenv import load_dotenv
 import openai
 from openai import OpenAI
 
-from utils import render_prompt, slugify
+from utils import render_prompt, sanitize_filename
 
 DATA_FILE = Path(__file__).resolve().parent.parent / "topics_final.csv"
 PROMPTS_DIR = Path(__file__).resolve().parent.parent / "prompts"
@@ -23,6 +25,16 @@ PROMPT_TEMPLATES = {
     "computation": PROMPTS_DIR / "prompt_template_computation.txt",
 }
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "output"
+
+LOGS_DIR = Path(__file__).resolve().parent.parent / "logs"
+LOGS_DIR.mkdir(exist_ok=True, parents=True)
+log_file = LOGS_DIR / f"generation_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+logging.basicConfig(
+    filename=log_file,
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(message)s",
+)
+logger = logging.getLogger(__name__)
 
 MODEL = "gpt-4o-mini"
 
@@ -46,7 +58,7 @@ def generate_content(prompt: str) -> str:
         )
         return response.choices[0].message.content
     except Exception as e:
-        print(f"[ERROR] API call failed: {e}")
+        logger.error(f"API call failed: {e}")
         return "Placeholder content. Replace this with real API output."
 
 
@@ -70,33 +82,50 @@ def main() -> None:
     start_index, max_entries = load_config(CONFIG_FILE)
     df = pd.read_csv(DATA_FILE)
     end_index = start_index + max_entries
-    print(f"[INFO] Generating entries {start_index} to {end_index}")
+    logger.info(f"Generating entries {start_index} to {end_index}")
     topics = df.iloc[start_index:end_index].to_dict(orient="records")
 
     for row in topics:
-        prompt_type = row.get("prompt_type")
-        if not prompt_type:
-            print(
-                f"Error: missing prompt_type for topic '{row.get('topic', 'unknown')}'. Skipping."
-            )
-            continue
-        try:
-            template_path = PROMPT_TEMPLATES[prompt_type]
-        except KeyError:
-            print(
-                f"Error: unknown prompt_type '{prompt_type}' for topic '{row.get('topic', 'unknown')}'. Skipping."
-            )
+        subtopic = row.get("subtopic")
+        if not subtopic:
+            logger.error(f"Missing subtopic in row: {row}. Skipping.")
             continue
 
-        template = template_cache.get(prompt_type)
+        prompt_type = (row.get("prompt_type") or "").strip()
+        template_path = PROMPT_TEMPLATES.get(prompt_type)
+        if template_path is None:
+            logger.error(
+                f"Unknown prompt_type '{prompt_type}' for subtopic '{subtopic}'. Using definition template."
+            )
+            template_path = PROMPT_TEMPLATES["definition"]
+
+        cache_key = str(template_path)
+        template = template_cache.get(cache_key)
         if template is None:
-            template = template_path.read_text(encoding="utf-8")
-            template_cache[prompt_type] = template
+            try:
+                template = template_path.read_text(encoding="utf-8")
+            except FileNotFoundError:
+                logger.error(f"Prompt template not found: {template_path}. Skipping '{subtopic}'.")
+                continue
+            template_cache[cache_key] = template
 
         prompt = render_prompt(template, **row)
         content = generate_content(prompt)
-        filename = OUTPUT_DIR / f"{slugify(row.get('topic', 'entry'))}.md"
-        filename.write_text(content, encoding="utf-8")
+
+        header = (
+            f"{subtopic}\n"
+            f"ID: {row.get('id', '')}\n"
+            f"Domain: {row.get('domain', '')}\n"
+            f"Topic: {row.get('topic', '')}\n\n"
+        )
+
+        filename = OUTPUT_DIR / sanitize_filename(subtopic)
+        if filename.exists():
+            logger.error(f"File already exists, skipping: {filename}")
+            continue
+
+        filename.write_text(header + content, encoding="utf-8")
+        logger.info(f"Wrote {filename}")
         print(f"Wrote {filename}")
 
 

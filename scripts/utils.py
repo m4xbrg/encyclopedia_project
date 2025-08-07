@@ -19,6 +19,11 @@ def slugify(text: str) -> str:
     return text.strip("-") or "entry"
 
 
+def sanitize_filename(text: str) -> str:
+    """Return a sanitized filename for the given text with a .md extension."""
+    return f"{slugify(text)}.md"
+
+
 def read_file(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
