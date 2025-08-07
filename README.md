@@ -30,6 +30,11 @@ Logging is enabled by default. To disable structured logging:
 python scripts/generate.py --log false
 ```
 
+Retry failed API calls (default 3 attempts):
+```bash
+python scripts/generate.py --retries 5
+```
+
 Compile `.tex` files into PDFs:
 ```bash
 python scripts/compile_pdf.py          # compile all valid files
