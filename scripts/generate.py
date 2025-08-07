@@ -1,10 +1,10 @@
 """Generate Markdown encyclopedia entries from topics CSV using OpenAI."""
 from __future__ import annotations
 
-import csv
-import tomllib
+import toml
 from pathlib import Path
-from typing import Dict, Iterable
+from typing import Dict
+import pandas as pd
 
 import os
 
@@ -33,13 +33,6 @@ if not openai.api_key:
     raise ValueError("OPENAI_API_KEY is missing. Please set it in the .env file.")
 
 
-def load_topics(csv_path: Path) -> Iterable[Dict[str, str]]:
-    with csv_path.open(newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            yield row
-
-
 def generate_content(prompt: str) -> str:
     """Send prompt to OpenAI and return the response text.
 
@@ -61,8 +54,7 @@ def load_config(config_path: Path) -> tuple[int, int]:
     if not config_path.exists():
         config_path.write_text("start_index = 0\nmax_entries = 10\n", encoding="utf-8")
         print(f"Created default config at {config_path}")
-    with config_path.open("rb") as f:
-        data = tomllib.load(f)
+    data = toml.load(config_path)
     try:
         start_index = int(data["start_index"])
         max_entries = int(data["max_entries"])
@@ -76,7 +68,10 @@ def main() -> None:
     OUTPUT_DIR.mkdir(exist_ok=True, parents=True)
 
     start_index, max_entries = load_config(CONFIG_FILE)
-    topics = list(load_topics(DATA_FILE))[start_index : start_index + max_entries]
+    df = pd.read_csv(DATA_FILE)
+    end_index = start_index + max_entries
+    print(f"[INFO] Generating entries {start_index} to {end_index}")
+    topics = df.iloc[start_index:end_index].to_dict(orient="records")
 
     for row in topics:
         prompt_type = row.get("prompt_type")

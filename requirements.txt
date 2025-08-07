@@ -3,3 +3,5 @@ pypdf
 markdown
 weasyprint
 python-dotenv
+toml
+pandas
