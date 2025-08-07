@@ -24,6 +24,11 @@ Generate Markdown files:
 python scripts/generate.py
 ```
 
+Logging is enabled by default. To disable structured logging:
+```bash
+python scripts/generate.py --log false
+```
+
 Compile all Markdown into a single PDF:
 ```bash
 python scripts/compile_pdf.py
