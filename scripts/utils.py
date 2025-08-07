@@ -19,6 +19,11 @@ SPECIAL_LATEX_CHARS = {
     "|": r"\textbar{}",
     "<": r"\textless{}",
     ">": r"\textgreater{}",
+=======
+    "\\": r"\\textbackslash{}",
+    "#": r"\#", "$": r"\$", "%": r"\%", "&": r"\&",
+    "~": r"\textasciitilde{}", "_": r"\_", "^": r"\^{}",
+    "{": r"\{", "}": r"\}",
 }
 
 SPECIAL_LATEX_RE = re.compile(
