@@ -23,6 +23,10 @@ const lessons = defineCollection({
     summary: z.string(),
     courseCode: z.string().describe('Slug of the course this lesson belongs to'),
     order: z.number().int().nonnegative().optional(),
+    tags: z
+      .array(z.string())
+      .default([])
+      .describe('Topical labels that can be used for filtering'),
   }),
 });
 
