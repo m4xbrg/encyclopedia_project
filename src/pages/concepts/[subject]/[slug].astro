@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const concepts = await getCollection('concepts');
+
+  return concepts.map((concept) => ({
+    params: { subject: concept.data.subject, slug: concept.slug },
+    props: { concept },
+  }));
+}
+
+const { concept } = Astro.props;
+const { Content } = await concept.render();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{concept.data.title} – {concept.data.subject}</title>
+  </head>
+  <body>
+    <main>
+      <h1>{concept.data.title}</h1>
+      <p><strong>Subject:</strong> {concept.data.subject}</p>
+      <p>{concept.data.summary}</p>
+
+      <article>
+        <Content />
+      </article>
+    </main>
+  </body>
+</html>
