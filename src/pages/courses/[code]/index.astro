@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const courses = await getCollection('courses');
+  const lessons = await getCollection('lessons');
+
+  return courses.map((course) => ({
+    params: { code: course.slug },
+    props: {
+      course,
+      lessons: lessons
+        .filter((lesson) => lesson.data.courseCode === course.slug)
+        .sort((a, b) => {
+          const orderA = a.data.order ?? Number.POSITIVE_INFINITY;
+          const orderB = b.data.order ?? Number.POSITIVE_INFINITY;
+          if (orderA === orderB) {
+            return a.slug.localeCompare(b.slug);
+          }
+          return orderA - orderB;
+        }),
+    },
+  }));
+}
+
+const { course, lessons } = Astro.props;
+const { Content } = await course.render();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{course.data.title} – Course Overview</title>
+  </head>
+  <body>
+    <main>
+      <h1>{course.data.title}</h1>
+      <p><strong>Course code:</strong> {course.data.code.toUpperCase()}</p>
+      {course.data.level && <p><strong>Level:</strong> {course.data.level}</p>}
+
+      <article>
+        <Content />
+      </article>
+
+      {lessons.length > 0 && (
+        <section>
+          <h2>Lessons</h2>
+          <ol>
+            {lessons.map((lesson) => (
+              <li>
+                <a href={`/courses/${course.slug}/lessons/${lesson.slug}/`}>
+                  {lesson.data.title}
+                </a>
+                <p>{lesson.data.summary}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+    </main>
+  </body>
+</html>

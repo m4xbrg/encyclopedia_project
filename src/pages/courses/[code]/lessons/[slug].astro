@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const lessons = await getCollection('lessons');
+  const courses = await getCollection('courses');
+
+  return lessons.map((lesson) => {
+    const course = courses.find((course) => course.slug === lesson.data.courseCode);
+
+    if (!course) {
+      throw new Error(`Lesson ${lesson.slug} is missing a matching course (${lesson.data.courseCode}).`);
+    }
+
+    return {
+      params: { code: course.slug, slug: lesson.slug },
+      props: { lesson, course },
+    };
+  });
+}
+
+const { lesson, course } = Astro.props;
+const { Content } = await lesson.render();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{lesson.data.title} – {course.data.title}</title>
+  </head>
+  <body>
+    <main>
+      <nav>
+        <a href={`/courses/${course.slug}/`}>&larr; Back to {course.data.title}</a>
+      </nav>
+      <h1>{lesson.data.title}</h1>
+      <p><strong>Course:</strong> {course.data.title}</p>
+      <p>{lesson.data.summary}</p>
+
+      <article>
+        <Content />
+      </article>
+    </main>
+  </body>
+</html>
