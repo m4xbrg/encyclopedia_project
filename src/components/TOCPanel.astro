@@ -1,0 +1,73 @@
+---
+export interface TOCItem {
+  id: string;
+  text: string;
+  level?: number;
+}
+
+interface Props {
+  items?: TOCItem[];
+  title?: string;
+}
+
+const { items = [], title = 'On this page' } = Astro.props;
+---
+
+<aside class="toc-panel">
+  <h2>{title}</h2>
+  {items.length === 0 ? (
+    <p class="placeholder">No headings yet.</p>
+  ) : (
+    <ul>
+      {items.map((item) => (
+        <li style={{ '--indent': `${Math.max(0, (item.level ?? 1) - 1)}rem` }}>
+          <a href={`#${item.id}`}>{item.text}</a>
+        </li>
+      ))}
+    </ul>
+  )}
+</aside>
+
+<style>
+  .toc-panel {
+    position: sticky;
+    top: 1rem;
+    padding: 1rem;
+    border-left: 1px solid var(--border-color, #e2e8f0);
+  }
+
+  h2 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    color: var(--muted-text, #475569);
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    padding-left: var(--indent, 0rem);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  a:hover,
+  a:focus {
+    color: var(--accent-color, #2563eb);
+  }
+
+  .placeholder {
+    font-size: 0.85rem;
+    color: var(--muted-text, #94a3b8);
+  }
+</style>
