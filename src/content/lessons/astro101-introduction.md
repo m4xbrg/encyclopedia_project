@@ -3,6 +3,9 @@ title: "Orientation to the Night Sky"
 summary: "Use star maps and seasonal markers to navigate constellations with confidence."
 courseCode: astro101
 order: 1
+tags:
+  - activity
+  - reading
 estimated_time: "45 minutes"
 learning_goals:
   - "Identify major constellations using cardinal directions and seasonal cues."
