@@ -9,6 +9,10 @@ learning_goals:
   - "Use a planisphere or star chart to track nightly motion."
 related_concepts:
   - astronomy-light-pollution
+tags:
+  - constellations
+  - orientation
+  - beginner-friendly
 ---
 
 This lesson introduces the celestial sphere, cardinal directions, and the movement of the stars across the seasons.

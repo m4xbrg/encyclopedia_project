@@ -1,0 +1,34 @@
+---
+title: "Exercise Title"
+summary: "Context for the problem set or quick check."
+difficulty: "Moderate"
+estimatedTime: "15 minutes"
+# Mix-and-match lesson tags so the exercise shows up in discovery widgets.
+tags:
+  - demonstration
+  - assessment
+---
+
+import Exercise from '../../components/Exercise';
+
+> **Example tag bundle**
+> - `demonstration` – Learners watch a worked example before trying it.
+> - `assessment` – Used for quizzes, take-home practice, or study guides.
+
+> Difficulty and estimated time surface in the Topic layout chips. Tag options reuse the lesson discovery list:
+> `activity`, `demonstration`, `reading`, `lab`, `assessment`.
+
+<Exercise
+  prompt={<>
+    Describe how you would detect light pollution using only a paper star chart and the night sky.
+  </>}
+  hint={<>
+    Focus on relative brightness: compare the faintest stars you can see in two directions.
+  </>}
+  solution={<>
+    Record which magnitude markers disappear from the chart in each direction and log the time, location, and weather.
+  </>}
+/>
+
+## Debrief
+Offer follow-up discussion prompts, extension problems, or rubric notes.

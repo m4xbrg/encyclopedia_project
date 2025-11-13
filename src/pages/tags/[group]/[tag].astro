@@ -1,0 +1,130 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import { TAG_DESCRIPTIONS, TAXONOMY } from '../../../data/taxonomy';
+import { TAG_GROUP_COPY, formatTagLabel } from '../../../data/tags';
+
+export type TagGroupKey = keyof typeof TAXONOMY.tags;
+export type TagSlug = keyof typeof TAG_DESCRIPTIONS;
+
+type GroupEntryMap = {
+  course: CollectionEntry<'courses'>;
+  lesson: CollectionEntry<'lessons'>;
+  concept: CollectionEntry<'concepts'>;
+};
+
+type TagCollectionMap = {
+  [K in TagGroupKey]: GroupEntryMap[K][];
+};
+
+type TagResultProps<K extends TagGroupKey = TagGroupKey> = {
+  group: K;
+  tag: TagSlug;
+  entries: GroupEntryMap[K][];
+};
+
+const GROUP_RENDERERS: {
+  [K in TagGroupKey]: {
+    title: string;
+    intro: string;
+    entryLabel: string;
+    buildHref: (entry: GroupEntryMap[K]) => string;
+    getSummary: (entry: GroupEntryMap[K]) => string | undefined;
+    getTitle: (entry: GroupEntryMap[K]) => string;
+  };
+} = {
+  course: {
+    title: 'Courses',
+    intro: 'Multi-week learning experiences built from encyclopedia content.',
+    entryLabel: 'course',
+    buildHref: (entry) => `/courses/${entry.slug}/`,
+    getSummary: (entry) => entry.data.description,
+    getTitle: (entry) => entry.data.title,
+  },
+  lesson: {
+    title: 'Lessons',
+    intro: 'Individual sessions that live inside a parent course.',
+    entryLabel: 'lesson',
+    buildHref: (entry) => `/courses/${entry.data.courseCode}/lessons/${entry.slug}/`,
+    getSummary: (entry) => entry.data.summary,
+    getTitle: (entry) => entry.data.title,
+  },
+  concept: {
+    title: 'Concepts',
+    intro: 'Reference entries compiled for the encyclopedia.',
+    entryLabel: 'concept',
+    buildHref: (entry) => `/concepts/${entry.data.subject}/${entry.slug}/`,
+    getSummary: (entry) => entry.data.summary,
+    getTitle: (entry) => entry.data.title,
+  },
+};
+
+export async function getStaticPaths() {
+  const collections: TagCollectionMap = {
+    course: await getCollection('courses'),
+    lesson: await getCollection('lessons'),
+    concept: await getCollection('concepts'),
+  };
+
+  return (Object.entries(TAXONOMY.tags) as [TagGroupKey, readonly TagSlug[]][]).flatMap(([group, tags]) =>
+    tags.map((tag) => ({
+      params: { group, tag },
+      props: {
+        group,
+        tag,
+        entries: collections[group].filter((entry) => entry.data.tags?.includes(tag)),
+      },
+    }))
+  );
+}
+
+const { group, tag, entries } = Astro.props as TagResultProps;
+const typedEntries = entries as GroupEntryMap[typeof group][];
+const config = GROUP_RENDERERS[group];
+const tagLabel = formatTagLabel(tag);
+const tagDescription = TAG_DESCRIPTIONS[tag];
+const breadcrumbLabel = TAG_GROUP_COPY[group].title;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{tagLabel} – {config.title}</title>
+    <meta name="description" content={`Entries tagged “${tagLabel}” inside ${config.title.toLowerCase()}.`} />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <a href="/tags/">&larr; Back to all tags</a>
+      </nav>
+
+      <header>
+        <p>{breadcrumbLabel}</p>
+        <h1>{tagLabel}</h1>
+        {tagDescription && <p>{tagDescription}</p>}
+        <p>{config.intro}</p>
+      </header>
+
+      {typedEntries.length === 0 ? (
+        <p role="status">
+          We haven't tagged any {config.entryLabel}s with {tagLabel} yet. Check back as the encyclopedia grows.
+        </p>
+      ) : (
+        <>
+          <p>{typedEntries.length} {typedEntries.length === 1 ? config.entryLabel : `${config.entryLabel}s`}.</p>
+          <ol>
+            {typedEntries.map((entry) => {
+              const summary = config.getSummary(entry);
+              return (
+                <li>
+                  <a href={config.buildHref(entry)}>{config.getTitle(entry)}</a>
+                  {summary && <p>{summary}</p>}
+                </li>
+              );
+            })}
+          </ol>
+        </>
+      )}
+    </main>
+  </body>
+</html>
