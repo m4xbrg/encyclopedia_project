@@ -1,0 +1,93 @@
+---
+export interface SidebarTreeNode {
+  label: string;
+  href?: string;
+  children?: SidebarTreeNode[];
+  active?: boolean;
+}
+
+interface Props {
+  title?: string;
+  tree?: SidebarTreeNode[];
+}
+
+const { title = 'In this course', tree = [] } = Astro.props;
+
+function renderNode(node: SidebarTreeNode) {
+  return (
+    <li class:list={{ active: node.active }}>
+      {node.href ? (
+        <a href={node.href}>{node.label}</a>
+      ) : (
+        <span>{node.label}</span>
+      )}
+      {node.children && node.children.length > 0 && (
+        <ul>
+          {node.children.map((child) => renderNode(child))}
+        </ul>
+      )}
+    </li>
+  );
+}
+---
+
+<aside class="sidebar-tree">
+  <h2>{title}</h2>
+  {tree.length === 0 ? (
+    <p class="placeholder">No navigation items.</p>
+  ) : (
+    <ul>
+      {tree.map((node) => renderNode(node))}
+    </ul>
+  )}
+</aside>
+
+<style>
+  .sidebar-tree {
+    position: sticky;
+    top: 1rem;
+    padding: 1rem;
+    border-right: 1px solid var(--border-color, #e2e8f0);
+  }
+
+  h2 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    color: var(--muted-text, #475569);
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 0.35rem;
+  }
+
+  li ul {
+    margin-top: 0.35rem;
+    margin-left: 1rem;
+  }
+
+  a,
+  span {
+    font-size: 0.95rem;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  li.active > a,
+  li.active > span {
+    font-weight: 600;
+    color: var(--accent-color, #2563eb);
+  }
+
+  .placeholder {
+    font-size: 0.85rem;
+    color: var(--muted-text, #94a3b8);
+  }
+</style>

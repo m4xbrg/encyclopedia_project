@@ -1,0 +1,51 @@
+---
+import { tagCategories } from '../../data/tags';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tag explorer</title>
+    <meta
+      name="description"
+      content="Browse encyclopedia tags grouped by domain, theme, audience, and format."
+    />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Tag explorer</h1>
+        <p>
+          Use this page to scan every tag we apply to encyclopedia entries. Categories are grouped by
+          the purpose of the tag, helping you understand the context in which a label is used.
+        </p>
+      </header>
+
+      <nav aria-label="Tag categories">
+        <h2>Categories</h2>
+        <ol>
+          {tagCategories.map((category) => (
+            <li>
+              <a href={`#${category.slug}`}>{category.title}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      {tagCategories.map((category) => (
+        <section id={category.slug} aria-labelledby={`${category.slug}-title`}>
+          <h2 id={`${category.slug}-title`}>{category.title}</h2>
+          {category.description && <p>{category.description}</p>}
+          <ul>
+            {category.tags.map((tag) => (
+              <li id={`${category.slug}-${tag.slug}`}>
+                <strong>{tag.label}</strong>
+                {tag.description && <p>{tag.description}</p>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </main>
+  </body>
+</html>

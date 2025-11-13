@@ -1,4 +1,28 @@
 import { defineCollection, z } from 'astro:content';
+import { CONCEPT_TAGS, COURSE_TAGS, LESSON_TAGS, SUBJECT_SLUGS } from '../data/taxonomy';
+
+const enumFromValues = <T extends readonly [string, ...string[]]>(values: T) => z.enum(values);
+
+const tagListSchema = <T extends readonly [string, ...string[]]>(values: T, description: string) =>
+  z
+    .array(enumFromValues(values))
+    .default([])
+    .describe(description);
+
+const courseTagSchema = tagListSchema(
+  COURSE_TAGS,
+  'Discovery tags for courses defined in src/data/taxonomy.ts'
+);
+
+const lessonTagSchema = tagListSchema(
+  LESSON_TAGS,
+  'Discovery tags for lessons defined in src/data/taxonomy.ts'
+);
+
+const conceptTagSchema = tagListSchema(
+  CONCEPT_TAGS,
+  'Discovery tags for concepts defined in src/data/taxonomy.ts'
+);
 
 const courses = defineCollection({
   type: 'content',
@@ -9,10 +33,7 @@ const courses = defineCollection({
         title: z.string().describe('Human readable course name'),
         description: z.string().describe('Overview of the course'),
         level: z.string().optional().describe('Target experience level'),
-        tags: z
-          .array(z.string())
-          .optional()
-          .describe('Optional tags that help group courses'),
+        tags: courseTagSchema,
       })
       .refine((data) => data.code.toLowerCase() === slug.toLowerCase(), {
         message: 'The course code must match the file slug',
@@ -27,10 +48,7 @@ const lessons = defineCollection({
     summary: z.string(),
     courseCode: z.string().describe('Slug of the course this lesson belongs to'),
     order: z.number().int().nonnegative().optional(),
-    tags: z
-      .array(z.string())
-      .optional()
-      .describe('Optional tags to organize lessons'),
+    tags: lessonTagSchema,
   }),
 });
 
@@ -39,13 +57,10 @@ const concepts = defineCollection({
   schema: z.object({
     title: z.string(),
     summary: z.string(),
-    subject: z
-      .string()
-      .regex(/^[a-z0-9-]+$/, 'Subject must be a URL friendly slug'),
-    tags: z
-      .array(z.string())
-      .optional()
-      .describe('Optional tags describing the concept'),
+    subject: enumFromValues(SUBJECT_SLUGS).describe(
+      'Slug of the subject defined in src/data/taxonomy.ts'
+    ),
+    tags: conceptTagSchema,
   }),
 });
 
