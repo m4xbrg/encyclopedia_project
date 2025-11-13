@@ -1,0 +1,330 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+type SearchResult = {
+  id: string;
+  type: 'Course' | 'Lesson' | 'Concept';
+  title: string;
+  description: string;
+  href: string;
+  tags: string[];
+};
+
+const [courses, lessons, concepts] = await Promise.all([
+  getCollection('courses'),
+  getCollection('lessons'),
+  getCollection('concepts'),
+]);
+
+const toCourseResult = (course: CollectionEntry<'courses'>): SearchResult => ({
+  id: course.id,
+  type: 'Course',
+  title: course.data.title,
+  description: course.data.description,
+  href: `/courses/${course.slug}/`,
+  tags: course.data.tags ?? [],
+});
+
+const toLessonResult = (lesson: CollectionEntry<'lessons'>): SearchResult => ({
+  id: lesson.id,
+  type: 'Lesson',
+  title: lesson.data.title,
+  description: lesson.data.summary,
+  href: `/courses/${lesson.data.courseCode}/lessons/${lesson.slug}/`,
+  tags: lesson.data.tags ?? [],
+});
+
+const toConceptResult = (concept: CollectionEntry<'concepts'>): SearchResult => ({
+  id: concept.id,
+  type: 'Concept',
+  title: concept.data.title,
+  description: concept.data.summary,
+  href: `/concepts/${concept.data.subject}/${concept.slug}/`,
+  tags: concept.data.tags ?? [],
+});
+
+const searchResults: SearchResult[] = [
+  ...courses.map(toCourseResult),
+  ...lessons.map(toLessonResult),
+  ...concepts.map(toConceptResult),
+].sort((a, b) => a.title.localeCompare(b.title));
+
+const tagSet = new Set<string>();
+searchResults.forEach((result) => {
+  result.tags.forEach((tag) => tagSet.add(tag));
+});
+
+const availableTags = Array.from(tagSet).sort();
+
+const formatTagLabel = (tag: string) =>
+  tag
+    .split('-')
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join(' ');
+
+const tagLabelMap = Object.fromEntries(
+  availableTags.map((tag) => [tag, formatTagLabel(tag)]),
+);
+
+const initialCountLabel =
+  searchResults.length === 1
+    ? 'Showing 1 result'
+    : `Showing ${searchResults.length} results`;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Search results – Super Encyclopedia</title>
+    <meta
+      name="description"
+      content="Browse encyclopedia courses, lessons, and concepts, then narrow the grid with discovery tags."
+    />
+  </head>
+  <body>
+    <main class="search-page">
+      <header>
+        <p class="eyebrow">Search results</p>
+        <h1>Discovery catalog</h1>
+        <p class="lede">
+          Scan every course, lesson, and concept returned by your last search. Use the tag filter to focus
+          on the exact type of learning experience you're looking for.
+        </p>
+      </header>
+
+      <section class="filter-bar" aria-label="Filter search results">
+        <label class="filter-label" for="tag-filter">
+          <span>Filter by tag</span>
+          <select id="tag-filter" name="tag-filter">
+            <option value="all">All tags</option>
+            {availableTags.map((tag) => (
+              <option value={tag}>{tagLabelMap[tag]}</option>
+            ))}
+          </select>
+        </label>
+        <p id="results-count" class="results-count">{initialCountLabel}</p>
+      </section>
+
+      <section class="card-grid" aria-live="polite">
+        {searchResults.map((result) => (
+          <article
+            class="result-card"
+            data-result-card
+            data-tags={JSON.stringify(result.tags)}
+            data-type={result.type}
+          >
+            <p class="result-type">{result.type}</p>
+            <h3>
+              <a href={result.href}>{result.title}</a>
+            </h3>
+            <p class="result-summary">{result.description}</p>
+            {result.tags.length > 0 && (
+              <ul class="tag-list">
+                {result.tags.map((tag) => (
+                  <li>{tagLabelMap[tag] ?? formatTagLabel(tag)}</li>
+                ))}
+              </ul>
+            )}
+          </article>
+        ))}
+      </section>
+
+      <p id="no-results" class="empty-state" hidden role="status">
+        No results match the selected tag. Try another filter or switch back to “All tags”.
+      </p>
+    </main>
+
+    <script type="module">
+      const filter = document.getElementById('tag-filter');
+      const cards = Array.from(document.querySelectorAll('[data-result-card]'));
+      const emptyState = document.getElementById('no-results');
+      const resultsCount = document.getElementById('results-count');
+
+      const formatCount = (count) => `Showing ${count} result${count === 1 ? '' : 's'}`;
+
+      const applyFilter = () => {
+        const selectedTag = filter?.value ?? 'all';
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          const tags = JSON.parse(card.dataset.tags ?? '[]');
+          const matches = selectedTag === 'all' || tags.includes(selectedTag);
+          card.classList.toggle('is-hidden', !matches);
+          if (matches) {
+            visibleCount += 1;
+          }
+        });
+
+        if (resultsCount) {
+          resultsCount.textContent = formatCount(visibleCount);
+        }
+
+        if (emptyState) {
+          emptyState.hidden = visibleCount !== 0;
+        }
+      };
+
+      filter?.addEventListener('change', applyFilter);
+      applyFilter();
+    </script>
+
+    <style>
+      :root {
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: #0f172a;
+        background: #f8fafc;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .search-page {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 2.5rem 1.5rem 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .eyebrow {
+        margin: 0;
+        letter-spacing: 0.12em;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        color: #475569;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+      }
+
+      .lede {
+        margin: 0;
+        color: #475569;
+        max-width: 60ch;
+      }
+
+      .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.75rem;
+        padding: 1rem 1.25rem;
+      }
+
+      .filter-label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #475569;
+      }
+
+      .filter-label select {
+        border: 1px solid #cbd5f5;
+        border-radius: 0.5rem;
+        padding: 0.4rem 0.65rem;
+        font-size: 0.95rem;
+        min-width: 180px;
+      }
+
+      .results-count {
+        margin: 0;
+        margin-left: auto;
+        font-weight: 600;
+        color: #1e293b;
+      }
+
+      .card-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .result-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.9rem;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        min-height: 240px;
+        box-shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
+      }
+
+      .result-card.is-hidden {
+        display: none;
+      }
+
+      .result-type {
+        margin: 0;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #6366f1;
+      }
+
+      .result-card h3 {
+        margin: 0;
+        font-size: 1.15rem;
+      }
+
+      .result-card h3 a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .result-card h3 a:hover,
+      .result-card h3 a:focus-visible {
+        text-decoration: underline;
+      }
+
+      .result-summary {
+        margin: 0;
+        color: #475569;
+      }
+
+      .tag-list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      .tag-list li {
+        font-size: 0.75rem;
+        font-weight: 600;
+        border-radius: 999px;
+        padding: 0.2rem 0.65rem;
+        background: #eef2ff;
+        color: #4338ca;
+      }
+
+      .empty-state {
+        margin: 0;
+        padding: 1rem 1.25rem;
+        border-radius: 0.75rem;
+        border: 1px dashed #c7d2fe;
+        background: #f8f5ff;
+        color: #4338ca;
+      }
+    </style>
+  </body>
+</html>
