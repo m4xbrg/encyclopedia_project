@@ -6,18 +6,18 @@ import { tagCategories } from '../../data/tags';
   <head>
     <meta charset="utf-8" />
     <title>Tag explorer</title>
-    <meta
-      name="description"
-      content="Browse encyclopedia tags grouped by domain, theme, audience, and format."
-    />
+      <meta
+        name="description"
+        content="Browse encyclopedia tags grouped by taxonomy and jump to filtered result pages."
+      />
   </head>
   <body>
     <main>
       <header>
         <h1>Tag explorer</h1>
         <p>
-          Use this page to scan every tag we apply to encyclopedia entries. Categories are grouped by
-          the purpose of the tag, helping you understand the context in which a label is used.
+          Every course, lesson, and concept can be tagged for discovery. Browse the taxonomy below to
+          jump straight to filtered results pages for a specific label.
         </p>
       </header>
 
@@ -39,7 +39,9 @@ import { tagCategories } from '../../data/tags';
           <ul>
             {category.tags.map((tag) => (
               <li id={`${category.slug}-${tag.slug}`}>
-                <strong>{tag.label}</strong>
+                <a href={tag.href}>
+                  <strong>{tag.label}</strong>
+                </a>
                 {tag.description && <p>{tag.description}</p>}
               </li>
             ))}
