@@ -25,6 +25,29 @@ export async function getStaticPaths() {
 
 const { course, lessons } = Astro.props;
 const { Content } = await course.render();
+
+const FALLBACK_TAG = 'Untagged';
+const tagGroups = lessons.reduce<Map<string, typeof lessons>>((groups, lesson) => {
+  const tags = lesson.data.tags?.length ? lesson.data.tags : [FALLBACK_TAG];
+  tags
+    .map((tag) => tag.trim())
+    .filter(Boolean)
+    .forEach((tag) => {
+      const existing = groups.get(tag) ?? [];
+      groups.set(tag, [...existing, lesson]);
+    });
+  return groups;
+}, new Map());
+
+const groupedLessons = Array.from(tagGroups.entries())
+  .map(([tag, taggedLessons]) => ({
+    tag,
+    lessons: taggedLessons,
+  }))
+  .sort((a, b) => a.tag.localeCompare(b.tag));
+
+const tagFilterId = `tag-filter-${course.slug}`;
+const tagFilterEmptyStateId = `tag-filter-empty-${course.slug}`;
 ---
 
 <html lang="en">
@@ -55,8 +78,82 @@ const { Content } = await course.render();
               </li>
             ))}
           </ol>
+
+          <section aria-label="Lessons grouped by tag">
+            <div
+              style="display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: flex-end;"
+            >
+              <div>
+                <h3 style="margin-bottom: 0.25rem">Browse lessons by tag</h3>
+                <p style="margin: 0; color: #555; max-width: 60ch;">
+                  Use the dropdown to focus on a specific tag. Tags with no
+                  matching lessons are hidden automatically.
+                </p>
+              </div>
+              <label style="font-weight: 600;">
+                Filter
+                <select id={tagFilterId} style="margin-left: 0.5rem;">
+                  <option value="all">All tags</option>
+                  {groupedLessons.map((group) => (
+                    <option value={group.tag}>{group.tag}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
+
+            <div style="display: grid; gap: 1rem; margin-top: 1.5rem;">
+              {groupedLessons.map((group) => (
+                <article data-tag-group={group.tag}>
+                  <h4 style="margin-bottom: 0.5rem;">{group.tag}</h4>
+                  <ol>
+                    {group.lessons.map((lesson) => (
+                      <li>
+                        <a href={`/courses/${course.slug}/lessons/${lesson.slug}/`}>
+                          {lesson.data.title}
+                        </a>
+                        <p style="margin-top: 0.25rem;">{lesson.data.summary}</p>
+                      </li>
+                    ))}
+                  </ol>
+                </article>
+              ))}
+            </div>
+
+            <p id={tagFilterEmptyStateId} hidden>
+              No lessons match the selected tag yet.
+            </p>
+          </section>
         </section>
       )}
     </main>
+
+    {groupedLessons.length > 0 && (
+      <script is:inline>
+        {`(function() {
+          const filter = document.getElementById('${tagFilterId}');
+          const emptyState = document.getElementById('${tagFilterEmptyStateId}');
+          if (!filter) return;
+          const groups = Array.from(document.querySelectorAll('[data-tag-group]'));
+
+          const update = () => {
+            const selected = filter.value;
+            let visibleCount = 0;
+            groups.forEach((group) => {
+              const matches = selected === 'all' || group.getAttribute('data-tag-group') === selected;
+              group.toggleAttribute('hidden', !matches);
+              if (matches) {
+                visibleCount += 1;
+              }
+            });
+            if (emptyState) {
+              emptyState.toggleAttribute('hidden', visibleCount > 0);
+            }
+          };
+
+          filter.addEventListener('change', update);
+          update();
+        })();`}
+      </script>
+    )}
   </body>
 </html>
