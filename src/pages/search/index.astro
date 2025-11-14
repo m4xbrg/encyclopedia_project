@@ -177,13 +177,19 @@ const initialCountLabel =
         setActiveButton(tag);
       };
 
+      // Support linking like ?tag=foundations
+      const params = new URLSearchParams(window.location.search);
+      const requestedTag = params.get('tag');
+      const validTags = new Set(['all', ...filterButtons.map((b) => b.dataset.tag)]);
+      const initialTag = validTags.has(requestedTag) ? requestedTag : 'all';
+
       filterButtons.forEach((button) => {
         button.addEventListener('click', () => {
           applyFilter(button.dataset.tag);
         });
       });
 
-      applyFilter('all');
+      applyFilter(initialTag);
     </script>
 
     <style>

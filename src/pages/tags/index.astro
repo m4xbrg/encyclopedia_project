@@ -1,53 +1,337 @@
 ---
-import { tagCategories } from '../../data/tags';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import {
+  categoryTags,
+  domainTags,
+  pedagogicalTags,
+  thematicTags,
+  type TaxonomyTag,
+} from '../../data/taxonomy';
+
+const taxonomyOrder = ['domain', 'category', 'thematic', 'pedagogical'] as const;
+type TaxonomyCategory = (typeof taxonomyOrder)[number];
+
+const taxonomyGroups: Record<
+  TaxonomyCategory,
+  { title: string; description: string; tags: TaxonomyTag[] }
+> = {
+  domain: {
+    title: 'Domain tags',
+    description:
+      'High-level subjects and disciplines covered inside the encyclopedia content collections.',
+    tags: domainTags,
+  },
+  category: {
+    title: 'Category tags',
+    description: 'The role an entry plays inside the catalog, from core concepts to applied case studies.',
+    tags: categoryTags,
+  },
+  thematic: {
+    title: 'Thematic tags',
+    description: 'Cross-cutting ideas and lenses that help readers connect patterns between entries.',
+    tags: thematicTags,
+  },
+  pedagogical: {
+    title: 'Pedagogical tags',
+    description: 'Instructional approaches and learning experiences highlighted by an entry.',
+    tags: pedagogicalTags,
+  },
+};
+
+type AnyEntry =
+  | CollectionEntry<'courses'>
+  | CollectionEntry<'lessons'>
+  | CollectionEntry<'concepts'>;
+
+const [courses, lessons, concepts] = await Promise.all([
+  getCollection('courses'),
+  getCollection('lessons'),
+  getCollection('concepts'),
+]);
+
+const entries = [...courses, ...lessons, ...concepts] as AnyEntry[];
+
+const usedTagSlugs: Record<TaxonomyCategory, Set<string>> = {
+  domain: new Set<string>(),
+  category: new Set<string>(),
+  thematic: new Set<string>(),
+  pedagogical: new Set<string>(),
+};
+
+const isStringArray = (value: unknown): value is string[] =>
+  Array.isArray(value) && value.every((item) => typeof item === 'string');
+
+const getTaxonomyTags = (entry: AnyEntry, group: TaxonomyCategory) => {
+  const data = entry.data as Record<string, unknown> & {
+    taxonomy?: Partial<Record<TaxonomyCategory, unknown>>;
+  };
+
+  const fieldCandidates: unknown[] = [
+    data[group],
+    data[`${group}Tags`],
+    data.taxonomy?.[group],
+  ];
+
+  for (const candidate of fieldCandidates) {
+    if (isStringArray(candidate)) {
+      return candidate;
+    }
+  }
+
+  return [] as string[];
+};
+
+entries.forEach((entry) => {
+  taxonomyOrder.forEach((group) => {
+    getTaxonomyTags(entry, group).forEach((slug) => usedTagSlugs[group].add(slug));
+  });
+});
+
+const formatTagLabel = (slug: string) =>
+  slug
+    .split('-')
+    .filter(Boolean)
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join(' ');
+
+const buildTagHref = (slug: string) => `/search/?tag=${encodeURIComponent(slug)}`;
+
+const groupedTags = taxonomyOrder.map((group) => {
+  const definedTagMap = new Map(taxonomyGroups[group].tags.map((tag) => [tag.slug, tag]));
+  const tags = Array.from(usedTagSlugs[group])
+    .sort((a, b) => a.localeCompare(b))
+    .map((slug) =>
+      definedTagMap.get(slug) ?? {
+        slug,
+        label: formatTagLabel(slug),
+        description: 'Custom descriptor applied inside the content collection.',
+      }
+    );
+
+  return {
+    key: group,
+    title: taxonomyGroups[group].title,
+    description: taxonomyGroups[group].description,
+    tags,
+  };
+});
+
+const totalTagCount = groupedTags.reduce((sum, group) => sum + group.tags.length, 0);
+const hasAnyTags = totalTagCount > 0;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Tag explorer</title>
-      <meta
-        name="description"
-        content="Browse encyclopedia tags grouped by taxonomy and jump to filtered result pages."
-      />
+    <title>Taxonomy tags – Super Encyclopedia</title>
+    <meta
+      name="description"
+      content="Browse every taxonomy tag applied to the encyclopedia content collections. Jump directly to filtered search views for each descriptor."
+    />
   </head>
   <body>
-    <main>
-      <header>
-        <h1>Tag explorer</h1>
-        <p>
-          Every course, lesson, and concept can be tagged for discovery. Browse the taxonomy below to
-          jump straight to filtered results pages for a specific label.
+    <main class="tag-page">
+      <header class="page-header">
+        <p class="eyebrow">Taxonomy</p>
+        <h1>Tag directory</h1>
+        <p class="lede">
+          Review the domain, category, thematic, and pedagogical tags applied across every course, lesson,
+          and concept. Choose a descriptor to jump straight to filtered search results.
         </p>
       </header>
 
-      <nav aria-label="Tag categories">
-        <h2>Categories</h2>
+      <nav class="tag-nav" aria-label="Tag categories">
+        <h2 class="nav-title">Jump to a category</h2>
         <ol>
-          {tagCategories.map((category) => (
+          {taxonomyOrder.map((group) => (
             <li>
-              <a href={`#${category.slug}`}>{category.title}</a>
+              <a href={`#${group}`}>{taxonomyGroups[group].title}</a>
             </li>
           ))}
         </ol>
       </nav>
 
-      {tagCategories.map((category) => (
-        <section id={category.slug} aria-labelledby={`${category.slug}-title`}>
-          <h2 id={`${category.slug}-title`}>{category.title}</h2>
-          {category.description && <p>{category.description}</p>}
-          <ul>
-            {category.tags.map((tag) => (
-              <li id={`${category.slug}-${tag.slug}`}>
-                <a href={tag.href}>
-                  <strong>{tag.label}</strong>
-                </a>
-                {tag.description && <p>{tag.description}</p>}
-              </li>
-            ))}
-          </ul>
+      {!hasAnyTags && (
+        <p class="empty-state" role="status">
+          No taxonomy tags have been assigned to the published entries yet. As more content gains
+          discovery metadata, those tags will appear here automatically.
+        </p>
+      )}
+
+      {groupedTags.map((group) => (
+        <section id={group.key} class="tag-section">
+          <header>
+            <h2>{group.title}</h2>
+            <p>{group.description}</p>
+          </header>
+
+          {group.tags.length === 0 ? (
+            <p class="empty-section" role="status">No tags from this category appear yet.</p>
+          ) : (
+            <ul class="tag-grid">
+              {group.tags.map((tag) => (
+                <li>
+                  <a href={buildTagHref(tag.slug)}>
+                    <span class="tag-label">{tag.label}</span>
+                    <span class="tag-description">{tag.description}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
       ))}
     </main>
+
+    <style>
+      :root {
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: #0f172a;
+        background-color: #f8fafc;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .tag-page {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 2.5rem 1.5rem 3.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .page-header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .eyebrow {
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #475569;
+        font-size: 0.85rem;
+      }
+
+      .page-header h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 2.75rem);
+      }
+
+      .lede {
+        margin: 0;
+        font-size: 1.05rem;
+        color: #334155;
+      }
+
+      .tag-nav {
+        background: #e2e8f0;
+        border-radius: 0.75rem;
+        padding: 1.25rem;
+      }
+
+      .tag-nav ol {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0.5rem 0 0;
+      }
+
+      .tag-nav a {
+        text-decoration: none;
+        color: #2563eb;
+        font-weight: 600;
+      }
+
+      .nav-title {
+        margin: 0;
+        font-size: 1rem;
+        color: #0f172a;
+      }
+
+      .empty-state,
+      .empty-section {
+        margin: 0;
+        padding: 1rem;
+        background: #f8fafc;
+        border: 1px dashed #94a3b8;
+        border-radius: 0.75rem;
+        color: #475569;
+      }
+
+      .tag-section {
+        background: white;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .tag-section h2 {
+        margin: 0 0 0.25rem;
+      }
+
+      .tag-section p {
+        margin: 0;
+        color: #475569;
+      }
+
+      .tag-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .tag-grid a {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        text-decoration: none;
+        padding: 1rem;
+        border: 1px solid #cbd5f5;
+        border-radius: 0.85rem;
+        background: #f8fafc;
+        transition: border-color 150ms ease, box-shadow 150ms ease;
+        color: inherit;
+      }
+
+      .tag-grid a:hover,
+      .tag-grid a:focus-visible {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+      }
+
+      .tag-label {
+        font-weight: 600;
+        color: #0f172a;
+      }
+
+      .tag-description {
+        font-size: 0.95rem;
+        color: #475569;
+      }
+
+      @media (max-width: 600px) {
+        .tag-page {
+          padding: 2rem 1rem 3rem;
+        }
+
+        .tag-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </body>
 </html>
