@@ -26,6 +26,9 @@ export async function getStaticPaths() {
 const { course, lessons } = Astro.props;
 const { Content } = await course.render();
 
+const courseTags = course.data.tags ?? [];
+const learningGoals = course.data.learningGoals ?? [];
+
 const FALLBACK_TAG = 'Untagged';
 const tagGroups = lessons.reduce<Map<string, typeof lessons>>((groups, lesson) => {
   const tags = lesson.data.tags?.length ? lesson.data.tags : [FALLBACK_TAG];
@@ -56,10 +59,94 @@ const tagFilterEmptyStateId = `tag-filter-empty-${course.slug}`;
     <title>{course.data.title} – Course Overview</title>
   </head>
   <body>
-    <main>
-      <h1>{course.data.title}</h1>
-      <p><strong>Course code:</strong> {course.data.code.toUpperCase()}</p>
-      {course.data.level && <p><strong>Level:</strong> {course.data.level}</p>}
+    <main style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <header style="display: grid; gap: 1rem;">
+        <div>
+          <p style="margin: 0; color: #4a5568; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem;">
+            Course overview
+          </p>
+          <h1 style="margin-top: 0.25rem;">{course.data.title}</h1>
+          <p style="margin: 0; color: #374151; max-width: 65ch;">{course.data.description}</p>
+        </div>
+
+        <dl
+          style="
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+            gap: 0.75rem;
+          "
+        >
+          <div>
+            <dt style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #4a5568;">
+              Course code
+            </dt>
+            <dd style="margin: 0; font-weight: 600;">{course.data.code.toUpperCase()}</dd>
+          </div>
+          {course.data.level && (
+            <div>
+              <dt
+                style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #4a5568;"
+              >
+                Level
+              </dt>
+              <dd style="margin: 0; font-weight: 600;">{course.data.level}</dd>
+            </div>
+          )}
+          {course.data.difficulty && (
+            <div>
+              <dt
+                style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #4a5568;"
+              >
+                Difficulty
+              </dt>
+              <dd style="margin: 0; font-weight: 600;">{course.data.difficulty}</dd>
+            </div>
+          )}
+          {course.data.estimatedTime && (
+            <div>
+              <dt
+                style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #4a5568;"
+              >
+                Estimated time
+              </dt>
+              <dd style="margin: 0; font-weight: 600;">{course.data.estimatedTime}</dd>
+            </div>
+          )}
+        </dl>
+
+        {courseTags.length > 0 && (
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            {courseTags.map((tag) => (
+              <span
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  padding: 0.2rem 0.85rem;
+                  border-radius: 999px;
+                  background: #eef2ff;
+                  color: #1e3a8a;
+                  font-weight: 600;
+                  font-size: 0.85rem;
+                "
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {learningGoals.length > 0 && (
+          <section>
+            <h2 style="margin-bottom: 0.4rem;">Learning goals</h2>
+            <ul style="margin: 0; padding-left: 1.2rem; color: #1f2933;">
+              {learningGoals.map((goal) => (
+                <li style="margin-bottom: 0.2rem;">{goal}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </header>
 
       <article>
         <Content />
