@@ -94,15 +94,17 @@ const initialCountLabel =
       </header>
 
       <section class="filter-bar" aria-label="Filter search results">
-        <label class="filter-label" for="tag-filter">
-          <span>Filter by tag</span>
-          <select id="tag-filter" name="tag-filter">
-            <option value="all">All tags</option>
-            {availableTags.map((tag) => (
-              <option value={tag}>{tagLabelMap[tag]}</option>
-            ))}
-          </select>
-        </label>
+        <p class="filter-label">Filter by tag</p>
+        <div class="tag-filter" role="toolbar" aria-label="Tag filters">
+          <button type="button" class="tag-filter-button is-active" data-tag-filter data-tag="all">
+            All tags
+          </button>
+          {availableTags.map((tag) => (
+            <button type="button" class="tag-filter-button" data-tag-filter data-tag={tag}>
+              {tagLabelMap[tag]}
+            </button>
+          ))}
+        </div>
         <p id="results-count" class="results-count">{initialCountLabel}</p>
       </section>
 
@@ -136,23 +138,28 @@ const initialCountLabel =
     </main>
 
     <script type="module">
-      const filter = document.getElementById('tag-filter');
+      const filterButtons = Array.from(document.querySelectorAll('[data-tag-filter]'));
       const cards = Array.from(document.querySelectorAll('[data-result-card]'));
       const emptyState = document.getElementById('no-results');
       const resultsCount = document.getElementById('results-count');
 
       const formatCount = (count) => `Showing ${count} result${count === 1 ? '' : 's'}`;
 
-      const params = new URLSearchParams(window.location.search);
-      const requestedTag = params.get('tag');
+      const setActiveButton = (tag) => {
+        filterButtons.forEach((button) => {
+          const isActive = button.dataset.tag === tag;
+          button.classList.toggle('is-active', isActive);
+          button.setAttribute('aria-pressed', String(isActive));
+        });
+      };
 
-      const applyFilter = () => {
-        const selectedTag = filter?.value ?? 'all';
+      const applyFilter = (selectedTag) => {
+        const tag = selectedTag ?? 'all';
         let visibleCount = 0;
 
         cards.forEach((card) => {
           const tags = JSON.parse(card.dataset.tags ?? '[]');
-          const matches = selectedTag === 'all' || tags.includes(selectedTag);
+          const matches = tag === 'all' || tags.includes(tag);
           card.classList.toggle('is-hidden', !matches);
           if (matches) {
             visibleCount += 1;
@@ -166,17 +173,23 @@ const initialCountLabel =
         if (emptyState) {
           emptyState.hidden = visibleCount !== 0;
         }
+
+        setActiveButton(tag);
       };
 
-      if (requestedTag && filter instanceof HTMLSelectElement) {
-        const optionMatches = Array.from(filter.options).some((option) => option.value === requestedTag);
-        if (optionMatches) {
-          filter.value = requestedTag;
-        }
-      }
+      // Support linking like ?tag=foundations
+      const params = new URLSearchParams(window.location.search);
+      const requestedTag = params.get('tag');
+      const validTags = new Set(['all', ...filterButtons.map((b) => b.dataset.tag)]);
+      const initialTag = validTags.has(requestedTag) ? requestedTag : 'all';
 
-      filter?.addEventListener('change', applyFilter);
-      applyFilter();
+      filterButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          applyFilter(button.dataset.tag);
+        });
+      });
+
+      applyFilter(initialTag);
     </script>
 
     <style>
@@ -236,20 +249,41 @@ const initialCountLabel =
       }
 
       .filter-label {
-        display: flex;
-        flex-direction: column;
-        gap: 0.35rem;
+        margin: 0;
         font-size: 0.85rem;
         font-weight: 600;
         color: #475569;
       }
 
-      .filter-label select {
+      .tag-filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        width: 100%;
+      }
+
+      .tag-filter-button {
         border: 1px solid #cbd5f5;
-        border-radius: 0.5rem;
-        padding: 0.4rem 0.65rem;
-        font-size: 0.95rem;
-        min-width: 180px;
+        border-radius: 999px;
+        padding: 0.3rem 0.85rem;
+        background: #fff;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #4338ca;
+        cursor: pointer;
+        transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      }
+
+      .tag-filter-button:hover,
+      .tag-filter-button:focus-visible {
+        border-color: #818cf8;
+        color: #312e81;
+      }
+
+      .tag-filter-button.is-active {
+        background: #4338ca;
+        color: #fff;
+        border-color: #4338ca;
       }
 
       .results-count {

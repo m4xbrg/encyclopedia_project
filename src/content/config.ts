@@ -28,6 +28,15 @@ const courses = defineCollection({
         title: z.string().describe('Human readable course name'),
         description: z.string().describe('Overview of the course'),
         level: z.string().optional().describe('Target experience level'),
+        difficulty: z.string().optional().describe('How challenging the course is overall'),
+        estimatedTime: z
+          .string()
+          .optional()
+          .describe('Approximate total time commitment for the course'),
+        learningGoals: z
+          .array(z.string().min(1))
+          .default([])
+          .describe('Key outcomes learners should achieve by the end of the course'),
         tags: allTagSchema,
       })
       .refine((data) => data.code.toLowerCase() === slug.toLowerCase(), {
