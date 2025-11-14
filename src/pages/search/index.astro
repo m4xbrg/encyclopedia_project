@@ -143,6 +143,9 @@ const initialCountLabel =
 
       const formatCount = (count) => `Showing ${count} result${count === 1 ? '' : 's'}`;
 
+      const params = new URLSearchParams(window.location.search);
+      const requestedTag = params.get('tag');
+
       const applyFilter = () => {
         const selectedTag = filter?.value ?? 'all';
         let visibleCount = 0;
@@ -164,6 +167,13 @@ const initialCountLabel =
           emptyState.hidden = visibleCount !== 0;
         }
       };
+
+      if (requestedTag && filter instanceof HTMLSelectElement) {
+        const optionMatches = Array.from(filter.options).some((option) => option.value === requestedTag);
+        if (optionMatches) {
+          filter.value = requestedTag;
+        }
+      }
 
       filter?.addEventListener('change', applyFilter);
       applyFilter();
